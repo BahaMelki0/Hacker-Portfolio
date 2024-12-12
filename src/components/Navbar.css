@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap");
+
+/* Base Navbar Styles */
+.navbar {
+  background-color: #0d0d0d;
+  border-bottom: 1px solid #00ff00;
+  padding: 10px 10px;
+  font-family: "Source Code Pro", monospace;
+  transition: background-color 0.3s ease, border-bottom 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+/* Sticky Navbar */
+.sticky {
+  background-color: #1a1a1a;
+  border-bottom: 2px solid #00ff00;
+  box-shadow: 0 2px 10px rgba(0, 255, 0, 0.2);
+}
+
+/* Brand Logo */
+.navbar .logo {
+  max-height: 40px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
+  object-fit: contain;    /* Ensures the aspect ratio is maintained without distortion */
+}
+
+.navbar .logo:hover {
+  transform: scale(2);
+}
+
+/* Navbar Links */
+.navbar .navbar-nav {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  color: #00ff00 !important;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  padding: 0 15px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Hover Effect for Links */
+.nav-link:hover {
+  color: #00ff00 !important;
+  text-shadow: 0 0 8px #00ff00;
+}
+
+/* Active Link Style */
+.nav-link.active {
+  color: #00ff00 !important;
+  text-shadow: 0 0 10px #00ff00;
+}
+
+/* Navbar Buttons */
+.fork-btn .fork-btn-inner {
+  background-color: #0d0d0d;
+  color: #00ff00;
+  border: 1px solid #00ff00;
+  padding: 5px 15px;
+  transition: all 0.3s ease;
+  margin-left: 15px;
+}
+
+.fork-btn .fork-btn-inner:hover {
+  background-color: #00ff00;
+  color: #0d0d0d;
+  box-shadow: 0 0 10px #00ff00;
+}
+
+/* Mobile Toggle Button */
+.navbar-toggler {
+  border: 1px solid #00ff00;
+  transition: border-color 0.3s ease;
+}
+
+.navbar-toggler span {
+  background-color: #00ff00;
+  display: block;
+  height: 3px;
+  width: 20px;
+  margin: 5px 0;
+  transition: background-color 0.3s ease;
+}
+
+/* Navbar Collapse */
+.navbar-collapse {
+  background-color: #0d0d0d;
+  padding: 10px;
+}
+
+/* Dropdown (Mobile View) */
+@media (max-width: 768px) {
+  .navbar-collapse {
+    border-top: 1px solid #00ff00;
+    text-align: center;
+  }
+
+  .nav-link {
+    padding: 10px;
+    text-align: center;
+    display: block;
+  }
+
+  .fork-btn {
+    margin-top: 10px;
+    text-align: center;
+  }
+}
+
+/* Fix Full-Screen Mode Issues */
+@media (min-width: 992px) {
+  .navbar {
+    padding: 10px 50px;
+  }
+
+  .navbar .navbar-nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+  }
+
+  .nav-link {
+    padding: 10px;
+  }
+}

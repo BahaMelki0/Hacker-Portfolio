@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap");
+
+/* Footer Container */
+.footer {
+  background-color: #0d0d0d;
+  color: #c2f0c2;
+  font-family: "Source Code Pro", monospace;
+  padding: 20px 0;
+  text-align: center;
+  border-top: 1px solid #222;
+  position: relative;
+}
+
+/* Copywright Section */
+.footer-copywright h3 {
+  font-size: 1.2rem;
+  color: #66ff99;
+  margin-bottom: 10px;
+  text-shadow: 0 0 5px #66ff99;
+}
+
+/* Encoded Message Styling */
+.footer-encoded {
+  font-size: 0.9rem;
+  color: #00ff00;
+  text-shadow: 0 0 4px #00ff00;
+  margin-top: 10px;
+  word-break: break-word;
+  opacity: 0.8;
+}
+
+/* Prevent Footer Size Change */
+.footer-container {
+  max-width: 100%;
+  margin: 0 auto;
+}

@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
+
+/* Base Body Styles */
+body {
+  margin: 0;
+  font-family: "Courier New", monospace; /* Hacker-friendly font */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(to left, rgb(0, 0, 0), rgb(15, 35, 18)); /* Darker gradient */
+  color: #00ff00; /* Neon green text */
+  min-height: 100vh;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Global Link Styles */
+a {
+  color: #00ff00;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+a:hover {
+  text-shadow: 0 0 10px #00ff00;
+}
+
+/* Scrollbar Styles (Optional) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1b1329; /* Dark track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00ff00; /* Neon green scrollbar */
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00cc00;
+}
+
+/* Selection Styles (Highlight Text) */
+::selection {
+  background: #00ff00;
+  color: #000;
+}
+

@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap");
+
+/* Linux Command Styling */
+.linux-command {
+  font-family: "Source Code Pro", monospace;
+  color: #00ff00;
+  font-size: 0.5rem;
+  background-color: #000;
+  padding: 10px;
+  border-radius: 5px;
+  text-shadow: 0 0 8px #00ff00;
+  display: inline-block; /* Box fits the text dynamically */
+  white-space: nowrap; /* Keep the text on one line */
+  max-width: 100%; /* Prevents overflow */
+  overflow: hidden; /* Prevents overflow from breaking the layout */
+}
+
+/* Cursor Animation */
+.Typewriter__cursor {
+  color: #00ff00;
+  font-weight: bold;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
