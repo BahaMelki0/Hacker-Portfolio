@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300px" height="300px" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Glow Filter -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+      <feMerge>
+        <feMergeNode in="coloredBlur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Matrix Code Pattern -->
+    <pattern id="matrixPattern" width="10" height="20" patternUnits="userSpaceOnUse">
+      <text x="0" y="15" font-family="Courier New" font-size="16" fill="#00ff00" opacity="0.7">0</text>
+    </pattern>
+  </defs>
+
+  <!-- Background with Matrix Code -->
+  <rect width="100%" height="100%" fill="url(#matrixPattern)" />
+
+  <!-- Hood -->
+  <path
+    d="M50,80 Q150,10 250,80 Q240,200 150,250 Q60,200 50,80"
+    fill="black"
+    stroke="#00ff00"
+    stroke-width="4"
+    filter="url(#glow)"
+  />
+
+  <!-- Face Silhouette -->
+  <circle cx="150" cy="130" r="40" fill="black" stroke="#00ff00" stroke-width="2" filter="url(#glow)" />
+
+  <!-- Eyes with Glow -->
+  <circle cx="135" cy="120" r="6" fill="#00ff00" filter="url(#glow)" />
+  <circle cx="165" cy="120" r="6" fill="#00ff00" filter="url(#glow)" />
+
+  <!-- Mouth (Simple Line with Glitch) -->
+  <line x1="135" y1="150" x2="165" y2="150" stroke="#00ff00" stroke-width="2" filter="url(#glow)" />
+
+  <!-- Glitch Effect Lines -->
+  <line x1="70" y1="100" x2="90" y2="100" stroke="#00ff00" stroke-width="2" />
+  <line x1="210" y1="150" x2="230" y2="150" stroke="#00ff00" stroke-width="2" />
+  <line x1="120" y1="220" x2="180" y2="220" stroke="#00ff00" stroke-width="2" />
+</svg>
