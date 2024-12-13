@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Hacker-Portfolio/static/css/main.d5c96165.css",
-    "main.js": "/Hacker-Portfolio/static/js/main.d37b984b.js",
+    "main.js": "/Hacker-Portfolio/static/js/main.f646d02d.js",
     "static/js/415.4d6acbeb.chunk.js": "/Hacker-Portfolio/static/js/415.4d6acbeb.chunk.js",
     "static/js/787.1ed0c42c.chunk.js": "/Hacker-Portfolio/static/js/787.1ed0c42c.chunk.js",
     "static/media/leaf.png": "/Hacker-Portfolio/static/media/leaf.ff2616f664c8c0ceab91.png",
@@ -14,16 +14,16 @@
     "static/media/chatify.png": "/Hacker-Portfolio/static/media/chatify.7206044e0b5cdad44726.png",
     "static/media/logo.png": "/Hacker-Portfolio/static/media/logo.36f08fd5c98662f697d3.png",
     "static/media/about.png": "/Hacker-Portfolio/static/media/about.fbbde37461971b5223e5.png",
+    "static/media/avatar.svg": "/Hacker-Portfolio/static/media/avatar.52999e5110fa1ec346095c43b758b3dc.svg",
     "static/media/bug.svg": "/Hacker-Portfolio/static/media/bug.40468af7cace3ce4e88a8ba4fa6f7d22.svg",
     "index.html": "/Hacker-Portfolio/index.html",
-    "static/media/avatar.svg": "/Hacker-Portfolio/static/media/avatar.12d6aa3f33051f2e13eed9fbf3c9f186.svg",
     "main.d5c96165.css.map": "/Hacker-Portfolio/static/css/main.d5c96165.css.map",
-    "main.d37b984b.js.map": "/Hacker-Portfolio/static/js/main.d37b984b.js.map",
+    "main.f646d02d.js.map": "/Hacker-Portfolio/static/js/main.f646d02d.js.map",
     "415.4d6acbeb.chunk.js.map": "/Hacker-Portfolio/static/js/415.4d6acbeb.chunk.js.map",
     "787.1ed0c42c.chunk.js.map": "/Hacker-Portfolio/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d5c96165.css",
-    "static/js/main.d37b984b.js"
+    "static/js/main.f646d02d.js"
   ]
 }
