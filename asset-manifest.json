@@ -1,9 +1,8 @@
 {
   "files": {
-    "main.css": "/Hacker-Portfolio/static/css/main.d5c96165.css",
-    "main.js": "/Hacker-Portfolio/static/js/main.f646d02d.js",
-    "static/js/415.4d6acbeb.chunk.js": "/Hacker-Portfolio/static/js/415.4d6acbeb.chunk.js",
-    "static/js/787.1ed0c42c.chunk.js": "/Hacker-Portfolio/static/js/787.1ed0c42c.chunk.js",
+    "main.css": "/Hacker-Portfolio/static/css/main.69d563c5.css",
+    "main.js": "/Hacker-Portfolio/static/js/main.046562a0.js",
+    "static/js/488.9e51c7c4.chunk.js": "/Hacker-Portfolio/static/js/488.9e51c7c4.chunk.js",
     "static/media/leaf.png": "/Hacker-Portfolio/static/media/leaf.ff2616f664c8c0ceab91.png",
     "static/media/emotion.png": "/Hacker-Portfolio/static/media/emotion.eabfc16e7a146ab15778.png",
     "static/media/suicide.png": "/Hacker-Portfolio/static/media/suicide.9c86cd7138a398c45fa5.png",
@@ -17,13 +16,12 @@
     "static/media/avatar.svg": "/Hacker-Portfolio/static/media/avatar.52999e5110fa1ec346095c43b758b3dc.svg",
     "static/media/bug.svg": "/Hacker-Portfolio/static/media/bug.40468af7cace3ce4e88a8ba4fa6f7d22.svg",
     "index.html": "/Hacker-Portfolio/index.html",
-    "main.d5c96165.css.map": "/Hacker-Portfolio/static/css/main.d5c96165.css.map",
-    "main.f646d02d.js.map": "/Hacker-Portfolio/static/js/main.f646d02d.js.map",
-    "415.4d6acbeb.chunk.js.map": "/Hacker-Portfolio/static/js/415.4d6acbeb.chunk.js.map",
-    "787.1ed0c42c.chunk.js.map": "/Hacker-Portfolio/static/js/787.1ed0c42c.chunk.js.map"
+    "main.69d563c5.css.map": "/Hacker-Portfolio/static/css/main.69d563c5.css.map",
+    "main.046562a0.js.map": "/Hacker-Portfolio/static/js/main.046562a0.js.map",
+    "488.9e51c7c4.chunk.js.map": "/Hacker-Portfolio/static/js/488.9e51c7c4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d5c96165.css",
-    "static/js/main.f646d02d.js"
+    "static/css/main.69d563c5.css",
+    "static/js/main.046562a0.js"
   ]
 }
