@@ -1,80 +1,66 @@
-<<<<<<< HEAD
-# Hacker-Portfolio
-=======
-<h2 align="center">
-  Portfolio Website - v2.0<br/>
-  <a href="https://soumyajit.vercel.app/" target="_blank">soumyajit.tech</a>
-</h2>
-<div align="center">
-  <img alt="Demo" src="./Images/readme-img1.png" />
-</div>
+# 🐞 Hacker Portfolio
 
-<br/>
+Welcome to my **Hacker Portfolio** – a showcase of my projects, skills, and experiments in **cybersecurity**, **web development**, and **CTF challenges**. Explore the interactive features and see what I've been working on!
 
-<center>
+---
 
-[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com) &nbsp;
-[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com) &nbsp;
-[![forthebadge](https://forthebadge.com/images/badges/open-source.svg)](https://forthebadge.com) &nbsp;
-![GitHub Repo stars](https://img.shields.io/github/stars/soumyajit4419/Portfolio?color=red&logo=github&style=for-the-badge) &nbsp;
-![GitHub forks](https://img.shields.io/github/forks/soumyajit4419/Portfolio?color=red&logo=github&style=for-the-badge)
+## 🚀 **Live Demo**
 
-</center>
+Check out the live project here: [https://bahamelki0.github.io/Hacker-Portfolio/]
 
-<h3 align="center">
-    🔹
-    <a href="https://github.com/soumyajit4419/Portfolio/issues">Report Bug</a> &nbsp; &nbsp;
-    🔹
-    <a href="https://github.com/soumyajit4419/Portfolio/issues">Request Feature</a>
-</h3>
 
-## TL;DR
+## 🛠️ **Features**
 
-You can fork this repo to modify and make changes of your own. Please give me proper credit by linking back to [Soumyajit4419](https://github.com/soumyajit4419/Portfolio). Thanks!
+- **Interactive Particle System**: Dynamic bugs that spawn, move, and die automatically.
+- **Cyber-Themed Design**: Inspired by the hacker aesthetic with Matrix-like animations.
+- **Projects Showcase**: Highlights of my key projects in cybersecurity and development.
+- **CTF Writeups**: Detailed writeups of Capture The Flag (CTF) challenges.
+- **Responsive Design**: Works well on desktop, tablet, and mobile devices.
+- **Smooth Animations**: Subtle animations and hover effects for a modern look.
 
-## Built With
+---
 
-My personal portfolio <a href="https://soumyajit.vercel.app/" target="_blank">soumyajit.tech</a> which features some of my github projects as well as my resume and technical skills.<br/>
+## 🧑‍💻 **Technologies Used**
 
-This project was built using these technologies.
+- **Frontend**:
+  - React.js
+  - React-Bootstrap
+  - React-Tilt
+  - `react-tsparticles` for interactive particles
+- **Styling**:
+  - CSS3
+- **Icons**:
+  - `react-icons`
 
-- React.js
-- Node.js
-- Express.js
-- CSS3
-- VsCode
-- Vercel
+---
 
-## Features
+## ⚙️ **Setup and Installation**
 
-**📖 Multi-Page Layout**
+### Prerequisites
 
-**🎨 Styled with React-Bootstrap and Css with easy to customize colors**
+Make sure you have the following installed:
 
-**📱 Fully Responsive**
+- **Node.js**: [Download Node.js](https://nodejs.org/)
+- **Git**: [Download Git](https://git-scm.com/)
 
-## Getting Started
+### Installation Steps
 
-Clone down this repository. You will need `node.js` and `git` installed globally on your machine.
+1. **Clone the Repository**:
 
-## 🛠 Installation and Setup Instructions
+   ```bash
 
-1. Installation: `npm install`
+   git clone https://github.com/BahaMelki0/Hacker-Portfolio.git
 
-2. In the project directory, you can run: `npm start`
+2. **Running it on local**:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-The page will reload if you make edits.
+  cd Hacker-Portfolio
 
-## Usage Instructions
+  npm install
 
-Open the project folder and Navigate to `/src/components/`. <br/>
-You will find all the components used and you can edit your information accordingly.
+  npm run build
 
-### Show your support
+  npm start
 
-Give a ⭐ if you like this website!
+  
+  
 
-<a href="https://www.buymeacoffee.com/soumyajit4419" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png" alt="Buy Me A Coffee" height= "60px" width= "217px" ></a>
->>>>>>> a923089 (Initial commit)

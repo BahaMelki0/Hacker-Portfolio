@@ -2,7 +2,6 @@ import React from "react";
 import Particles from "react-tsparticles";
 import bugIcon from "../Assets/bug.svg";
 
-
 function Particle() {
   return (
     <Particles
@@ -10,7 +9,7 @@ function Particle() {
       params={{
         particles: {
           number: {
-            value: 50, // Fewer particles for better visibility
+            value: 40, // Maximum number of particles
             density: {
               enable: true,
               value_area: 800,
@@ -19,57 +18,62 @@ function Particle() {
           color: {
             value: "#00ff00", // Green color for fallback
           },
-
           shape: {
             type: "image",
             image: {
               src: bugIcon,
-              width: 15,
-              height: 15,
+              width: 20,
+              height: 20,
             },
           },
-          
-            
           opacity: {
-            value: 0.8,
-            random: true,
-          },
-          size: {
-            value: 20,
+            value: 0.7,
             random: true,
             anim: {
               enable: true,
-              speed: 1,
-              size_min: 10,
+              speed: 0.5,
+              opacity_min: 0.2,
             },
+          },
+          size: {
+            value: 15,
+            random: true,
           },
           move: {
             enable: true,
-            speed: 1,
+            speed: 2,
             direction: "none",
             random: true,
-            out_mode: "out",
-            bounce: false,
+            out_mode: "bounce",
+            bounce: true,
+          },
+          life: {
+            duration: {
+              value: 30, // Each bug lives for 30 seconds
+            },
+            count: 1, // After completing its lifespan, the bug is removed
+          },
+          line_linked: {
+            enable: true,
+            distance: 100, // Link distance threshold
+            color: "#00ff00",
+            opacity: 0.5,
+            width: 1,
           },
         },
         interactivity: {
           events: {
             onhover: {
               enable: true,
-              mode: "repulse",
-            },
-            onclick: {
-              enable: true,
-              mode: "push",
+              mode: "grab", // Show links when bugs are close to the mouse
             },
           },
           modes: {
-            repulse: {
-              distance: 100,
-              duration: 0.4,
-            },
-            push: {
-              particles_nb: 4,
+            grab: {
+              distance: 120, // Distance to show links
+              line_linked: {
+                opacity: 0.8,
+              },
             },
           },
         },

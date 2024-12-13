@@ -94,7 +94,7 @@ function NavBar() {
 
             <Nav.Item>
               <Nav.Link
-                href="https://www.linkedin.com/in/bahaeddine-melki/"
+                href="https://eurecom.gitbook.io/330169-cyber-blog/"
                 target="_blank"
                 rel="noreferrer"
               >
