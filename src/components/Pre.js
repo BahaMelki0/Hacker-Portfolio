@@ -1,6 +1,16 @@
 import React from "react";
-function Pre(props) {
-  return <div id={props.load ? "preloader" : "preloader-none"}></div>;
+import { FaUserSecret } from "react-icons/fa";
+import "./Pre.css";
+
+function Pre() {
+  return (
+    <div className="preloader">
+      <FaUserSecret className="preloader-icon" />
+      <div className="preloader-text">
+      Parsing   <span className="dots"></span>
+      </div>
+    </div>
+  );
 }
 
 export default Pre;

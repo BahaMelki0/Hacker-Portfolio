@@ -2,11 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import myImg from "../../Assets/avatar.svg";
 import Tilt from "react-parallax-tilt";
-import {
-  AiFillGithub,
-  AiOutlineTwitter,
-  AiFillInstagram,
-} from "react-icons/ai";
+import { AiFillGithub } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 
 function Home2() {
@@ -19,36 +15,41 @@ function Home2() {
               LET ME INTRODUCE MYSELF
             </h1>
             <p className="home-about-body">
-              I'm a highly driven, solution-oriented person with an affinity to CyberSecurity and AI.
+              I'm a highly driven, solution-oriented person with an affinity for{" "}
+              CyberSecurity and{" "}
+              AI.
               <br />
-              <br />I am fluent in languages like Python, C++ and Rust. 
+              <br />I am fluent in languages like{" "}
+              Python, C++, and Rust.
               <br />
               <br />
-              My field of Interest's are :  &nbsp;
+              My fields of interest include:&nbsp;
               <i>
-                Pentesting, 
-                DevSecOps
-                and
-                 Machine learning.
+                Pentesting,{" "}
+                DevSecOps, and{" "}
+                Machine Learning.
               </i>
               <br />
               <br />
-              Whenever possible, I enjoy developing and experimenting with malicious applications in a controlled environment to better understand the thought process behind malicious scripts and enhance my cybersecurity skills.
-              &nbsp; like
+              Whenever possible, I enjoy developing and experimenting with{" "}
+              malicious applications  in a controlled environment
+              to better understand the thought process behind malicious scripts and
+              enhance my cybersecurity skills.
             </p>
           </Col>
-          <Col md={4} className="myAvtar">
-  <Tilt>
-    <img 
-      src={myImg} 
-      className="img-fluid" 
-      alt="avatar" 
-      style={{ maxWidth: "60%", height: "auto" }} 
-    />
-  </Tilt>
-</Col>
 
+          <Col md={4} className="myAvtar">
+            <Tilt>
+              <img
+                src={myImg}
+                className="img-fluid"
+                alt="avatar"
+                style={{ width: "100%", maxWidth: "250px", height: "auto" }}
+              />
+            </Tilt>
+          </Col>
         </Row>
+
         <Row>
           <Col md={12} className="home-about-social">
             <h1>FIND ME ON</h1>
@@ -58,7 +59,7 @@ function Home2() {
                   href="https://github.com/BahaMelki0"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour  home-social-icons"
+                  className="icon-colour home-social-icons"
                 >
                   <AiFillGithub />
                 </a>
@@ -68,14 +69,14 @@ function Home2() {
                   href="https://www.linkedin.com/in/bahaeddine-melki/"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour  home-social-icons"
+                  className="icon-colour home-social-icons"
                 >
                   <FaLinkedinIn />
                 </a>
               </li>
             </ul>
             <p>
-              Feel free to <span className="purple">connect </span>with me
+              Feel free to connect with me.
             </p>
           </Col>
         </Row>
@@ -83,4 +84,5 @@ function Home2() {
     </Container>
   );
 }
+
 export default Home2;
