@@ -61,7 +61,3 @@ Make sure you have the following installed:
   npm run build
 
   npm start
-
-  
-  
-
