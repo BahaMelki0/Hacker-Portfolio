@@ -44,11 +44,11 @@ Make sure you have the following installed:
 - **Git**: [Download Git](https://git-scm.com/)
 
 ### Installation Steps
-
+**1 - Clone the repository:**
 ```bash
 git clone https://github.com/BahaMelki0/Hacker-Portfolio.git
 ```
-
+**2 - Running it on local:**
 ```bash
 cd Hacker-Portfolio
 npm install
