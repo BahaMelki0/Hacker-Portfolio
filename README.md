@@ -45,13 +45,12 @@ Make sure you have the following installed:
 
 ### Installation Steps
 
-Clone the Repository:
-'''bash
-Copier le code
+```bash
 git clone https://github.com/BahaMelki0/Hacker-Portfolio.git
-Run Locally:
-'''bash
-Copier le code
+```
+
+```bash
 cd Hacker-Portfolio
 npm install
 npm start
+```
