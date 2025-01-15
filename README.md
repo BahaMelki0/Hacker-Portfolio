@@ -49,9 +49,10 @@ Make sure you have the following installed:
 
    ```bash
 
-   git clone https://github.com/BahaMelki0/Hacker-Portfolio.git
+    git clone https://github.com/BahaMelki0/Hacker-Portfolio.git
 
 2. **Running it on local**:
+ ```bash
 
   cd Hacker-Portfolio
 
@@ -60,7 +61,3 @@ Make sure you have the following installed:
   npm run build
 
   npm start
-
-  
-  
-
