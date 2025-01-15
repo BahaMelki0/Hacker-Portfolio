@@ -1,50 +1,63 @@
-import React, { useState } from "react";
-import { Container, Row } from "react-bootstrap";
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Particle from "../Particle";
 import pdf from "../../Assets/../Assets/Melki_Bahaeddine.pdf";
 import { AiOutlineDownload } from "react-icons/ai";
-import { Document, Page, pdfjs } from "react-pdf";
-import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "./Resume.css";
 
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
-
 function ResumeNew() {
-  const [pageNumber, setPageNumber] = useState(1);
-  const [numPages, setNumPages] = useState(null);
-  const [scale, setScale] = useState(1.0);
-
-  const onDocumentLoadSuccess = ({ numPages }) => {
-    setNumPages(numPages);
-  };
-
-  const zoomIn = () => setScale((prevScale) => prevScale + 0.2);
-  const zoomOut = () => setScale((prevScale) => Math.max(prevScale - 0.2, 0.6));
-  const nextPage = () => setPageNumber((prev) => Math.min(prev + 1, numPages));
-  const prevPage = () => setPageNumber((prev) => Math.max(prev - 1, 1));
-
   return (
-    <Container fluid className="resume-section">
-      <Particle />
-      <Row style={{ justifyContent: "center", position: "relative" }}>
-        <Document file={pdf} onLoadSuccess={onDocumentLoadSuccess} className="d-flex justify-content-center">
-          <Page pageNumber={pageNumber} scale={scale} />
-        </Document>
-      </Row>
+    <div className="resume-page">
+      <Container fluid className="resume-section">
+        <Particle />
 
-      <div className="pdf-controls">
-        <button onClick={prevPage}>Previous Page</button>
-        <button onClick={nextPage}>Next Page</button>
-      </div>
+        <Row style={{ justifyContent: "center", position: "relative" }}>
+          <Col md={8} className="resume-description">
+            <h2 className="resume-heading">
+              My Professional Journey{" "}
+              <span className="emoji" role="img" aria-label="shield">
+                🛡️
+              </span>
+            </h2>
+            <p>
+              I specialize in <strong>Cybersecurity</strong> and <strong>AI-driven solutions</strong>, focusing on areas like <strong>Pentesting</strong>, <strong>Cryptography</strong>{" "}
+              <span className="emoji" role="img" aria-label="lock">
+                🗝️
+              </span>{" "}
+              and <strong>Digital Forensics</strong> (DFIR). My experience includes designing secure systems, identifying vulnerabilities, and developing automation tools to enhance system security and efficiency.{" "}
+              <span className="emoji" role="img" aria-label="laptop">
+                💻
+              </span>
+            </p>
+            <p>
+              My background includes <strong>Web and Mobile Development</strong>, where I build responsive, secure applications. I enjoy developing end-to-end solutions that integrate modern web technologies with robust backend services.{" "}
+              <span className="emoji" role="img" aria-label="mobile">
+                📱
+              </span>
+            </p>
+            <p>
+              I am also passionate about <strong>Machine Learning</strong>, applying AI models to solve real-world problems and enhance security protocols. My projects blend cryptographic techniques with AI to create innovative, secure solutions.{" "}
+              <span className="emoji" role="img" aria-label="brain">
+                🧠
+              </span>
+            </p>
+          </Col>
+        </Row>
 
-      <Row style={{ justifyContent: "center", position: "relative" }}>
-        <Button variant="primary" href={pdf} target="_blank" style={{ maxWidth: "250px" }}>
-          <AiOutlineDownload />
-          &nbsp;Download CV
-        </Button>
-      </Row>
-    </Container>
+        <Row style={{ justifyContent: "center", position: "relative", marginTop: "20px" }}>
+          <Button
+            variant="primary"
+            href={pdf}
+            target="_blank"
+            style={{ maxWidth: "250px" }}
+          >
+            <AiOutlineDownload />
+            &nbsp;Download My CV
+          </Button>
+        </Row>
+      </Container>
+    </div>
   );
 }
 

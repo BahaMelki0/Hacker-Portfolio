@@ -18,7 +18,7 @@ function About() {
             style={{
               justifyContent: "center",
               paddingTop: "30px",
-              paddingBottom: "50px",
+              paddingBottom: "20px", // Reduced bottom padding
             }}
           >
             <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
@@ -28,7 +28,9 @@ function About() {
           </Col>
           <Col
             md={5}
-            style={{ paddingTop: "120px", paddingBottom: "50px" }}
+            style={{
+              paddingBottom: "20px", // Reduced bottom padding
+            }}
             className="about-img"
           >
             <img src={laptopImg} alt="about" className="img-fluid" />

@@ -18,51 +18,94 @@ import {
   SiGnubash, 
   SiWireshark, 
 } from "react-icons/si";
+import './stack.css';
 
 function Techstack() {
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
       <Col xs={4} md={2} className="tech-icons">
-        <CgCPlusPlus />
+        <div>
+          <CgCPlusPlus />
+          <span className="tech-name">C++</span>
+        </div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <DiPython />
+        <div>
+          <DiPython />
+          <span className="tech-name">Python</span>
+        </div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <DiJava />
+        <div>
+          <DiJava />
+          <span className="tech-name">Java</span>
+        </div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <DiPhp />
+        <div>
+          <DiPhp />
+          <span className="tech-name">PHP</span>
+        </div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiRust />
+        <div>
+          <SiRust />
+          <span className="tech-name">Rust</span>
+        </div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <DiReact />
+        <div>
+          <DiReact />
+          <span className="tech-name">React</span>
+        </div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiAngular />
+        <div>
+          <SiAngular />
+          <span className="tech-name">Angular</span>
+        </div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiFlutter />
+        <div>
+          <SiFlutter />
+          <span className="tech-name">Flutter</span>
+        </div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <DiMongodb />
+        <div>
+          <DiMongodb />
+          <span className="tech-name">MongoDB</span>
+        </div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiFirebase />
+        <div>
+          <SiFirebase />
+          <span className="tech-name">Firebase</span>
+        </div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <DiGit />
+        <div>
+          <DiGit />
+          <span className="tech-name">Git</span>
+        </div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <DiLinux />
+        <div>
+          <DiLinux />
+          <span className="tech-name">Linux</span>
+        </div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiGnubash />
+        <div>
+          <SiGnubash />
+          <span className="tech-name">Bash</span>
+        </div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiWireshark />
+        <div>
+          <SiWireshark />
+          <span className="tech-name">Wireshark</span>
+        </div>
       </Col>
     </Row>
   );

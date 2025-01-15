@@ -1,7 +1,6 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import {
-  SiVisualstudiocode,
   SiPostman,
   SiFigma,
   SiJupyter,
@@ -10,33 +9,59 @@ import {
   SiDocker,
   SiTensorflow,
 } from "react-icons/si";
+import { VscVscode } from "react-icons/vsc";
+import './stack.css';
 
 function Toolstack() {
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
       <Col xs={4} md={2} className="tech-icons">
-        <SiVisualstudiocode />
+        <div>
+          <VscVscode />
+          <span className="tech-name">VS Code</span>
+        </div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiPostman />
+        <div>
+          <SiPostman />
+          <span className="tech-name">Postman</span>
+        </div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiJupyter />
+        <div>
+          <SiJupyter />
+          <span className="tech-name">Jupyter</span>
+        </div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiAnaconda />
+        <div>
+          <SiAnaconda />
+          <span className="tech-name">Anaconda</span>
+        </div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiFigma />
+        <div>
+          <SiFigma />
+          <span className="tech-name">Figma</span>
+        </div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiGithub />
+        <div>
+          <SiGithub />
+          <span className="tech-name">GitHub</span>
+        </div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiDocker />
+        <div>
+          <SiDocker />
+          <span className="tech-name">Docker</span>
+        </div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiTensorflow />
+        <div>
+          <SiTensorflow />
+          <span className="tech-name">TensorFlow</span>
+        </div>
       </Col>
     </Row>
   );

@@ -1,0 +1,51 @@
+/* stack.css */
+
+/* Container for each tech icon */
+.tech-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 120px; /* Box width */
+    height: 120px; /* Box height */
+    margin: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.5); /* Border color: white */
+    border-radius: 10px;
+    background-color: transparent;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  }
+  
+  /* Styling for the tech icon */
+  .tech-icons svg {
+    font-size: 3rem; /* Size of the icons */
+    color: #ffffff; /* Icon color: white */
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  /* Hidden tech name (initially) */
+  .tech-name {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width of the container */
+    height: 100%; /* Full height of the container */
+    display: flex;
+    align-items: center; /* Vertically center */
+    justify-content: center; /* Horizontally center */
+    font-size: 1rem; /* Text size */
+    color: #ffffff; /* White text */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1; /* Ensure it appears above other elements */
+  }
+  
+  /* On hover: make icon transparent and show the name */
+  .tech-icons:hover svg {
+    opacity: 0; /* Make the icon transparent */
+  }
+  
+  .tech-icons:hover .tech-name {
+    opacity: 1; /* Show the name */
+  }
+  
