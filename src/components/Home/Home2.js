@@ -21,7 +21,7 @@ function Home2() {
                 <strong>CyberSecurity</strong> and <strong>AI</strong>.
                 <br />
                 <br />I am fluent in languages like{" "}
-                <strong>Python</strong>, <strong>C++</strong>, and <strong>Rust</strong>.
+                <strong>Python</strong>, <strong>C++</strong>, and <strong>JavaScript</strong>.
                 <br />
                 <br />
                 My fields of interest include:&nbsp;

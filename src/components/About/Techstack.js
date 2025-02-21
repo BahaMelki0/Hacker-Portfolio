@@ -12,7 +12,6 @@ import {
 } from "react-icons/di";
 import { 
   SiFirebase, 
-  SiAngular, 
   SiRust, 
   SiFlutter, 
   SiGnubash, 
@@ -57,12 +56,6 @@ function Techstack() {
         <div>
           <DiReact />
           <span className="tech-name">React</span>
-        </div>
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <div>
-          <SiAngular />
-          <span className="tech-name">Angular</span>
         </div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
