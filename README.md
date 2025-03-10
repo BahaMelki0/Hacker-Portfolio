@@ -11,10 +11,8 @@ Check out the live project here: [https://bahamelki0.github.io/Hacker-Portfolio/
 
 ## 🛠️ **Features**
 
-- **Interactive Particle System**: Dynamic bugs that spawn, move, and die automatically.
 - **Cyber-Themed Design**: Inspired by the hacker aesthetic with Matrix-like animations.
 - **Projects Showcase**: Highlights of my key projects in cybersecurity and development.
-- **CTF Writeups**: Detailed writeups of Capture The Flag (CTF) challenges.
 - **Responsive Design**: Works well on desktop, tablet, and mobile devices.
 - **Smooth Animations**: Subtle animations and hover effects for a modern look.
 
@@ -26,7 +24,7 @@ Check out the live project here: [https://bahamelki0.github.io/Hacker-Portfolio/
   - React.js
   - React-Bootstrap
   - React-Tilt
-  - `react-tsparticles` for interactive particles
+  - React-tsparticles
 - **Styling**:
   - CSS3
 - **Icons**:
