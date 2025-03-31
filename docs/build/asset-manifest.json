@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Hacker-Portfolio/static/css/main.af914cc6.css",
+    "main.js": "/Hacker-Portfolio/static/js/main.89735dcc.js",
+    "static/js/488.4065c291.chunk.js": "/Hacker-Portfolio/static/js/488.4065c291.chunk.js",
+    "static/media/Melki_Bahaeddine.pdf": "/Hacker-Portfolio/static/media/Melki_Bahaeddine.43c5f901cedbd589c4c8.pdf",
+    "static/media/dielux.png": "/Hacker-Portfolio/static/media/dielux.ec2c675489c833187a88.png",
+    "static/media/zksnark.png": "/Hacker-Portfolio/static/media/zksnark.31e2949e00c717c2e2e5.png",
+    "static/media/energy.png": "/Hacker-Portfolio/static/media/energy.d07cce565a359a01c088.png",
+    "static/media/database.png": "/Hacker-Portfolio/static/media/database.2e661001bbc83250b2fb.png",
+    "static/media/voronoi.png": "/Hacker-Portfolio/static/media/voronoi.9bc224f9f7a3877b35a1.png",
+    "static/media/logo.png": "/Hacker-Portfolio/static/media/logo.36f08fd5c98662f697d3.png",
+    "static/media/opportune.png": "/Hacker-Portfolio/static/media/opportune.6c7619a130fac2442cc4.png",
+    "static/media/about.png": "/Hacker-Portfolio/static/media/about.fbbde37461971b5223e5.png",
+    "static/media/home-main.svg": "/Hacker-Portfolio/static/media/home-main.16ffd6710141991afacc7c809b350f08.svg",
+    "index.html": "/Hacker-Portfolio/index.html",
+    "main.af914cc6.css.map": "/Hacker-Portfolio/static/css/main.af914cc6.css.map",
+    "main.89735dcc.js.map": "/Hacker-Portfolio/static/js/main.89735dcc.js.map",
+    "488.4065c291.chunk.js.map": "/Hacker-Portfolio/static/js/488.4065c291.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.af914cc6.css",
+    "static/js/main.89735dcc.js"
+  ]
+}
