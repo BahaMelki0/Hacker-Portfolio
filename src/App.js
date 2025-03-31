@@ -31,7 +31,7 @@ function App() {
   }, []);
 
   return (
-    <Router basename="/">
+    <Router>
       {loading ? (
         <Pre />
       ) : (
