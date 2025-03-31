@@ -1,51 +1,39 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import myImg from "../../Assets/avatar.svg";
-import Tilt from "react-parallax-tilt";
 import { AiFillGithub } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
-import "./Home2.css"; // Import the updated CSS file
+import "./Home2.css"; // Ensure your updated CSS is imported
 
 function Home2() {
   return (
     <Container fluid className="home-about-section" id="about">
       <Container>
         <Row>
-          <Col md={8} className="home-about-description">
+          <Col md={12} className="home-about-description">
             <div className="blur-background">
-              <h1 className="home-about-heading">
-                LET ME INTRODUCE MYSELF
-              </h1>
+              <h1 className="home-about-heading">LET ME INTRODUCE MYSELF</h1>
               <p className="home-about-body">
                 I'm a highly driven, solution-oriented person with an affinity for{" "}
                 <strong>CyberSecurity</strong> and <strong>AI</strong>.
                 <br />
-                <br />I am fluent in languages like{" "}
+                <br />
+                I am fluent in languages like{" "}
                 <strong>Python</strong>, <strong>C++</strong>, and <strong>JavaScript</strong>.
                 <br />
                 <br />
                 My fields of interest include:&nbsp;
                 <i>
-                  <strong>Pentesting</strong>, <strong>DevSecOps</strong>, and <strong>Machine Learning</strong>.
+                  <strong>Pentesting</strong>, <strong>DevSecOps</strong>, and{" "}
+                  <strong>Machine Learning</strong>.
                 </i>
                 <br />
                 <br />
-                Whenever possible, I enjoy developing and experimenting with{" "}
-                malicious applications in a controlled environment to better understand the thought process behind malicious scripts and
-                enhance my cybersecurity skills.
+                Whenever possible, I enjoy developing and experimenting with
+                malicious applications in a controlled environment to better
+                understand the thought process behind malicious scripts and enhance
+                my cybersecurity skills.
               </p>
             </div>
-          </Col>
-
-          <Col md={4} className="myAvtar">
-            <Tilt>
-              <img
-                src={myImg}
-                className="img-fluid"
-                alt="avatar"
-                style={{ width: "100%", maxWidth: "250px", height: "auto" }}
-              />
-            </Tilt>
           </Col>
         </Row>
 
@@ -74,9 +62,7 @@ function Home2() {
                 </a>
               </li>
             </ul>
-            <p>
-              Feel free to connect with me.
-            </p>
+            <p>Feel free to connect with me.</p>
           </Col>
         </Row>
       </Container>

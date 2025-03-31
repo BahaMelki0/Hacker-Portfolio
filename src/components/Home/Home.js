@@ -13,32 +13,26 @@ function Home() {
         <Container className="home-content">
           <Row>
             <Col md={7} className="home-header">
-              <h1 style={{ paddingBottom: 15 }} className="heading">
+              <h1 style={{ paddingBlockEnd: "15px" }} className="heading">
                 Hi There!{" "}
                 <span className="wave" role="img" aria-labelledby="wave">
                   👾
                 </span>
               </h1>
-
-              <h1 className="heading-name">
-                I'm Bahaeddine Melki
-              </h1>
-
-              <div style={{ padding: 50, textAlign: "left" }}>
+              <h1 className="heading-name">I'm Bahaeddine Melki</h1>
+              <div style={{ padding: "50px", textAlign: "left" }}>
                 <Type />
               </div>
             </Col>
-
-            <Col md={5} style={{ paddingBottom: 20 }}>
+            <Col md={5} style={{ paddingBlockEnd: "20px" }}>
               <img
                 src={homeLogo}
                 alt="home pic"
                 className="img-fluid home-image"
                 style={{
-                  maxHeight: "450px",
-                  width: "100%",
+                  maxBlockSize: "450px",  // Logical equivalent of maxHeight
+                  inlineSize: "100%",      // Logical equivalent of width
                   objectFit: "contain",
-                  filter: "hue-rotate(140deg) saturate(200%) brightness(90%)",
                   transition: "transform 0.3s ease, filter 0.3s ease",
                 }}
                 onMouseOver={(e) => {

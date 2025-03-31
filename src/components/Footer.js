@@ -1,22 +1,27 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import "./Footer.css"; // Import the updated CSS
+import "./Footer.css";
 
 function Footer() {
-  let date = new Date();
-  let year = date.getFullYear();
+  const year = new Date().getFullYear();
+  const encodedMessage =
+    "2NomdNT25oXRiaZMg6AS3ELVYziFqDiZfGgXaPYYLRfsXmJ8P7VT3uWsexvDKsTzKDrxebQPF2FP6hKAh";
 
-  // Encoded message example (base64 or hexadecimal)
-  const encodedMessage = "2NomdNT25oXRiaZMg6AS3ELVYziFqDiZfGgXaPYYLRfsXmJ8P7VT3uWsexvDKsTzKDrxebQPF2FP6hKAh"
   return (
-    <Container fluid className="footer">
-      <Row className="footer-container">
-        <Col md="12" className="footer-copywright">
-          <h3>Designed and Developed by Bahaeddine</h3>
-          <p className="footer-encoded">{encodedMessage}</p>
-        </Col>
-      </Row>
-    </Container>
+    <footer className="footer">
+      <Container fluid>
+        <Row className="footer-container">
+          <Col md={12} className="footer-copywright">
+            <h3 className="footer-heading">Designed and Developed by K4v0r1_0x</h3>
+              <span className="footer-emoji" role="img" aria-label="hacker emoji">
+                👾
+              </span>{" "}
+              {year}
+            <p className="footer-encoded">{encodedMessage}</p>
+          </Col>
+        </Row>
+      </Container>
+    </footer>
   );
 }
 

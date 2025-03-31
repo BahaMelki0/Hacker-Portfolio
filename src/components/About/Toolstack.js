@@ -1,16 +1,13 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
+import { VscVscode } from "react-icons/vsc";
 import {
-  SiPostman,
-  SiFigma,
-  SiJupyter,
-  SiAnaconda,
   SiGithub,
   SiDocker,
-  SiTensorflow,
+  SiJupyter,
+  SiAnaconda,
 } from "react-icons/si";
-import { VscVscode } from "react-icons/vsc";
-import './stack.css';
+import "./stack.css";
 
 function Toolstack() {
   return (
@@ -19,30 +16,6 @@ function Toolstack() {
         <div>
           <VscVscode />
           <span className="tech-name">VS Code</span>
-        </div>
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <div>
-          <SiPostman />
-          <span className="tech-name">Postman</span>
-        </div>
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <div>
-          <SiJupyter />
-          <span className="tech-name">Jupyter</span>
-        </div>
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <div>
-          <SiAnaconda />
-          <span className="tech-name">Anaconda</span>
-        </div>
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <div>
-          <SiFigma />
-          <span className="tech-name">Figma</span>
         </div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
@@ -59,8 +32,14 @@ function Toolstack() {
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <div>
-          <SiTensorflow />
-          <span className="tech-name">TensorFlow</span>
+          <SiJupyter />
+          <span className="tech-name">Jupyter</span>
+        </div>
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <div>
+          <SiAnaconda />
+          <span className="tech-name">Anaconda</span>
         </div>
       </Col>
     </Row>

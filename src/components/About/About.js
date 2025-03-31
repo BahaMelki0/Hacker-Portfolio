@@ -17,11 +17,11 @@ function About() {
             md={7}
             style={{
               justifyContent: "center",
-              paddingTop: "30px",
-              paddingBottom: "20px", // Reduced bottom padding
+              paddingBlockStart: "30px",
+              paddingBlockEnd: "20px", // Reduced bottom padding
             }}
           >
-            <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
+            <h1 style={{ fontSize: "2.1em", paddingBlockEnd: "20px" }}>
               Get to know Baha
             </h1>
             <Aboutcard />
@@ -29,24 +29,17 @@ function About() {
           <Col
             md={5}
             style={{
-              paddingBottom: "20px", // Reduced bottom padding
+              paddingBlockEnd: "20px", // Reduced bottom padding
             }}
             className="about-img"
           >
             <img src={laptopImg} alt="about" className="img-fluid" />
           </Col>
         </Row>
-        <h1 className="project-heading">
-          Professional SKILLSET
-        </h1>
-
+        <h1 className="project-heading">Professional SKILLSET</h1>
         <Techstack />
-
-        <h1 className="project-heading">
-          Tools I use
-        </h1>
+        <h1 className="project-heading">Tools I use</h1>
         <Toolstack />
-
         <Github />
       </Container>
     </Container>

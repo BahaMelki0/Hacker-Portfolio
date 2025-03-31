@@ -1,23 +1,17 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import { CgCPlusPlus } from "react-icons/cg";
+import { DiPython, DiLinux, DiPhp, DiRuby } from "react-icons/di";
 import {
-  DiReact,
-  DiMongodb,
-  DiPython,
-  DiGit,
-  DiJava,
-  DiPhp,
-  DiLinux,
-} from "react-icons/di";
-import { 
-  SiFirebase, 
-  SiRust, 
-  SiFlutter, 
-  SiGnubash, 
-  SiWireshark, 
+  SiMysql,
+  SiRust,
+  SiGnubash,
+  SiWireshark,
+  SiTensorflow,
+  SiPytorch,
+  SiKeras,
 } from "react-icons/si";
-import './stack.css';
+import "./stack.css";
 
 function Techstack() {
   return (
@@ -36,8 +30,8 @@ function Techstack() {
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <div>
-          <DiJava />
-          <span className="tech-name">Java</span>
+          <DiRuby />
+          <span className="tech-name">Ruby</span>
         </div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
@@ -48,38 +42,14 @@ function Techstack() {
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <div>
+          <SiMysql />
+          <span className="tech-name">MySQL</span>
+        </div>
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <div>
           <SiRust />
           <span className="tech-name">Rust</span>
-        </div>
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <div>
-          <DiReact />
-          <span className="tech-name">React</span>
-        </div>
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <div>
-          <SiFlutter />
-          <span className="tech-name">Flutter</span>
-        </div>
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <div>
-          <DiMongodb />
-          <span className="tech-name">MongoDB</span>
-        </div>
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <div>
-          <SiFirebase />
-          <span className="tech-name">Firebase</span>
-        </div>
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <div>
-          <DiGit />
-          <span className="tech-name">Git</span>
         </div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
@@ -98,6 +68,24 @@ function Techstack() {
         <div>
           <SiWireshark />
           <span className="tech-name">Wireshark</span>
+        </div>
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <div>
+          <SiTensorflow />
+          <span className="tech-name">TensorFlow</span>
+        </div>
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <div>
+          <SiPytorch />
+          <span className="tech-name">PyTorch</span>
+        </div>
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <div>
+          <SiKeras />
+          <span className="tech-name">Keras</span>
         </div>
       </Col>
     </Row>

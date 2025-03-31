@@ -21,7 +21,9 @@ function ResumeNew() {
               </span>
             </h2>
             <p>
-              I specialize in <strong>Cybersecurity</strong> and <strong>AI-driven solutions</strong>, focusing on areas like <strong>Pentesting</strong>, <strong>Cryptography</strong>{" "}
+              I specialize in <strong>Cybersecurity</strong> and{" "}
+              <strong>AI-driven solutions</strong>, focusing on areas like{" "}
+              <strong>Pentesting</strong>, <strong>Cryptography</strong>{" "}
               <span className="emoji" role="img" aria-label="lock">
                 🗝️
               </span>{" "}
@@ -31,13 +33,13 @@ function ResumeNew() {
               </span>
             </p>
             <p>
-              My background includes <strong>Web and Mobile Development</strong>, where I build responsive, secure applications. I enjoy developing end-to-end solutions that integrate modern web technologies with robust backend services.{" "}
-              <span className="emoji" role="img" aria-label="mobile">
-                📱
+              I also have a keen interest in offensive security, with hands-on experience in <strong>pwning</strong> and <strong>malware development</strong>. I analyze vulnerabilities, craft exploits, and reverse-engineer binaries to understand and outsmart system defenses—giving me a comprehensive perspective on both offensive and defensive security.
+              <span className="emoji" role="img" aria-label="skull">
+                💀
               </span>
             </p>
             <p>
-              I am also passionate about <strong>Machine Learning</strong>, applying AI models to solve real-world problems and enhance security protocols. My projects blend cryptographic techniques with AI to create innovative, secure solutions.{" "}
+              Additionally, I am passionate about <strong>Machine Learning</strong> and its application in cybersecurity. I develop AI models to detect anomalies, predict security threats, and optimize defensive strategies, blending cryptographic techniques with intelligent systems to create innovative, secure solutions.{" "}
               <span className="emoji" role="img" aria-label="brain">
                 🧠
               </span>

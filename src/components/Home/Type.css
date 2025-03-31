@@ -11,7 +11,6 @@
   text-shadow: 0 0 8px #00ff00;
   display: inline-block; /* Box fits the text dynamically */
   white-space: nowrap; /* Keep the text on one line */
-  max-width: 100%; /* Prevents overflow */
   overflow: hidden; /* Prevents overflow from breaking the layout */
 }
 

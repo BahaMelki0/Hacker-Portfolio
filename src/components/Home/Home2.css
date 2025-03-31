@@ -1,29 +1,28 @@
 .home-about-section {
-    position: relative;
-    padding: 60px 0;
-  }
-  
-  /* Style for the blur background container */
-  .blur-background {
-    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black */
-    backdrop-filter: blur(8px);           /* Standard property */
-    -webkit-backdrop-filter: blur(8px);   /* WebKit-specific property for Safari */
-    border-radius: 10px;                  /* Rounded corners */
-    padding: 20px;                        /* Inner padding */
-    margin-bottom: 20px;                  /* Space below the block */
-  }
-  
-  /* Style for the heading */
-  .home-about-heading {
-    font-size: 2.6em;
-    color: #00ff00;                      /* Cyber green color for emphasis */
-    margin-bottom: 20px;
-  }
-  
-  /* Style for the paragraph text */
-  .home-about-body {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: #d1d5db;                      /* Slightly lighter text color */
-  }
-  
+  position: relative;
+  padding: 60px 0;
+}
+
+/* Style for the blur background container */
+.blur-background {
+  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black */
+  -webkit-backdrop-filter: blur(8px);   /* WebKit-specific property for Safari */
+  backdrop-filter: blur(8px);           /* Standard property */
+  border-radius: 10px;                  /* Rounded corners */
+  padding: 20px;                        /* Inner padding */
+  margin-block-end: 20px;               /* Logical equivalent of margin-bottom */
+}
+
+/* Style for the heading */
+.home-about-heading {
+  font-size: 2.6em;
+  color: #00ff00;                       /* Cyber green color for emphasis */
+  margin-block-end: 20px;               /* Logical equivalent of margin-bottom */
+}
+
+/* Style for the paragraph text */
+.home-about-body {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #d1d5db;                       /* Slightly lighter text color */
+}
