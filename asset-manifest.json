@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Hacker-Portfolio/static/css/main.af914cc6.css",
-    "main.js": "/Hacker-Portfolio/static/js/main.79cb5399.js",
+    "main.js": "/Hacker-Portfolio/static/js/main.a72ca0b9.js",
     "static/js/488.4065c291.chunk.js": "/Hacker-Portfolio/static/js/488.4065c291.chunk.js",
     "static/media/Melki_Bahaeddine.pdf": "/Hacker-Portfolio/static/media/Melki_Bahaeddine.43c5f901cedbd589c4c8.pdf",
     "static/media/dielux.png": "/Hacker-Portfolio/static/media/dielux.ec2c675489c833187a88.png",
@@ -15,11 +15,11 @@
     "static/media/home-main.svg": "/Hacker-Portfolio/static/media/home-main.16ffd6710141991afacc7c809b350f08.svg",
     "index.html": "/Hacker-Portfolio/index.html",
     "main.af914cc6.css.map": "/Hacker-Portfolio/static/css/main.af914cc6.css.map",
-    "main.79cb5399.js.map": "/Hacker-Portfolio/static/js/main.79cb5399.js.map",
+    "main.a72ca0b9.js.map": "/Hacker-Portfolio/static/js/main.a72ca0b9.js.map",
     "488.4065c291.chunk.js.map": "/Hacker-Portfolio/static/js/488.4065c291.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.af914cc6.css",
-    "static/js/main.79cb5399.js"
+    "static/js/main.a72ca0b9.js"
   ]
 }
