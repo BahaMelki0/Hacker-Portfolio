@@ -1,5 +1,11 @@
 /* stack.css */
 
+/* Layout */
+.stack-row {
+    justify-content: center;
+    gap: 15px 0;
+}
+
 /* Container for each tech icon */
 .tech-icons {
     display: flex;
@@ -9,43 +15,33 @@
     width: 120px; /* Box width */
     height: 120px; /* Box height */
     margin: 15px;
-    border: 2px solid rgba(255, 255, 255, 0.5); /* Border color: white */
-    border-radius: 10px;
-    background-color: transparent;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    border: 1px solid rgba(63, 167, 73, 0.35);
+    border-radius: 12px;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 20px 35px rgba(63, 167, 73, 0.18);
+    transition: none;
+  }
+  
+  .tech-icons div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    height: 100%;
   }
   
   /* Styling for the tech icon */
   .tech-icons svg {
     font-size: 3rem; /* Size of the icons */
     color: #ffffff; /* Icon color: white */
-    transition: opacity 0.3s ease-in-out;
   }
   
-  /* Hidden tech name (initially) */
   .tech-name {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%; /* Full width of the container */
-    height: 100%; /* Full height of the container */
-    display: flex;
-    align-items: center; /* Vertically center */
-    justify-content: center; /* Horizontally center */
-    font-size: 1rem; /* Text size */
-    color: #ffffff; /* White text */
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.3s ease-in-out;
-    z-index: 1; /* Ensure it appears above other elements */
-  }
-  
-  /* On hover: make icon transparent and show the name */
-  .tech-icons:hover svg {
-    opacity: 0; /* Make the icon transparent */
-  }
-  
-  .tech-icons:hover .tech-name {
-    opacity: 1; /* Show the name */
+    font-size: 1rem;
+    color: #f4f4f4;
   }
   

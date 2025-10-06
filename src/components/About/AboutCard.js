@@ -9,56 +9,41 @@ function AboutCard() {
         <Card.Body>
           <blockquote className="blockquote mb-0">
             <p style={{ textAlign: "justify" }}>
-              I am <span style={{ fontWeight: "bold" }}>Bahaeddine Melki </span>
-              from <span style={{ fontWeight: "bold" }}>Tunis, Tunisia</span>.
-              <br />
-              Dual-degree post masters student in Security of Computer Systems and Communications with a keen interest in penetration testing.
-              Persistence and continuous learning define my journey as K4v0r1 in CTF competitions, and I aspire to become one of the best penetration testers in the field.
-              <br />
-              <br />
-              Apart from coding, here are some activities I enjoy:
+              I'm <span style={{ fontWeight: "bold" }}>Bahaeddine Melki</span>, a Tunisian cybersecurity
+              engineer pursuing the SUP'COM x EURECOM double-degree post-master. I specialise in offensive
+              security and AI red teaming, co-founding <strong>KB4B3T</strong> to push our local scene with
+              weekly learning-first CTF drills and retro sessions.
+            </p>
+            <p style={{ textAlign: "justify" }}>
+              My day-to-day lab work swings from engineering Discord-based C2 implants and stealth
+              persistence kits to crafting adversarial AI exercises that pressure-test defenders long before
+              attackers show up.
             </p>
             <ul>
               <li className="about-activity">
-                <ImPointRight /> Competing in CTF competitions.
+                <ImPointRight /> Leading KB4B3T red-team labs and post-mortems.
               </li>
               <li className="about-activity">
-                <ImPointRight /> Working with AI.
+                <ImPointRight /> Building tooling (RATs, malware sandboxes, exploit chains) for controlled drills.
               </li>
               <li className="about-activity">
-                <ImPointRight /> Playing video games.
+                <ImPointRight /> Stress-testing LLM agents and jailbreak guardrails for AI safety research.
               </li>
             </ul>
-            <p style={{ color: "rgb(155 126 172)" }}>
-              "Good hackers hack machines, great hackers hack people."
+            <p style={{ color: "#3fa749" }}>
+              "Security isn't luck it's the repetition of difficult practice."
             </p>
-            <footer className="blockquote-footer">K4v0r1_0x</footer>
           </blockquote>
         </Card.Body>
       </Card>
 
-      {/* TryHackMe Section */}
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          textAlign: "center",
-          margin: "50px auto", // Provides balanced spacing above and below
-          maxWidth: "100%",
-        }}
-      >
-        <h3 style={{ marginBottom: "40px" }}>TryHackMe Profile</h3>
+      <div className="thm-embed">
         <iframe
           src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=1985230"
-          style={{
-            border: "none",
-            width: "100%",
-            maxWidth: "800px",
-            height: "300px",
-          }}
+          className="thm-iframe"
           title="TryHackMe Badge"
+          loading="lazy"
+          referrerPolicy="no-referrer"
         ></iframe>
       </div>
     </>

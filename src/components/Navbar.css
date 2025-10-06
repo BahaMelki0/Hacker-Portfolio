@@ -2,9 +2,9 @@
 
 /* Base Navbar Styles */
 .navbar {
-  background-color: #0d0d0d;
+  background-color: #000000;
   border-block-end: 1px solid #00ff00; /* replaced border-bottom with border-block-end */
-  padding: 10px 10px;
+  padding: 6px 16px;
   font-family: "Source Code Pro", monospace;
   transition: background-color 0.3s ease, border-block-end 0.3s ease;
   display: flex;
@@ -12,15 +12,15 @@
 }
 
 /* Sticky Navbar */
-.sticky {
-  background-color: #1a1a1a;
-  border-block-end: 2px solid #00ff00; /* replaced border-bottom with border-block-end */
-  box-shadow: 0 2px 10px rgba(0, 255, 0, 0.2);
+.navbar.colored {
+  background-color: #000000;
+  border-block-end: 1px solid #00ff00; /* replaced border-bottom with border-block-end */
+  box-shadow: none;
 }
 
 /* Brand Logo */
 .navbar .logo {
-  max-block-size: 40px; /* replaced max-height with max-block-size */
+  max-block-size: 32px; /* replaced max-height with max-block-size */
   filter: brightness(0) invert(1);
   transition: transform 0.3s ease;
   object-fit: contain;    /* Ensures the aspect ratio is maintained without distortion */
@@ -39,7 +39,7 @@
 
 .nav-link {
   color: #00ff00 !important;
-  font-size: 1.1rem;
+  font-size: 1rem;
   text-transform: uppercase;
   padding: 0 15px;
   transition: color 0.3s ease, text-shadow 0.3s ease;
@@ -59,7 +59,7 @@
 
 /* Navbar Buttons */
 .fork-btn .fork-btn-inner {
-  background-color: #0d0d0d;
+  background-color: #000000;
   color: #00ff00;
   border: 1px solid #00ff00;
   padding: 5px 15px;
@@ -69,7 +69,7 @@
 
 .fork-btn .fork-btn-inner:hover {
   background-color: #00ff00;
-  color: #0d0d0d;
+  color: #000000;
   box-shadow: 0 0 10px #00ff00;
 }
 
@@ -90,7 +90,7 @@
 
 /* Navbar Collapse */
 .navbar-collapse {
-  background-color: #0d0d0d;
+  background-color: #000000;
   padding: 10px;
 }
 
@@ -125,7 +125,44 @@
     gap: 20px;
   }
 
-  .nav-link {
-    padding: 10px;
+.nav-link {
+  padding: 10px;
   }
 }
+
+.navbar-brand-wrap {
+  margin-right: auto;
+}
+
+.navbar-toggle-button {
+  margin-left: auto;
+}
+
+@media (max-width: 767.98px) {
+  .navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar-toggle-button {
+    margin-left: 0;
+    margin-inline-start: auto;
+  }
+
+  .navbar-collapse {
+    width: 100%;
+    margin-top: 0.75rem;
+  }
+
+  .mobile-nav-links {
+    width: 100%;
+    text-align: center;
+  }
+
+  .mobile-nav-links .nav-link {
+    display: block;
+    padding: 0.75rem 0;
+  }
+}
+

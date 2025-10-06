@@ -12,8 +12,8 @@ import {
   Navigate,
 } from "react-router-dom";
 import MatrixBackground from "./components/MatrixBackground";
-import Particle from "./components/Particle";
 import ScrollToTop from "./components/ScrollToTop";
+import AdminRedirect from "./components/AdminRedirect";
 import Pre from "./components/Pre";
 import "./style.css";
 import "./App.css";
@@ -23,11 +23,28 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2000); // Display the loading screen for 2 seconds
+    const { pathname, hash, origin } = window.location;
+    if (!hash && pathname.endsWith("/admin-panel")) {
+      const basePath = pathname.replace(/\/admin-panel$/, "");
+      window.location.replace(`${origin}${basePath}#/admin-panel`);
+    }
+  }, []);
 
-    return () => clearTimeout(timer);
+  useEffect(() => {
+    const handleLoad = () => setLoading(false);
+
+    if (document.readyState === "complete") {
+      setLoading(false);
+      return undefined;
+    }
+
+    window.addEventListener("load", handleLoad, { once: true });
+    const fallbackTimeout = window.setTimeout(() => setLoading(false), 3000);
+
+    return () => {
+      window.removeEventListener("load", handleLoad);
+      window.clearTimeout(fallbackTimeout);
+    };
   }, []);
 
   return (
@@ -36,15 +53,14 @@ function App() {
         <Pre />
       ) : (
         <div className="App">
-          <MatrixBackground />
-          <Particle />
-          <Navbar />
+          <MatrixBackground />          <Navbar />
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/project" element={<Projects />} />
             <Route path="/about" element={<About />} />
             <Route path="/resume" element={<Resume />} />
+            <Route path="/admin-panel" element={<AdminRedirect />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
           <Footer />
@@ -55,3 +71,6 @@ function App() {
 }
 
 export default App;
+
+
+

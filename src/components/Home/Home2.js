@@ -13,25 +13,17 @@ function Home2() {
             <div className="blur-background">
               <h1 className="home-about-heading">LET ME INTRODUCE MYSELF</h1>
               <p className="home-about-body">
-                I'm a highly driven, solution-oriented person with an affinity for{" "}
-                <strong>CyberSecurity</strong> and <strong>AI</strong>.
-                <br />
-                <br />
-                I am fluent in languages like{" "}
-                <strong>Python</strong>, <strong>C++</strong>, and <strong>JavaScript</strong>.
-                <br />
-                <br />
-                My fields of interest include:&nbsp;
-                <i>
-                  <strong>Pentesting</strong>, <strong>DevSecOps</strong>, and{" "}
-                  <strong>Machine Learning</strong>.
-                </i>
-                <br />
-                <br />
-                Whenever possible, I enjoy developing and experimenting with
-                malicious applications in a controlled environment to better
-                understand the thought process behind malicious scripts and enhance
-                my cybersecurity skills.
+                Post-master student in the SUP'COM × EURECOM double-degree program, I split my time between
+                <strong> offensive security</strong>, <strong>AI red teaming</strong>, and co-leading{" "}
+                <strong>KB4B3T</strong> — the Tunisian CTF crew that drills weekly for mastery rather than medals.
+              </p>
+              <p className="home-about-body">
+                I enjoy building the tooling I need: Discord-based C2 implants, long-lived pentest labs,
+                automation for malware analysis, and infrastructure that lets blue teams validate their detections.
+              </p>
+              <p className="home-about-body">
+                Currently preparing for a March 2025 end-of-studies internship anywhere in Europe, ideally on an
+                offensive security or AI red-team mission.
               </p>
             </div>
           </Col>
@@ -40,13 +32,17 @@ function Home2() {
         <Row>
           <Col md={12} className="home-about-social">
             <h1>FIND ME ON</h1>
-            <ul className="home-about-social-links">
+            <ul
+              className="home-about-social-links"
+              aria-label="Social media profiles"
+            >
               <li className="social-icons">
                 <a
                   href="https://github.com/BahaMelki0"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour home-social-icons"
+                  aria-label="Visit Bahaeddine Melki on GitHub"
                 >
                   <AiFillGithub />
                 </a>
@@ -57,6 +53,7 @@ function Home2() {
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour home-social-icons"
+                  aria-label="Visit Bahaeddine Melki on LinkedIn"
                 >
                   <FaLinkedinIn />
                 </a>

@@ -13,10 +13,10 @@ function Footer() {
         <Row className="footer-container">
           <Col md={12} className="footer-copywright">
             <h3 className="footer-heading">Designed and Developed by K4v0r1_0x</h3>
-              <span className="footer-emoji" role="img" aria-label="hacker emoji">
-                👾
-              </span>{" "}
-              {year}
+            <span className="footer-emoji" role="img" aria-label="hacker">
+              {"\u{1F9D1}\u200D\u{1F4BB}"}
+            </span>{" "}
+            {year}
             <p className="footer-encoded">{encodedMessage}</p>
           </Col>
         </Row>

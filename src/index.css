@@ -1,13 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Code+Pro:wght@400;600&display=swap");
 
 /* Base Body Styles */
 body {
   margin: 0;
-  font-family: "Courier New", monospace; /* Hacker-friendly font */
+  font-family: "Inter", "Source Code Pro", monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: linear-gradient(to left, rgb(0, 0, 0), rgb(15, 35, 18)); /* Darker gradient */
-  color: #00ff00; /* Neon green text */
+  color: #f8fff4;
   min-height: 100vh;
   padding: 0;
   overflow-x: hidden;
@@ -15,13 +15,13 @@ body {
 
 /* Global Link Styles */
 a {
-  color: #00ff00;
+  color: #5cff5c;
   text-decoration: none;
   transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 a:hover {
-  text-shadow: 0 0 10px #00ff00;
+  text-shadow: 0 0 12px rgba(92, 255, 92, 0.45);
 }
 
 /* Scrollbar Styles (Optional) */
@@ -34,27 +34,18 @@ a:hover {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #00ff00; /* Neon green scrollbar */
+  background: #3fa749; /* Accent scrollbar */
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #00cc00;
+  background: #2f7b33;
 }
 
 /* Selection Styles (Highlight Text) */
 ::selection {
-  background: #00ff00;
-  color: #000;
-}
-
-#tsparticles {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: -1; /* Keep particles behind all other content */
-  top: 0;
-  left: 0;
+  background: rgba(92, 255, 92, 0.35);
+  color: #0b0b0f;
 }
 
 

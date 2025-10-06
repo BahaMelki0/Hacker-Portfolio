@@ -1,49 +1,35 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
-import Particle from "../Particle";
-import pdf from "../../Assets/../Assets/Melki_Bahaeddine.pdf";
+import pdf from "../../Assets/Melki_Bahaeddine.pdf";
 import { AiOutlineDownload } from "react-icons/ai";
 import "./Resume.css";
+
+const highlights = [
+  "SUP'COM x EURECOM double-degree post-master specialising in offensive security and AI red teaming.",
+  "Co-founded KB4B3T, orchestrating weekly CTF drills, red-team labs, and retro sessions for the Tunisian scene.",
+  "Builds bespoke tooling : Discord RAT C2, persistence kits, malware sandboxes ; to sharpen detection and response.",
+  "Explores AI safety by stress-testing LLM agents, jailbreak tooling, and guardrail evaluation pipelines.",
+  "Ready for a March 2025 offensive security or AI red-team internship anywhere in Europe.",
+];
 
 function ResumeNew() {
   return (
     <div className="resume-page">
       <Container fluid className="resume-section">
-        <Particle />
-
         <Row style={{ justifyContent: "center", position: "relative" }}>
           <Col md={8} className="resume-description">
             <h2 className="resume-heading">
-              My Professional Journey{" "}
-              <span className="emoji" role="img" aria-label="shield">
-                🛡️
+              Current Focus
+              <span className="emoji" role="img" aria-label="compass">
+                {"\u{1F9ED}"}
               </span>
             </h2>
-            <p>
-              I specialize in <strong>Cybersecurity</strong> and{" "}
-              <strong>AI-driven solutions</strong>, focusing on areas like{" "}
-              <strong>Pentesting</strong>, <strong>Cryptography</strong>{" "}
-              <span className="emoji" role="img" aria-label="lock">
-                🗝️
-              </span>{" "}
-              and <strong>Digital Forensics</strong> (DFIR). My experience includes designing secure systems, identifying vulnerabilities, and developing automation tools to enhance system security and efficiency.{" "}
-              <span className="emoji" role="img" aria-label="laptop">
-                💻
-              </span>
-            </p>
-            <p>
-              I also have a keen interest in offensive security, with hands-on experience in <strong>pwning</strong> and <strong>malware development</strong>. I analyze vulnerabilities, craft exploits, and reverse-engineer binaries to understand and outsmart system defenses—giving me a comprehensive perspective on both offensive and defensive security.
-              <span className="emoji" role="img" aria-label="skull">
-                💀
-              </span>
-            </p>
-            <p>
-              Additionally, I am passionate about <strong>Machine Learning</strong> and its application in cybersecurity. I develop AI models to detect anomalies, predict security threats, and optimize defensive strategies, blending cryptographic techniques with intelligent systems to create innovative, secure solutions.{" "}
-              <span className="emoji" role="img" aria-label="brain">
-                🧠
-              </span>
-            </p>
+            <ul className="resume-points">
+              {highlights.map((point) => (
+                <li key={point}>{point}</li>
+              ))}
+            </ul>
           </Col>
         </Row>
 
@@ -52,7 +38,9 @@ function ResumeNew() {
             variant="primary"
             href={pdf}
             target="_blank"
+            rel="noreferrer"
             style={{ maxWidth: "250px" }}
+            aria-label="Download Bahaeddine Melki resume PDF"
           >
             <AiOutlineDownload />
             &nbsp;Download My CV

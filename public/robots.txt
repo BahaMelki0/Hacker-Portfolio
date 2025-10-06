@@ -1,5 +1,6 @@
 # Hey hacker, you've uncovered our robots.txt!
-# Our hidden directories are just for fun – nothing serious here.
+# Our hidden directories are just for fun – nothing serious here. 
+
 User-agent: *
 Disallow: /admin-panel/         # Where the secret admins (not really) hang out
 Disallow: /wp-admin/           

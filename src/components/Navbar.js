@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
@@ -14,80 +14,68 @@ import { CgFileDocument } from "react-icons/cg";
 import "./Navbar.css";
 
 function NavBar() {
-  const [expand, updateExpanded] = useState(false);
-  const [navColour, updateNavbar] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  // Update navColour state based on scroll position
-  const scrollHandler = () => {
-    if (window.scrollY >= 20) {
-      updateNavbar(true);
-    } else {
-      updateNavbar(false);
-    }
-  };
-
-  // Attach scroll listener on mount and remove on unmount
-  useEffect(() => {
-    window.addEventListener("scroll", scrollHandler);
-    return () => window.removeEventListener("scroll", scrollHandler);
+  const handleScroll = useCallback(() => {
+    setIsScrolled(window.scrollY >= 20);
   }, []);
+
+  useEffect(() => {
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
+
+  const closeMobileMenu = () => setIsExpanded(false);
 
   return (
     <Navbar
-      expanded={expand}
+      expanded={isExpanded}
       fixed="top"
       expand="md"
-      className={navColour ? "navbar colored" : "navbar"}
+      className={isScrolled ? "navbar colored" : "navbar"}
     >
       <Container>
-        <Navbar.Brand className="d-flex">
-          <img src={logo} className="img-fluid logo" alt="brand" />
+        <Navbar.Brand className="d-flex navbar-brand-wrap">
+          <img
+            src={logo}
+            className="img-fluid logo"
+            alt="Bahaeddine Melki personal logo"
+          />
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
-          onClick={() => updateExpanded(expand ? false : "expanded")}
+          aria-label="Toggle navigation"
+          onClick={() => setIsExpanded((prev) => !prev)}
+          className="navbar-toggle-button"
         >
           <span></span>
           <span></span>
           <span></span>
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ms-auto" defaultActiveKey="#home">
+          <Nav className="ms-md-auto mobile-nav-links" defaultActiveKey="#home">
             <Nav.Item>
-              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
+              <Nav.Link as={Link} to="/" onClick={closeMobileMenu}>
                 <AiOutlineHome style={{ marginBlockEnd: "2px" }} /> Home
               </Nav.Link>
             </Nav.Item>
 
             <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/about"
-                onClick={() => updateExpanded(false)}
-              >
+              <Nav.Link as={Link} to="/about" onClick={closeMobileMenu}>
                 <AiOutlineUser style={{ marginBlockEnd: "2px" }} /> About
               </Nav.Link>
             </Nav.Item>
 
             <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/project"
-                onClick={() => updateExpanded(false)}
-              >
-                <AiOutlineFundProjectionScreen
-                  style={{ marginBlockEnd: "2px" }}
-                />{" "}
-                Projects
+              <Nav.Link as={Link} to="/project" onClick={closeMobileMenu}>
+                <AiOutlineFundProjectionScreen style={{ marginBlockEnd: "2px" }} /> Projects
               </Nav.Link>
             </Nav.Item>
 
             <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/resume"
-                onClick={() => updateExpanded(false)}
-              >
+              <Nav.Link as={Link} to="/resume" onClick={closeMobileMenu}>
                 <CgFileDocument style={{ marginBlockEnd: "2px" }} /> Resume
               </Nav.Link>
             </Nav.Item>
@@ -97,10 +85,12 @@ function NavBar() {
                 href="https://eurecom.gitbook.io/330169-cyber-blog/"
                 target="_blank"
                 rel="noreferrer"
+                onClick={closeMobileMenu}
               >
                 <ImBlog style={{ marginBlockEnd: "2px" }} /> Blog
               </Nav.Link>
             </Nav.Item>
+            
           </Nav>
         </Navbar.Collapse>
       </Container>

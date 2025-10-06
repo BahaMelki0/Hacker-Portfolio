@@ -25,3 +25,30 @@ footer {
   padding: 20px;               /* Add padding for better spacing */
   color: #d1d5db;              /* Slightly lighter text color for readability */
 }
+
+.resume-section .btn-primary {
+  background-color: #27c331 !important;
+  border-color: #1ac325 !important;
+  color: #ffffff !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.resume-section .btn-primary:hover,
+.resume-section .btn-primary:focus {
+  background-color: #0d3d12 !important;
+  border-color: #0d3d12 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 10px rgba(13, 61, 18, 0.35);
+}
+
+.resume-section .btn-primary {
+  background-color: #1B5E20;
+  border-color: #1B5E20;
+  color: #ffffff;
+}
+
+.resume-section .btn-primary:hover {
+  background-color: #0D3D12;
+  border-color: #0D3D12;
+}

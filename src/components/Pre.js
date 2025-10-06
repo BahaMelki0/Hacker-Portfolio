@@ -7,7 +7,7 @@ function Pre() {
     <div className="preloader">
       <FaUserSecret className="preloader-icon" />
       <div className="preloader-text">
-      Parsing   <span className="dots"></span>
+        Parsing<span className="dots"></span>
       </div>
     </div>
   );

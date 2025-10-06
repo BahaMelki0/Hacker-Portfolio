@@ -1,55 +1,89 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
+
+const LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+const initializeCanvas = (canvas) => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  const fontSize = Math.max(10, window.innerWidth / 100);
+  const columns = Math.floor(canvas.width / fontSize);
+  return { fontSize, drops: Array.from({ length: columns }).fill(0) };
+};
 
 const MatrixBackground = () => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
+    if (!canvas) {
+      return undefined;
+    }
+
     const ctx = canvas.getContext("2d");
+    if (!ctx) {
+      return undefined;
+    }
 
-    // Set canvas size
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    let animationFrameId;
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let isReducedMotion = mediaQuery.matches;
+    let { fontSize, drops } = initializeCanvas(canvas);
 
-    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    const fontSize = Math.max(10, window.innerWidth / 100); // Dynamic font size
-    const columns = Math.floor(canvas.width / fontSize);
+    const handleResize = () => {
+      ({ fontSize, drops } = initializeCanvas(canvas));
+    };
 
-    // Initialize drops with random starting positions
-    const drops = Array.from({ length: columns }).map(() =>
-      Math.floor((Math.random() * canvas.height) / fontSize)
-    );
+    const handleMotionPreference = (event) => {
+      isReducedMotion = event.matches;
+    };
 
-    function draw() {
-      // Semi-transparent background to create the trailing effect
+    const addMotionListener = () => {
+      if (mediaQuery.addEventListener) {
+        mediaQuery.addEventListener("change", handleMotionPreference);
+        return () => mediaQuery.removeEventListener("change", handleMotionPreference);
+      }
+      if (mediaQuery.addListener) {
+        mediaQuery.addListener(handleMotionPreference);
+        return () => mediaQuery.removeListener(handleMotionPreference);
+      }
+      return undefined;
+    };
+
+    const removeMotionListener = addMotionListener();
+
+    const draw = () => {
       ctx.fillStyle = "rgba(0, 0, 0, 0.02)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Green text with a subtle glow effect
       ctx.fillStyle = "#00ff00";
       ctx.shadowColor = "#00ff00";
+      ctx.shadowBlur = 0;
       ctx.font = `${fontSize}px monospace`;
 
-      for (let i = 0; i < drops.length; i++) {
-        const text = letters[Math.floor(Math.random() * letters.length)];
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-        // Reset drop position with randomness
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0;
+      drops = drops.map((value, index) => {
+        const text = LETTERS[Math.floor(Math.random() * LETTERS.length)];
+        ctx.fillText(text, index * fontSize, value * fontSize);
+        if (value * fontSize > canvas.height && Math.random() > 0.975) {
+          return 0;
         }
-        drops[i] += 0.3;
-      }
-      requestAnimationFrame(draw);
-    }
+        return value + (isReducedMotion ? 0.1 : 0.3);
+      });
+
+      animationFrameId = requestAnimationFrame(draw);
+    };
 
     draw();
+    window.addEventListener("resize", handleResize, { passive: true });
 
-    // Handle window resize
-    window.addEventListener("resize", () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    });
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      if (removeMotionListener) {
+        removeMotionListener();
+      }
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+    };
   }, []);
 
   return (

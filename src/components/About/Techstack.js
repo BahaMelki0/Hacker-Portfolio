@@ -1,93 +1,46 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import { CgCPlusPlus } from "react-icons/cg";
-import { DiPython, DiLinux, DiPhp, DiRuby } from "react-icons/di";
+import { DiPython, DiLinux } from "react-icons/di";
 import {
-  SiMysql,
   SiRust,
   SiGnubash,
   SiWireshark,
-  SiTensorflow,
-  SiPytorch,
-  SiKeras,
+  SiBurpsuite,
+  SiKalilinux,
+  SiNmap,
+  SiNikto,
+  SiMetasploit,
 } from "react-icons/si";
+import { FaCat, FaDragon, FaProjectDiagram, FaSkullCrossbones, FaBullseye } from "react-icons/fa";
 import "./stack.css";
+
+const coreSecurity = [
+  { icon: <DiPython />, label: "Python" },
+  { icon: <CgCPlusPlus />, label: "C++" },
+  { icon: <SiRust />, label: "Rust" },
+  { icon: <SiGnubash />, label: "Bash" },
+  { icon: <SiKalilinux />, label: "Kali Linux" },
+  { icon: <SiMetasploit />, label: "Metasploit" },
+  { icon: <SiBurpsuite />, label: "Burp Suite" },
+  { icon: <FaCat />, label: "Hashcat" },
+  { icon: <FaDragon />, label: "Ghidra" },
+  { icon: <FaProjectDiagram />, label: "BloodHound" },
+  { icon: <FaSkullCrossbones />, label: "Mimikatz" },
+  { icon: <SiWireshark />, label: "Wireshark" },
+];
 
 function Techstack() {
   return (
-    <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
-      <Col xs={4} md={2} className="tech-icons">
-        <div>
-          <CgCPlusPlus />
-          <span className="tech-name">C++</span>
-        </div>
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <div>
-          <DiPython />
-          <span className="tech-name">Python</span>
-        </div>
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <div>
-          <DiRuby />
-          <span className="tech-name">Ruby</span>
-        </div>
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <div>
-          <DiPhp />
-          <span className="tech-name">PHP</span>
-        </div>
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <div>
-          <SiMysql />
-          <span className="tech-name">MySQL</span>
-        </div>
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <div>
-          <SiRust />
-          <span className="tech-name">Rust</span>
-        </div>
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <div>
-          <DiLinux />
-          <span className="tech-name">Linux</span>
-        </div>
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <div>
-          <SiGnubash />
-          <span className="tech-name">Bash</span>
-        </div>
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <div>
-          <SiWireshark />
-          <span className="tech-name">Wireshark</span>
-        </div>
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <div>
-          <SiTensorflow />
-          <span className="tech-name">TensorFlow</span>
-        </div>
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <div>
-          <SiPytorch />
-          <span className="tech-name">PyTorch</span>
-        </div>
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <div>
-          <SiKeras />
-          <span className="tech-name">Keras</span>
-        </div>
-      </Col>
+    <Row className="stack-row">
+      {coreSecurity.map(({ icon, label }) => (
+        <Col xs={6} md={3} className="tech-icons" key={label}>
+          <div>
+            {icon}
+            <span className="tech-name">{label}</span>
+          </div>
+        </Col>
+      ))}
     </Row>
   );
 }

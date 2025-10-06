@@ -34,3 +34,9 @@
   max-inline-size: 100%; /* Replaces max-width */
   margin: 0 auto;
 }
+.footer-emoji {
+  font-size: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
