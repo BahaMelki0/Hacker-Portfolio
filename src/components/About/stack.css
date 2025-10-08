@@ -15,8 +15,10 @@
   animation: stack-scroll 26s linear infinite;
 }
 
-.stack-track:hover {
-  animation-play-state: paused;
+@media (hover: hover) and (pointer: fine) {
+  .stack-track:hover {
+    animation-play-state: paused;
+  }
 }
 
 .stack-chip {

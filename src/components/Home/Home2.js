@@ -10,21 +10,24 @@ function Home2() {
       <Container>
         <Row>
           <Col md={12} className="home-about-description">
-            <div className="blur-background">
-              <h1 className="home-about-heading">LET ME INTRODUCE MYSELF</h1>
-              <p className="home-about-body">
-                I'm Bahaeddine, a telecommunications engineer finishing the SUP'COM x EURECOM double-degree post-master.
-                Years of designing carrier-grade networks taught me to read packet flows the same way I read anatomy in the gym.
-              </p>
-              <p className="home-about-body">
-                Today I pour that mindset into <strong>KB4B3T</strong>: we script Discord-based C2 implants, map Active Directory forests,
-                and publish learning playbooks so the Tunisian community can replay our drills instead of copying write-ups.
-              </p>
-              <p className="home-about-body">
-                When I'm not breaking lab machines I'm in the weight room, keeping the discipline that long red-team operations demand.
-                I'm actively seeking a March 2025 offensive security or AI red-team internship anywhere in Europe.
-              </p>
-            </div>
+          <div className="blur-background">
+            <h1 className="home-about-heading">LET ME INTRODUCE MYSELF</h1>
+
+            <p className="home-about-body">
+              I'm Bahaeddine — a Post-Master’s student at EURECOM, focused on Offensive Security.
+              Years building carrier-grade networks taught me to read packet flows the way I read training programs: precisely and with discipline.
+            </p>
+
+            <p className="home-about-body">
+              I channel that same mindset into <strong>KB4B3T</strong>, our Tunisian CTF team and cybersecurity collective where we play weekly competitions,
+              exchange techniques, and explore real-world attack and defense concepts together.
+            </p>
+
+            <p className="home-about-body">
+              Outside the lab I train in the gym — the focus and routine there mirror what long red-team engagements require. I am currently seeking an end-of-studies
+              internship in offensive security or AI red-team research.
+            </p>
+          </div>
           </Col>
         </Row>
 

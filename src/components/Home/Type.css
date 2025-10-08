@@ -4,15 +4,16 @@
 .linux-command {
   font-family: "Source Code Pro", monospace;
   color: #00ff00;
-  font-size: clamp(0.85rem, 1.6vw, 0.95rem);
+  font-size: clamp(0.8rem, 1.4vw, 0.9rem);
   background-color: #000;
   padding: clamp(10px, 2vw, 14px) clamp(16px, 3vw, 22px);
   border-radius: 8px;
   text-shadow: 0 0 8px #00ff00;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  max-width: min(100%, 520px);
+  width: min(100%, 520px);
+  max-width: 100%;
   margin: 0 auto;
   line-height: 1.4;
   white-space: normal;
@@ -28,7 +29,8 @@
 }
 
 .Typewriter__wrapper {
-  display: inline-block;
+  display: block;
+  width: 100%;
   text-align: center;
 }
 
@@ -47,10 +49,10 @@
 
 @media (max-width: 899px) {
   .linux-command {
-    background-color: transparent;
-    padding: 0;
-    border-radius: 0;
-    text-shadow: none;
+    background-color: rgba(0, 0, 0, 0.42);
+    padding: clamp(8px, 2.5vw, 12px) clamp(14px, 5vw, 20px);
+    border-radius: 10px;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.35);
   }
 }
 

@@ -33,7 +33,17 @@
 .footer-container {
   max-inline-size: 100%; /* Replaces max-width */
   margin: 0 auto;
+  justify-content: center;
 }
+
+.footer-copywright {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
 .footer-emoji {
   font-size: 1.5rem;
   display: inline-flex;

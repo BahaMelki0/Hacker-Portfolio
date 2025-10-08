@@ -13,14 +13,13 @@ function Home() {
             <div className="home-header">
               <h1 style={{ paddingBlockEnd: "15px" }} className="heading">
                 Hi There!{" "}
-                <span className="wave" role="img" aria-label="waving hand">
-                  {"\u{1F44B}"}
+                <span className="wave" role="img" aria-label="laptop">
+                    {"\u{1F4BB}"}{/* 💻 */}
                 </span>
               </h1>
               <h1 className="heading-name">I'm Bahaeddine Melki</h1>
               <p className="heading-tagline">
-                Offensive security engineer building Discord C2s and adversarial AI drills for KB4B3T and partner teams.
-              </p>
+                Cybersecurity Post-Master’s student at EURECOM specializing in Offensive Security and Red Teaming.              </p>
               <div className="typing-wrapper">
                 <Type />
               </div>

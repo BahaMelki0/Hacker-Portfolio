@@ -1,6 +1,6 @@
 import React from "react";
 import { CgCPlusPlus } from "react-icons/cg";
-import { DiPython, DiLinux } from "react-icons/di";
+import { DiPython } from "react-icons/di";
 import {
   SiRust,
   SiGnubash,
@@ -16,7 +16,6 @@ const coreSecurity = [
   { icon: <CgCPlusPlus />, label: "C++" },
   { icon: <SiRust />, label: "Rust" },
   { icon: <SiGnubash />, label: "Bash" },
-  { icon: <DiLinux />, label: "Linux" },
   { icon: <SiKalilinux />, label: "Kali Linux" },
   { icon: <SiBurpsuite />, label: "Burp Suite" },
   { icon: <FaCat />, label: "Hashcat" },

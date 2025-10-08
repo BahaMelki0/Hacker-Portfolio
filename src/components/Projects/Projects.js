@@ -4,83 +4,83 @@ import ProjectCard from "./ProjectCards";
 
 const projectData = [
   {
-    title: "Energy Consumption Forecast",
-    short: "GRU/LSTM ensemble for predicting energy usage",
+    title: "Offensive Lab Environment",
+    short: "Segmented lab for malware RE & PoC testing",
     description:
-      "Deep learning pipelines combining GRU/LSTM ensembles with feature engineering to forecast consumption, flag anomalies, and benchmark data-driven energy strategies.",
-    tags: ["Python", "LSTM", "GRU", "Time-Series"],
+      "Self-hosted, segmented pentest playground for reverse engineering, safe PoC validation and solving CTF/HTB/THM challenges in controlled conditions to push more safer testing.",
+    tags: ["Pentest Lab", "Reverse Engineering", "Automation"],
     ghLink: null,
     demoLink: null,
   },
   {
-    title: "Voronoi Diagrams Generator",
-    short: "Spatial analysis tool using Fortune's algorithm",
+    title: "ZK-SNARK Implementation",
+    short: "Fiat–Shamir zk-SNARK implementation in Rust",
     description:
-      "Web-based visualiser that turns OpenStreetMap data into interactive Voronoi maps using Fortune's algorithm, aiding spatial analysis and network planning use-cases.",
-    tags: ["Fortune's Algorithm", "OSM", "Visualization"],
-    ghLink: null,
-    demoLink: null,
-  },
-  {
-    title: "ZK-Snark",
-    short: "Post-quantum polynomial commitments",
-    description:
-      "Lattice-based polynomial commitment implementation with post-quantum guarantees, fast verification, and transparent setup leveraging FRI-style folding and lattice homomorphism.",
+      "Semester project implementing polynomial commitments and a Fiat–Shamir non-interactive proof flow in Rust, with tests and a transparent setup for reproducible experiments.",
     tags: ["Zero-Knowledge", "Cryptography", "Rust"],
     ghLink: null,
     demoLink: null,
   },
   {
-    title: "Opportune",
-    short: "Mobile platform for matching IT talent",
+    title: "LLM-Spoof Detection (ASVspoof-5)",
+    short: "ASR + LLM pipeline for voice spoof detection",
     description:
-      "Full-stack mobile platform connecting IT talent and employers with AI-assisted chat, curated feeds, and Firebase-secured messaging to streamline hiring.",
-    tags: ["React Native", "Firebase", "Recruitment"],
+      "Detection pipeline for the ASVspoof-5 task using Wav2Vec2 ASR transcripts and fine-tuned language models (DistilBERT / Whisper variants) to identify spoofed speech and benchmark performance.",
+    tags: ["ASVspoof", "LLM", "Wav2Vec2"],
+    ghLink: "https://github.com/BahaMelki0/llm-spoof-detection-asvspoof5",
+    demoLink: null,
+  },
+  {
+    title: "Red-Team Implant - Discord RAT",
+    short: "Lab-only implant to study evasion & detection",
+    description:
+      "Research-grade implant developed for controlled lab experiments to investigate evasion techniques and detection tuning; strictly used in private, ethical testbeds.",
+    tags: ["Red Team", "Detection", "Research"],
     ghLink: null,
     demoLink: null,
   },
   {
-    title: "Die Lux",
-    short: "Boutique fashion storefront",
+    title: "Energy Consumption Forecast",
+    short: "GRU/LSTM ensemble for energy prediction",
     description:
-      "Luxury fashion storefront built with React, dynamic product galleries, lookbook storytelling, and CMS-powered merchandising for a boutique brand.",
-    tags: ["React", "E-commerce", "CMS"],
+      "Time-series pipeline using GRU/LSTM ensembles and feature engineering to forecast facility energy consumption and produce tunable models for anomaly detection.",
+    tags: ["Time-Series", "LSTM", "GRU"],
+    ghLink: null,
+    demoLink: null,
+  },
+  {
+    title: "Voronoi Diagrams Generator",
+    short: "Fortune's algorithm C++ implementation",
+    description:
+      "C++ implementation of Fortune’s algorithm to generate interactive Voronoi diagrams — a project focused on computational geometry and spatial analysis.",
+    tags: ["C++", "Algorithms", "Computational Geometry"],
     ghLink: null,
     demoLink: null,
   },
   {
     title: "Student Projects Portal",
-    short: "Oracle-backed archive for SUP'COM capstones",
+    short: "Oracle-backed archive for SUP'COM projects",
     description:
-      "Oracle-backed platform cataloguing SUP'COM capstone work with relational modelling, media storage, and granular query/report tooling for faculty oversight.",
-    tags: ["Oracle", "SQL", "Academic"],
+      "Database system converting legacy Excel inventories into a searchable, maintainable platform with update controls and reporting tools for faculty oversight.",
+    tags: ["Oracle", "SQL", "Data Platform"],
     ghLink: null,
     demoLink: null,
   },
   {
-    title: "Discord RAT C2",
-    short: "Discord-driven implant for red-team labs",
+    title: "Opportune",
+    short: "Mobile app matching IT talent & offers",
     description:
-      "Research-grade remote access tool that provisions Discord channels, supports live tasking, persistence modes, and Defender bypass for controlled red-team drills.",
-    tags: ["Discord", "C2", "Persistence"],
+      "Full-stack mobile platform connecting IT candidates and employers with AI-assisted chat, curated feeds and Firebase-secured messaging to streamline hiring.",
+    tags: ["React Native", "Firebase", "Product"],
     ghLink: null,
     demoLink: null,
   },
   {
-    title: "Offensive Lab Environment",
-    short: "Dedicated purple-team playground",
+    title: "Die Lux",
+    short: "Luxury storefront — front-end showcase",
     description:
-      "Self-hosted pentest lab with segmented networks, intentionally vulnerable services, and automation scripts to rehearse exploit chains and blue-team detection tuning.",
-    tags: ["Infrastructure", "Automation", "Ops"],
-    ghLink: null,
-    demoLink: null,
-  },
-  {
-    title: "AI Red-Team Harness",
-    short: "LLM jailbreak + guardrail testbed",
-    description:
-      "Experimental harness for testing LLM guardrails, jailbreak prompts, and autonomy boundaries in AI security research.",
-    tags: ["AI Security", "LLM", "Guardrails"],
+      "React-based luxury e-commerce frontend featuring dynamic galleries, lookbook storytelling and CMS-driven merchandising for boutique retail experiences.",
+    tags: ["React", "E-commerce", "UI"],
     ghLink: null,
     demoLink: null,
   },
@@ -91,12 +91,14 @@ function Projects() {
     <Container fluid className="project-section">
       <Container>
         <div className="projects-intro">
-          <h1 className="project-heading">Highlighted <strong className="purple">Projects</strong></h1>
-          <p>A snapshot of offensive tooling, research builds, and product work.</p>
+          <h1 className="project-heading">
+            Highlighted <strong className="purple">Projects</strong>
+          </h1>
+          <p>A snapshot of what i have done.</p>
         </div>
-        <Row className="project-grid-row">
+        <Row className="project-grid-row justify-content-center">
           {projectData.map(({ title, short, description, tags, ghLink, demoLink }) => (
-            <Col md={4} className="project-card" key={title}>
+            <Col xs={12} md={6} lg={4} className="project-card" key={title}>
               <ProjectCard
                 title={title}
                 short={short}

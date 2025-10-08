@@ -32,11 +32,11 @@ function About() {
           </Col>
         </Row>
         <h1 className="project-heading">Core Security Stack</h1>
-        <Techstack />
+          <Techstack />
         <h1 className="project-heading">Operational Tooling</h1>
-        <Toolstack />
+          <Toolstack />
         <h1 className="project-heading">AI Toolkit</h1>
-        <AIStack />
+          <AIStack />
       </Container>
     </Container>
   );

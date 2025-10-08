@@ -7,31 +7,32 @@ function AboutCard() {
     <>
       <Card className="quote-card-view">
         <Card.Body>
-          <blockquote className="blockquote mb-0">
-            <p style={{ textAlign: "justify" }}>
-              I'm <span style={{ fontWeight: "bold" }}>Bahaeddine Melki</span> a telecom engineer retooling for offensive
-              security through the SUP'COM x EURECOM post-master. Network and application penetration testing let me blend
-              RF discipline with creative tradecraft.
-            </p>
-            <p style={{ textAlign: "justify" }}>
-              Each week at <strong>KB4B3T</strong> we build the tooling we wish existed: Discord C2 implants, adversarial AI harnesses,
-              and purple-team lab scripts. We document everything so the next crew can rerun the attack chains, not just read about them.
-            </p>
-            <ul>
-              <li className="about-activity">
-                <ImPointRight /> Crafting implants, persistence kits, and automation for controlled red-team exercises.
-              </li>
-              <li className="about-activity">
-                <ImPointRight /> Mapping enterprise environments with BloodHound and custom reconnaissance playbooks.
-              </li>
-              <li className="about-activity">
-                <ImPointRight /> Strength training to keep the mindset sharp and the grind sustainable.
-              </li>
-            </ul>
-            <p style={{ color: "#3fa749" }}>
-              "Sharpen your tools, share your notes, repeat." that's the KB4B3T creed.
-            </p>
-          </blockquote>
+        <blockquote className="blockquote mb-0">
+          <p style={{ textAlign: "justify" }}>
+            I'm <span style={{ fontWeight: "bold" }}>Bahaeddine Melki</span>, a cybersecurity student following the SUP'COM × EURECOM Post-Master’s program. My background in network engineering shaped how I approach security — structured thinking,
+            low-level visibility, and respect for protocol logic.
+          </p>
+
+          <p style={{ textAlign: "justify" }}>
+            I focus on network and application penetration testing across black-box, grey-box and white-box scenarios. I habitually tinker in
+            controlled labs and CTF environments — when bored I try to break my own assumptions and systems to spot flaws in design and reasoning.
+            That curiosity helps me turn exploitation paths into practical mitigation advice.
+          </p>
+
+          <ul>
+            <li className="about-activity">
+              <ImPointRight /> Hands-on pentesting: network, web apps, and AD security in black/grey/white-box settings.
+            </li>
+            <li className="about-activity">
+              <ImPointRight /> Applying automation and adversarial AI to improve testing depth and detection workloads.
+            </li>
+            <li className="about-activity">
+              <ImPointRight /> Discipline and consistency — principles I train in the gym and apply to my life.
+            </li>
+          </ul>
+        <p style={{ color: "#3fa749" }}> Every system has a story — I just like to read the parts its designer didn’t mean to show. </p>      
+        </blockquote>
+
         </Card.Body>
       </Card>
 

@@ -6,11 +6,12 @@ import { AiOutlineDownload } from "react-icons/ai";
 import "./Resume.css";
 
 const highlights = [
-  "Telecommunications engineer completing the SUP'COM x EURECOM post-master with a focus on offensive security.",
-  "Engineer bespoke tooling for red teams: Discord RAT C2, persistence modules, automated purple-team lab rebuilders.",
-  "Lead KB4B3T retrospectives that codify network and application intrusion techniques for the Tunisian community.",
-  "Run AI red-team experiments jailbreak suites, LLM guardrail evaluations, and detection tuning playbooks.",
-  "Open to March 2025 internship opportunities across Europe in offensive security, red teaming, or AI security.",
+  "Telecommunications engineering student completing the SUP'COM × EURECOM Post-Master’s program in Security of Computer Systems and Communications.",
+  "Specialized in offensive security, network and application penetration testing, and adversarial AI research.",
+  "Active member of KB4B3T — a Tunisian CTF team competing weekly and sharing practical cybersecurity insights with the local community.",
+  "Certified Junior Penetration Tester (eJPT) and TryHackMe PT1, currently preparing for Hack The Box CPTS certification to deepen red-team expertise.",
+  "Exploring how AI can both power and defend against cyber attacks.",
+  "Open to end-of-studies internship opportunities across Europe in offensive security, red teaming, or AI-driven cyber defense.",
 ];
 
 function ResumeNew() {
@@ -20,7 +21,7 @@ function ResumeNew() {
         <Row style={{ justifyContent: "center", position: "relative" }}>
           <Col md={8} className="resume-description">
             <h2 className="resume-heading">
-              Current Focus
+              In a Nutshell :
               <span className="emoji" role="img" aria-label="compass">
                 {"\u{1F9ED}"}
               </span>

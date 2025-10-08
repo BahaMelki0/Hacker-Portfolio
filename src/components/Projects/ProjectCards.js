@@ -67,7 +67,9 @@ function ProjectCards({ title, short, description, tags = [], ghLink, demoLink }
             <ul className="project-tags" aria-label="Technologies used">
               {tags.map((tag) => (
                 <li className="project-tag" key={tag}>
-                  {renderTagIcon(tag)}
+                  <span className="project-tag-icon" aria-hidden="true">
+                    {renderTagIcon(tag)}
+                  </span>
                   <span>{tag}</span>
                 </li>
               ))}
