@@ -6,11 +6,11 @@ import { AiOutlineDownload } from "react-icons/ai";
 import "./Resume.css";
 
 const highlights = [
-  "SUP'COM x EURECOM double-degree post-master specialising in offensive security and AI red teaming.",
-  "Co-founded KB4B3T, orchestrating weekly CTF drills, red-team labs, and retro sessions for the Tunisian scene.",
-  "Builds bespoke tooling : Discord RAT C2, persistence kits, malware sandboxes ; to sharpen detection and response.",
-  "Explores AI safety by stress-testing LLM agents, jailbreak tooling, and guardrail evaluation pipelines.",
-  "Ready for a March 2025 offensive security or AI red-team internship anywhere in Europe.",
+  "Telecommunications engineer completing the SUP'COM x EURECOM post-master with a focus on offensive security.",
+  "Engineer bespoke tooling for red teams: Discord RAT C2, persistence modules, automated purple-team lab rebuilders.",
+  "Lead KB4B3T retrospectives that codify network and application intrusion techniques for the Tunisian community.",
+  "Run AI red-team experiments jailbreak suites, LLM guardrail evaluations, and detection tuning playbooks.",
+  "Open to March 2025 internship opportunities across Europe in offensive security, red teaming, or AI security.",
 ];
 
 function ResumeNew() {

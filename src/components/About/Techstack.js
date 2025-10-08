@@ -1,5 +1,4 @@
 import React from "react";
-import { Col, Row } from "react-bootstrap";
 import { CgCPlusPlus } from "react-icons/cg";
 import { DiPython, DiLinux } from "react-icons/di";
 import {
@@ -8,11 +7,8 @@ import {
   SiWireshark,
   SiBurpsuite,
   SiKalilinux,
-  SiNmap,
-  SiNikto,
-  SiMetasploit,
 } from "react-icons/si";
-import { FaCat, FaDragon, FaProjectDiagram, FaSkullCrossbones, FaBullseye } from "react-icons/fa";
+import { FaCat, FaDragon, FaProjectDiagram, FaSkullCrossbones } from "react-icons/fa";
 import "./stack.css";
 
 const coreSecurity = [
@@ -20,8 +16,8 @@ const coreSecurity = [
   { icon: <CgCPlusPlus />, label: "C++" },
   { icon: <SiRust />, label: "Rust" },
   { icon: <SiGnubash />, label: "Bash" },
+  { icon: <DiLinux />, label: "Linux" },
   { icon: <SiKalilinux />, label: "Kali Linux" },
-  { icon: <SiMetasploit />, label: "Metasploit" },
   { icon: <SiBurpsuite />, label: "Burp Suite" },
   { icon: <FaCat />, label: "Hashcat" },
   { icon: <FaDragon />, label: "Ghidra" },
@@ -30,18 +26,20 @@ const coreSecurity = [
   { icon: <SiWireshark />, label: "Wireshark" },
 ];
 
+const loopedItems = [...coreSecurity, ...coreSecurity];
+
 function Techstack() {
   return (
-    <Row className="stack-row">
-      {coreSecurity.map(({ icon, label }) => (
-        <Col xs={6} md={3} className="tech-icons" key={label}>
-          <div>
-            {icon}
+    <div className="stack-marquee" aria-label="Core Security Stack">
+      <div className="stack-track">
+        {loopedItems.map(({ icon, label }, idx) => (
+          <div className="stack-chip" key={`${label}-${idx}`}>
+            <span className="stack-icon">{icon}</span>
             <span className="tech-name">{label}</span>
           </div>
-        </Col>
-      ))}
-    </Row>
+        ))}
+      </div>
+    </div>
   );
 }
 

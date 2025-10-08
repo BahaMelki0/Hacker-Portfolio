@@ -1,47 +1,73 @@
 /* stack.css */
 
-/* Layout */
-.stack-row {
-    justify-content: center;
-    gap: 15px 0;
+.stack-marquee {
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto 32px;
+  position: relative;
 }
 
-/* Container for each tech icon */
-.tech-icons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    width: 120px; /* Box width */
-    height: 120px; /* Box height */
-    margin: 15px;
-    border: 1px solid rgba(63, 167, 73, 0.35);
-    border-radius: 12px;
-    background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    box-shadow: 0 20px 35px rgba(63, 167, 73, 0.18);
-    transition: none;
+.stack-track {
+  display: flex;
+  align-items: stretch;
+  gap: 18px;
+  width: max-content;
+  animation: stack-scroll 26s linear infinite;
+}
+
+.stack-track:hover {
+  animation-play-state: paused;
+}
+
+.stack-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 140px;
+  padding: 20px 18px;
+  border-radius: 14px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(63, 167, 73, 0.35);
+  box-shadow: 0 18px 38px rgba(63, 167, 73, 0.18);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  gap: 10px;
+}
+
+.stack-icon svg {
+  font-size: 2.6rem;
+  color: #ffffff;
+}
+
+.tech-name {
+  font-size: 0.95rem;
+  color: #f4fdf4;
+  text-align: center;
+}
+
+@keyframes stack-scroll {
+  0% {
+    transform: translateX(0);
   }
-  
-  .tech-icons div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    width: 100%;
-    height: 100%;
+  100% {
+    transform: translateX(-50%);
   }
-  
-  /* Styling for the tech icon */
-  .tech-icons svg {
-    font-size: 3rem; /* Size of the icons */
-    color: #ffffff; /* Icon color: white */
+}
+
+@media (max-width: 767.98px) {
+  .stack-track {
+    animation-duration: 20s;
   }
-  
-  .tech-name {
-    font-size: 1rem;
-    color: #f4f4f4;
+
+  .stack-chip {
+    min-width: 120px;
+    padding: 16px;
   }
-  
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stack-track {
+    animation: none;
+  }
+}

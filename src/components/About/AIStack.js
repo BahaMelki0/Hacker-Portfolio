@@ -1,6 +1,12 @@
 import React from "react";
-import { Col, Row } from "react-bootstrap";
-import { SiTensorflow, SiPytorch, SiKeras, SiScikitlearn, SiOpencv, SiWeightsandbiases } from "react-icons/si";
+import {
+  SiTensorflow,
+  SiPytorch,
+  SiKeras,
+  SiScikitlearn,
+  SiOpencv,
+} from "react-icons/si";
+import { FaBrain } from "react-icons/fa";
 import "./stack.css";
 
 const aiFrameworks = [
@@ -9,20 +15,23 @@ const aiFrameworks = [
   { icon: <SiKeras />, label: "Keras" },
   { icon: <SiScikitlearn />, label: "scikit-learn" },
   { icon: <SiOpencv />, label: "OpenCV" },
+  { icon: <FaBrain />, label: "LangChain" },
 ];
+
+const loopedItems = [...aiFrameworks, ...aiFrameworks];
 
 function AIStack() {
   return (
-    <Row className="stack-row">
-      {aiFrameworks.map(({ icon, label }) => (
-        <Col xs={6} md={3} className="tech-icons" key={label}>
-          <div>
-            {icon}
+    <div className="stack-marquee" aria-label="AI Research Toolkit">
+      <div className="stack-track">
+        {loopedItems.map(({ icon, label }, idx) => (
+          <div className="stack-chip" key={`${label}-${idx}`}>
+            <span className="stack-icon">{icon}</span>
             <span className="tech-name">{label}</span>
           </div>
-        </Col>
-      ))}
-    </Row>
+        ))}
+      </div>
+    </div>
   );
 }
 

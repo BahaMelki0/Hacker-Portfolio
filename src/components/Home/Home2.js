@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { AiFillGithub } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
-import "./Home2.css"; // Ensure your updated CSS is imported
+import "./Home2.css";
 
 function Home2() {
   return (
@@ -13,17 +13,16 @@ function Home2() {
             <div className="blur-background">
               <h1 className="home-about-heading">LET ME INTRODUCE MYSELF</h1>
               <p className="home-about-body">
-                Post-master student in the SUP'COM × EURECOM double-degree program, I split my time between
-                <strong> offensive security</strong>, <strong>AI red teaming</strong>, and co-leading{" "}
-                <strong>KB4B3T</strong> — the Tunisian CTF crew that drills weekly for mastery rather than medals.
+                I'm Bahaeddine, a telecommunications engineer finishing the SUP'COM x EURECOM double-degree post-master.
+                Years of designing carrier-grade networks taught me to read packet flows the same way I read anatomy in the gym.
               </p>
               <p className="home-about-body">
-                I enjoy building the tooling I need: Discord-based C2 implants, long-lived pentest labs,
-                automation for malware analysis, and infrastructure that lets blue teams validate their detections.
+                Today I pour that mindset into <strong>KB4B3T</strong>: we script Discord-based C2 implants, map Active Directory forests,
+                and publish learning playbooks so the Tunisian community can replay our drills instead of copying write-ups.
               </p>
               <p className="home-about-body">
-                Currently preparing for a March 2025 end-of-studies internship anywhere in Europe, ideally on an
-                offensive security or AI red-team mission.
+                When I'm not breaking lab machines I'm in the weight room, keeping the discipline that long red-team operations demand.
+                I'm actively seeking a March 2025 offensive security or AI red-team internship anywhere in Europe.
               </p>
             </div>
           </Col>
@@ -32,10 +31,7 @@ function Home2() {
         <Row>
           <Col md={12} className="home-about-social">
             <h1>FIND ME ON</h1>
-            <ul
-              className="home-about-social-links"
-              aria-label="Social media profiles"
-            >
+            <ul className="home-about-social-links" aria-label="Social media profiles">
               <li className="social-icons">
                 <a
                   href="https://github.com/BahaMelki0"
@@ -59,7 +55,7 @@ function Home2() {
                 </a>
               </li>
             </ul>
-            <p>Feel free to connect with me.</p>
+            <p>Let's connect.</p>
           </Col>
         </Row>
       </Container>

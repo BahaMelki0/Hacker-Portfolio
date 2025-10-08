@@ -1,6 +1,4 @@
 import React from "react";
-import { Col, Row } from "react-bootstrap";
-import { VscVscode } from "react-icons/vsc";
 import {
   SiGithub,
   SiDocker,
@@ -9,6 +7,8 @@ import {
   SiKalilinux,
   SiBurpsuite,
 } from "react-icons/si";
+import { VscVscode } from "react-icons/vsc";
+import { FaTerminal, FaCloud } from "react-icons/fa";
 import "./stack.css";
 
 const tools = [
@@ -17,20 +17,26 @@ const tools = [
   { icon: <SiDocker />, label: "Docker" },
   { icon: <SiJupyter />, label: "Jupyter" },
   { icon: <SiAnaconda />, label: "Anaconda" },
+  { icon: <SiKalilinux />, label: "Kali Linux" },
+  { icon: <SiBurpsuite />, label: "Burp Suite" },
+  { icon: <FaTerminal />, label: "tmux" },
+  { icon: <FaCloud />, label: "AWS Lab" },
 ];
+
+const loopedItems = [...tools, ...tools];
 
 function Toolstack() {
   return (
-    <Row className="stack-row">
-      {tools.map(({ icon, label }) => (
-        <Col xs={6} md={3} className="tech-icons" key={label}>
-          <div>
-            {icon}
+    <div className="stack-marquee" aria-label="Operational Tooling">
+      <div className="stack-track">
+        {loopedItems.map(({ icon, label }, idx) => (
+          <div className="stack-chip" key={`${label}-${idx}`}>
+            <span className="stack-icon">{icon}</span>
             <span className="tech-name">{label}</span>
           </div>
-        </Col>
-      ))}
-    </Row>
+        ))}
+      </div>
+    </div>
   );
 }
 

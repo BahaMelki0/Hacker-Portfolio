@@ -9,29 +9,27 @@ function AboutCard() {
         <Card.Body>
           <blockquote className="blockquote mb-0">
             <p style={{ textAlign: "justify" }}>
-              I'm <span style={{ fontWeight: "bold" }}>Bahaeddine Melki</span>, a Tunisian cybersecurity
-              engineer pursuing the SUP'COM x EURECOM double-degree post-master. I specialise in offensive
-              security and AI red teaming, co-founding <strong>KB4B3T</strong> to push our local scene with
-              weekly learning-first CTF drills and retro sessions.
+              I'm <span style={{ fontWeight: "bold" }}>Bahaeddine Melki</span> a telecom engineer retooling for offensive
+              security through the SUP'COM x EURECOM post-master. Network and application penetration testing let me blend
+              RF discipline with creative tradecraft.
             </p>
             <p style={{ textAlign: "justify" }}>
-              My day-to-day lab work swings from engineering Discord-based C2 implants and stealth
-              persistence kits to crafting adversarial AI exercises that pressure-test defenders long before
-              attackers show up.
+              Each week at <strong>KB4B3T</strong> we build the tooling we wish existed: Discord C2 implants, adversarial AI harnesses,
+              and purple-team lab scripts. We document everything so the next crew can rerun the attack chains, not just read about them.
             </p>
             <ul>
               <li className="about-activity">
-                <ImPointRight /> Leading KB4B3T red-team labs and post-mortems.
+                <ImPointRight /> Crafting implants, persistence kits, and automation for controlled red-team exercises.
               </li>
               <li className="about-activity">
-                <ImPointRight /> Building tooling (RATs, malware sandboxes, exploit chains) for controlled drills.
+                <ImPointRight /> Mapping enterprise environments with BloodHound and custom reconnaissance playbooks.
               </li>
               <li className="about-activity">
-                <ImPointRight /> Stress-testing LLM agents and jailbreak guardrails for AI safety research.
+                <ImPointRight /> Strength training to keep the mindset sharp and the grind sustainable.
               </li>
             </ul>
             <p style={{ color: "#3fa749" }}>
-              "Security isn't luck it's the repetition of difficult practice."
+              "Sharpen your tools, share your notes, repeat." that's the KB4B3T creed.
             </p>
           </blockquote>
         </Card.Body>

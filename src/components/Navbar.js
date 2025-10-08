@@ -37,7 +37,14 @@ function NavBar() {
       className={isScrolled ? "navbar colored" : "navbar"}
     >
       <Container>
-        <Navbar.Brand className="d-flex navbar-brand-wrap">
+        <Navbar.Brand
+          as={Link}
+          to="/"
+          onClick={closeMobileMenu}
+          className="d-flex navbar-brand-wrap"
+          role="button"
+          aria-label="Back to home"
+        >
           <img
             src={logo}
             className="img-fluid logo"
