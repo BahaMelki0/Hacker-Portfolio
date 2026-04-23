@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, lazy, Suspense } from "react";
+import React, { useState, useEffect, useCallback, lazy, Suspense, Component } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Pre from "./components/Pre";
@@ -16,6 +16,22 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./style.css";
 import "./mx.css";
 import "./App.css";
+
+class ErrorBoundary extends Component {
+  constructor(props) { super(props); this.state = { error: null }; }
+  static getDerivedStateFromError(error) { return { error }; }
+  render() {
+    if (this.state.error) {
+      return (
+        <div style={{ color: "#00ff00", background: "#000", padding: 40, fontFamily: "monospace", minHeight: "100vh" }}>
+          <h2>[ runtime error ]</h2>
+          <pre style={{ whiteSpace: "pre-wrap", color: "#ff4444" }}>{String(this.state.error)}</pre>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
 
 // Route-based code splitting
 const Home     = lazy(() => import("./components/Home/Home"));
@@ -116,6 +132,7 @@ function App() {
   }, []);
 
   return (
+    <ErrorBoundary>
     <PortfolioProvider>
       <Router>
         {loading ? (
@@ -132,6 +149,7 @@ function App() {
         )}
       </Router>
     </PortfolioProvider>
+    </ErrorBoundary>
   );
 }
 
