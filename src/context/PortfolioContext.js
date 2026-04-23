@@ -10,6 +10,7 @@ export function PortfolioProvider({ children }) {
 
   useEffect(() => {
     async function fetchAll() {
+      if (!supabase) { setLoading(false); return; }
       try {
         const [
           { data: profile, error: e1 },
