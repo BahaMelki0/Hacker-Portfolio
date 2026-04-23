@@ -1,0 +1,158 @@
+const PORTFOLIO = {
+  name: "Bahaeddine Melki",
+  handle: "bmelki",
+  locale: "Sophia Antipolis · FR",
+  taglines: [
+    "Breaking Azure tenants by day.",
+    "Post-Master @ EURECOM × SUP'COM.",
+    "Building red-team tooling in Rust.",
+    "Poking at LLMs until they lie.",
+  ],
+  terminalDemo: [
+    { cmd: "whoami",                                              out: "bmelki (uid=1337)  groups=redteam,eurecom" },
+    { cmd: "cat /etc/identity",                                   out: "Bahaeddine Melki · Offensive Security · FR/TN" },
+    { cmd: "nmap -sS -A target.corp",                             out: "22/tcp open  ssh  ·  443/tcp open  https  ·  3389/tcp filtered" },
+    { cmd: "az ad signed-in-user show",                           out: "svc_backup@tenant.onmicrosoft.com  ·  MFA: disabled ⚠" },
+    { cmd: "python3 rat_analyzer.py --sample discord_c2.exe",     out: "[+] C2 channel detected · discord://gateway · entropy=7.8" },
+  ],
+  bio: `Pentest Intern at RandoriSec and Post-Master's student at EURECOM
+in the SUP'COM × EURECOM program — Security of Computer Systems
+and Communications. I like shells on cloud tenants, adversarial
+ML, and writing tools that are uncomfortably effective.`,
+  profile: [
+    { key: "role",      val: "Pentest Intern @ RandoriSec" },
+    { key: "study",     val: "Post-Master · EURECOM × SUP'COM" },
+    { key: "focus",     val: "Azure red team · Adversarial AI · C2 dev" },
+    { key: "languages", val: "FR · EN · AR" },
+    { key: "pgp",       val: "A3F1 9C2D … 88EE" },
+  ],
+  skills: {
+    Security: [
+      "Azure Red Team", "Active Directory", "Web Pentest",
+      "Malware Analysis", "Privilege Escalation", "C2 Dev",
+    ],
+    Tooling: [
+      "Rust", "Python", "PowerShell",
+      "Bash", "Docker", "Linux",
+    ],
+    "AI / ML": [
+      "Adversarial ML", "PyTorch", "LLM Evaluation",
+      "LSTM / GRU", "Anomaly Detection", "ZK-SNARK",
+    ],
+  },
+  projects: [
+    {
+      id: "azure-rt",
+      name: "Azure Red Team Arsenal",
+      cat: "Security",
+      year: "2026",
+      nda: true,
+      summary: "Suite of Azure tenant enumeration and abuse primitives. Covers graph API, devicecode phish, service principal pivoting.",
+      stack: ["Python", "PowerShell", "Azure CLI", "Graph API"],
+      status: "active",
+      ghLink: null,
+    },
+    {
+      id: "zk-rust",
+      name: "ZK-SNARK in Rust",
+      cat: "Systems",
+      year: "2025",
+      nda: false,
+      summary: "From-scratch Groth16 verifier in safe Rust. Bilinear pairing math and transparent setup for reproducible experiments.",
+      stack: ["Rust", "Cryptography", "bls12-381"],
+      status: "shipped",
+      ghLink: null,
+    },
+    {
+      id: "llm-spoof",
+      name: "LLM Spoof Detection",
+      cat: "AI",
+      year: "2025",
+      nda: false,
+      summary: "ASR + LLM pipeline for the ASVspoof-5 task. Fine-tuned DistilBERT and Wav2Vec2 variants to identify spoofed speech.",
+      stack: ["PyTorch", "HF Transformers", "Wav2Vec2"],
+      status: "shipped",
+      ghLink: "https://github.com/BahaMelki0/llm-spoof-detection-asvspoof5",
+    },
+    {
+      id: "syscall-graph",
+      name: "Win11 Syscall Call Graph",
+      cat: "Security",
+      year: "2025",
+      nda: false,
+      summary: "Toolkit that maps Windows 11 DLL exports (kernel32, advapi32, user32) to their ntdll syscall stubs via automated Ghidra analysis. Produces unified call graphs, reachability sets, and an interactive Dash UI for exploring hook surface.",
+      stack: ["Python", "Ghidra", "Dash", "igraph", "PowerShell"],
+      status: "shipped",
+      ghLink: "https://github.com/BahaMelki0/Win11Lib_Call_Graph_Construction",
+    },
+    {
+      id: "discord-rat",
+      name: "Discord RAT Research",
+      cat: "Security",
+      year: "2024",
+      nda: false,
+      summary: "Lab-only research implant to study C2 evasion techniques and tune detection rules. Strictly used in private ethical testbeds.",
+      stack: ["Python", "YARA", "Wireshark"],
+      status: "shipped",
+      ghLink: null,
+    },
+    {
+      id: "energy-lstm",
+      name: "Energy Forecasting LSTM",
+      cat: "AI",
+      year: "2024",
+      nda: false,
+      summary: "GRU/LSTM ensemble for short-horizon electrical load forecasting with tunable anomaly detection output.",
+      stack: ["PyTorch", "Pandas", "Keras"],
+      status: "shipped",
+      ghLink: null,
+    },
+    {
+      id: "voronoi",
+      name: "Voronoi Diagram Generator",
+      cat: "Systems",
+      year: "2024",
+      nda: false,
+      summary: "C++ implementation of Fortune's sweep-line algorithm for interactive Voronoi diagrams — computational geometry focus.",
+      stack: ["C++", "Algorithms", "Geometry"],
+      status: "shipped",
+      ghLink: null,
+    },
+  ],
+  experience: [
+    {
+      role: "Pentest Intern",
+      org: "RandoriSec",
+      date: "2026 —",
+      bullets: ["Azure red-team engagements", "Internal AD assessments", "Offensive tool dev in Python / PowerShell"],
+    },
+    {
+      role: "MSc — Security of Computer Systems",
+      org: "EURECOM",
+      date: "2024 — 2026",
+      bullets: ["Security of Computer Systems & Communications", "Applied cryptography, adversarial ML", "Thesis: offensive use of LLMs"],
+    },
+    {
+      role: "Research Intern",
+      org: "Tunisian Grid Lab",
+      date: "2024",
+      bullets: ["Load forecasting with LSTM / GRU", "Dataset cleaning and feature engineering"],
+    },
+    {
+      role: "Engineer Degree — Telecommunications",
+      org: "SUP'COM",
+      date: "2022 — 2024",
+      bullets: ["Telecommunications engineering, security focus", "Top 5% of cohort"],
+    },
+  ],
+  contact: {
+    email: "bahaeddine.melki@eurecom.fr",
+    github: "github.com/BahaMelki0",
+    linkedin: "linkedin.com/in/bahaeddine-melki",
+    pgp: "A3F1 9C2D … 88EE",
+  },
+};
+
+export const PROJECT_CATS = ["All", "Security", "AI", "Systems", "Web"];
+
+export default PORTFOLIO;

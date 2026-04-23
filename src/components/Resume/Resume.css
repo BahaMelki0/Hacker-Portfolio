@@ -1,54 +1,48 @@
-/* Full-page layout for the resume page */
-.resume-page {
-  display: flex;
-  flex-direction: column;
-  min-height: 86.5vh;
+/* ─── Resume ─── */
+.mx-resume-panel { margin-top: 0; }
+
+.mx-resume-dl {
+  margin-left: auto;
+  font-size: 11px;
+  letter-spacing: 0.06em;
 }
 
-/* Ensure the resume-section takes up remaining space */
-.resume-section {
-  flex: 1;
-  padding: 60px 0;
+.mx-resume-entry {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 24px;
+  padding: 18px 0;
 }
 
-/* Ensure the footer is fixed at the bottom */
-footer {
-  margin-top: auto;
-  width: 100%;
-  background-color: #0d1117;
-  padding: 20px 0;
+.mx-resume-date {
+  font-size: 12px;
+  padding-top: 3px;
+  line-height: 1.5;
 }
 
-.resume-description {
-  font-size: 1.2rem;           /* Increase font size */
-  line-height: 1.8;            /* Improve line spacing */
-  padding: 20px;               /* Add padding for better spacing */
-  color: #d1d5db;              /* Slightly lighter text color for readability */
+.mx-resume-role {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.mx-resume-org  { font-size: 13px; font-weight: 400; }
+
+.mx-resume-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.mx-resume-bullets li {
+  font-size: 13px;
+  color: var(--mx-green);
+  opacity: 0.85;
+  padding: 2px 0;
 }
 
-.resume-section .btn-primary {
-  background-color: #27c331 !important;
-  border-color: #1ac325 !important;
-  color: #ffffff !important;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.resume-section .btn-primary:hover,
-.resume-section .btn-primary:focus {
-  background-color: #0d3d12 !important;
-  border-color: #0d3d12 !important;
-  color: #ffffff !important;
-  box-shadow: 0 0 10px rgba(13, 61, 18, 0.35);
-}
-
-.resume-section .btn-primary {
-  background-color: #1B5E20;
-  border-color: #1B5E20;
-  color: #ffffff;
-}
-
-.resume-section .btn-primary:hover {
-  background-color: #0D3D12;
-  border-color: #0D3D12;
+@media (max-width: 768px) {
+  .mx-resume-entry {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .mx-resume-date { padding-top: 0; }
 }

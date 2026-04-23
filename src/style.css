@@ -315,26 +315,7 @@ button:focus {
   color: #ffffff;
 }
 
-.Typewriter__wrapper {
-  font-size: 2.2em !important;
-  color: #00ff00 !important;
-  font-weight: 600 !important;
-}
-.Typewriter__cursor {
-  font-size: 2.4em !important;
-  color: #00ff00 !important;
-}
-
-@media (max-width: 767px) {
-  .Typewriter__wrapper {
-    font-size: 1.4em !important;
-    font-weight: 500 !important;
-    position: absolute !important;
-  }
-  .Typewriter__cursor {
-    display: none !important;
-  }
-}
+/* Typewriter defaults — actual sizing lives in Type.css */
 
 .myAvtar {
   justify-content: center !important;
@@ -971,10 +952,6 @@ button:focus {
   .about-text-col {
     margin-bottom: 30px;
   }
-  .about-blur-card {
-    padding: 18px;
-  }
-
   .about-section .about-text-col,
   .about-section .about-img {
     align-items: center;
@@ -1090,7 +1067,7 @@ button:focus {
   }
 
   .blur-background,
-  .about-blur-card,
+  .about-text-col .terminal-box,
   .projects-intro,
   .thm-embed,
   .resume-description {
@@ -1099,19 +1076,11 @@ button:focus {
 
   .typing-wrapper {
     padding: 20px;
+    justify-content: center;
   }
 
   .footer {
     font-size: 0.85rem;
-  }
-
-
-  .Typewriter__wrapper {
-    font-size: 1.65em !important;
-  }
-
-  .Typewriter__cursor {
-    font-size: 1.85em !important;
   }
 
   .home-image {
@@ -1256,18 +1225,9 @@ button:focus {
 }
 
 .project-description {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.35s ease, opacity 0.35s ease;
   font-size: 0.95rem;
   color: #f5fff5;
-}
-
-.project-card-view:hover .project-description,
-.project-card-view:focus-within .project-description {
-  max-height: 260px;
-  opacity: 1;
+  line-height: 1.6;
 }
 
 .project-links {
@@ -1308,11 +1268,6 @@ button:focus {
   }
 
   .project-card-view::after {
-    opacity: 1;
-  }
-
-  .project-description {
-    max-height: none;
     opacity: 1;
   }
 
@@ -1392,5 +1347,231 @@ button:focus {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+}
+
+/* --------- */
+/* Page transitions */
+/* --------- */
+.page-fade {
+  animation: pageFadeIn 0.35s ease both;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --------- */
+/* Scroll reveal */
+/* --------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --------- */
+/* Section divider */
+/* --------- */
+.section-divider {
+  border: none;
+  border-top: 1px solid rgba(63, 167, 73, 0.25);
+  margin: 48px 0 36px;
+}
+
+/* --------- */
+/* Glitch effect */
+/* --------- */
+.glitch {
+  position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  font: inherit;
+  color: inherit;
+  overflow: hidden;
+}
+
+.glitch::before {
+  left: 2px;
+  text-shadow: -2px 0 #00ffea;
+  clip-path: polygon(0 30%, 100% 30%, 100% 50%, 0 50%);
+  animation: glitch-top 4s infinite linear;
+}
+
+.glitch::after {
+  left: -2px;
+  text-shadow: 2px 0 #ff003c;
+  clip-path: polygon(0 55%, 100% 55%, 100% 75%, 0 75%);
+  animation: glitch-bot 4s infinite linear;
+}
+
+@keyframes glitch-top {
+  0%, 90%, 100% { transform: translateX(0); opacity: 0; }
+  92%            { transform: translateX(-4px); opacity: 1; }
+  94%            { transform: translateX(4px); opacity: 1; }
+  96%            { transform: translateX(0); opacity: 0; }
+}
+
+@keyframes glitch-bot {
+  0%, 90%, 100% { transform: translateX(0); opacity: 0; }
+  93%            { transform: translateX(4px); opacity: 1; }
+  95%            { transform: translateX(-4px); opacity: 1; }
+  97%            { transform: translateX(0); opacity: 0; }
+}
+
+/* --------- */
+/* Scroll progress bar */
+/* --------- */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #00ff00, #3fa749);
+  box-shadow: 0 0 8px rgba(0, 255, 0, 0.7);
+  z-index: 9999;
+  transition: width 0.1s linear;
+}
+
+/* --------- */
+/* Section labels */
+/* --------- */
+.section-label {
+  display: block;
+  font-family: "Source Code Pro", monospace;
+  font-size: 0.78rem;
+  color: rgba(63, 167, 73, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 8px;
+}
+
+/* --------- */
+/* Terminal bio box */
+/* --------- */
+.terminal-box {
+  background: rgba(0, 0, 0, 0.75);
+  border: 1px solid rgba(63, 167, 73, 0.4);
+  border-radius: 10px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 20px 48px rgba(63, 167, 73, 0.18);
+  margin-bottom: 20px;
+}
+
+.terminal-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 16px;
+  background: rgba(0, 0, 0, 0.6);
+  border-bottom: 1px solid rgba(63, 167, 73, 0.2);
+}
+
+.terminal-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+.terminal-dot.red    { background: #ff5f57; }
+.terminal-dot.yellow { background: #febc2e; }
+.terminal-dot.green  { background: #28c840; }
+
+.terminal-title {
+  margin-left: 8px;
+  font-family: "Source Code Pro", monospace;
+  font-size: 0.78rem;
+  color: rgba(180, 220, 185, 0.5);
+  letter-spacing: 0.06em;
+}
+
+.terminal-body {
+  padding: 20px 24px;
+}
+
+.terminal-prompt {
+  font-family: "Source Code Pro", monospace;
+  font-size: 0.85rem;
+  color: #3fa749;
+  margin-bottom: 14px;
+}
+
+.terminal-prompt span {
+  color: #00ff00;
+}
+
+.terminal-body .home-about-body {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #d4eeda;
+  padding-top: 0;
+  margin-bottom: 0.85rem;
+}
+
+.about-activity-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0.75rem 0 0;
+}
+
+.about-activity-list .about-activity {
+  padding: 0.3rem 0;
+  color: #d4eeda;
+  font-size: 0.95rem;
+}
+
+/* --------- */
+/* Category accent bars on project cards */
+/* --------- */
+.project-card-view[data-category="security"] { border-top: 2px solid rgba(0, 255, 0, 0.6); }
+.project-card-view[data-category="ai"]       { border-top: 2px solid rgba(0, 180, 216, 0.7); }
+.project-card-view[data-category="systems"]  { border-top: 2px solid rgba(157, 78, 221, 0.7); }
+.project-card-view[data-category="web"]      { border-top: 2px solid rgba(247, 127, 0, 0.7); }
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* --------- */
+/* NDA badge */
+/* --------- */
+.project-card-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.project-nda-badge {
+  font-family: "Source Code Pro", monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(247, 127, 0, 0.6);
+  color: rgba(247, 180, 80, 0.9);
+  background: rgba(247, 127, 0, 0.08);
+  white-space: nowrap;
+  vertical-align: middle;
 }
 

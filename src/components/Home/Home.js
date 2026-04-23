@@ -1,40 +1,70 @@
 import React from "react";
-import { Container } from "react-bootstrap";
-import Home2 from "./Home2";
-import Type from "./Type";
-import homeLogo from "../../Assets/home-main.svg";
+import Typewriter from "typewriter-effect";
+import HeroTerminal from "../HeroTerminal";
+import { useNavigate } from "react-router-dom";
+import { usePortfolio } from "../../context/PortfolioContext";
+import "./Home.css";
 
 function Home() {
+  const navigate = useNavigate();
+  const { data: PORTFOLIO } = usePortfolio();
+
   return (
-    <section>
-      <Container fluid className="home-section" id="home">
-        <Container className="home-content">
-          <div className="home-hero-row">
-            <div className="home-header">
-              <h1 style={{ paddingBlockEnd: "15px" }} className="heading">
-                Hi There!{" "}
-                <span className="wave" role="img" aria-label="laptop">
-                    {"\u{1F4BB}"}{/* 💻 */}
-                </span>
-              </h1>
-              <h1 className="heading-name">I'm Bahaeddine Melki</h1>
-              <p className="heading-tagline">
-                Cybersecurity Post-Master’s student at EURECOM specializing in Offensive Security and Red Teaming.              </p>
-              <div className="typing-wrapper">
-                <Type />
-              </div>
-            </div>
-            <div className="home-image-container">
-              <img
-                src={homeLogo}
-                alt="Illustration of Bahaeddine Melki hacking on a laptop"
-                className="home-image"
-              />
-            </div>
-          </div>
-        </Container>
-      </Container>
-      <Home2 />
+    <section className="mx-hero mx-scanlines">
+      {/* boot meta */}
+      <div className="mx-hero-meta mx-dim">
+        <span className="mx-hl">[ system::boot ]</span>
+        &nbsp;&nbsp;identity: verified &nbsp;·&nbsp; clearance: ops &nbsp;·&nbsp; status:{" "}
+        <span className="mx-hl">online</span>
+      </div>
+
+      {/* glitch name */}
+      <h1 className="mx-glitch mx-hero-name" data-text={PORTFOLIO.name}>
+        {PORTFOLIO.name}
+      </h1>
+
+      {/* tagline typewriter */}
+      <div className="mx-hero-tagline">
+        <span className="mx-hl">▶&nbsp;</span>
+        <Typewriter
+          options={{
+            strings: PORTFOLIO.taglines,
+            autoStart: true,
+            loop: true,
+            deleteSpeed: 28,
+            delay: 48,
+            cursor: "▋",
+          }}
+        />
+      </div>
+
+      {/* inline terminal */}
+      <div className="mx-panel mx-hero-terminal">
+        <div className="mx-panel-head">
+          <span className="mx-panel-dots">
+            <span /><span /><span />
+          </span>
+          <span>/dev/tty0 &nbsp;·&nbsp; bmelki@matrix</span>
+        </div>
+        <div style={{ padding: "16px 20px" }}>
+          <HeroTerminal />
+        </div>
+      </div>
+
+      {/* CTAs */}
+      <div className="mx-hero-ctas">
+        <button className="mx-btn mx-btn-primary" onClick={() => navigate("/project")}>
+          <span>▶</span> View Operations
+        </button>
+        <button className="mx-btn" onClick={() => navigate("/contact")}>
+          <span>⌁</span> Establish Contact
+        </button>
+      </div>
+
+      {/* scroll hint */}
+      <div className="mx-hero-hint mx-dim">
+        ↓ scroll &nbsp;·&nbsp; wake up, neo
+      </div>
     </section>
   );
 }

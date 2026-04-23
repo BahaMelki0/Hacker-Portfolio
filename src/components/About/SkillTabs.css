@@ -1,0 +1,112 @@
+/* SkillTabs.css */
+
+.skill-tabs-wrapper {
+  margin: 0 auto 48px;
+  max-width: 900px;
+}
+
+/* Tab header */
+.skill-tabs-header {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.skill-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  border-radius: 30px;
+  border: 1px solid rgba(63, 167, 73, 0.4);
+  background: rgba(0, 0, 0, 0.45);
+  color: #a8d8b0;
+  font-family: "Source Code Pro", monospace;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.skill-tab-btn:hover {
+  border-color: rgba(63, 167, 73, 0.8);
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(63, 167, 73, 0.3);
+}
+
+.skill-tab-btn.active {
+  background: rgba(63, 167, 73, 0.18);
+  border-color: #3fa749;
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(63, 167, 73, 0.35);
+}
+
+.skill-tab-icon {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Skill grid */
+.skill-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.skill-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 110px;
+  padding: 18px 12px;
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(63, 167, 73, 0.3);
+  box-shadow: 0 8px 24px rgba(63, 167, 73, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.skill-chip:hover {
+  transform: translateY(-4px);
+  border-color: rgba(63, 167, 73, 0.7);
+  box-shadow: 0 14px 32px rgba(63, 167, 73, 0.22);
+}
+
+.skill-chip-icon svg {
+  font-size: 2.2rem;
+  color: #ffffff;
+}
+
+.skill-chip-label {
+  font-size: 0.82rem;
+  color: #d4edd6;
+  text-align: center;
+  font-family: "Source Code Pro", monospace;
+}
+
+@media (max-width: 576px) {
+  .skill-chip {
+    width: 90px;
+    padding: 14px 8px;
+  }
+
+  .skill-tab-btn {
+    padding: 8px 16px;
+    font-size: 0.82rem;
+  }
+}

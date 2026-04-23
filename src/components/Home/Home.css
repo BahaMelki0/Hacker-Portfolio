@@ -1,0 +1,77 @@
+/* ─── Hero section ─── */
+.mx-hero {
+  min-height: 100vh;
+  padding: 120px 60px 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.mx-hero-meta {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  margin-bottom: 24px;
+  font-family: var(--mx-font);
+}
+
+.mx-hero-name {
+  font-size: clamp(48px, 7vw, 96px);
+  font-weight: 700;
+  letter-spacing: -2px;
+  line-height: 1;
+  margin: 0 0 16px;
+}
+
+.mx-hero-tagline {
+  font-size: clamp(16px, 2vw, 22px);
+  color: var(--mx-green-bright);
+  margin-bottom: 36px;
+  display: flex;
+  align-items: center;
+  min-height: 2rem;
+}
+
+/* override typewriter-effect defaults */
+.mx-hero-tagline .Typewriter { display: inline; }
+.mx-hero-tagline .Typewriter__wrapper {
+  font-family: var(--mx-font);
+  color: var(--mx-green-bright);
+  font-size: inherit;
+  font-weight: inherit;
+}
+.mx-hero-tagline .Typewriter__cursor {
+  color: var(--mx-green);
+  font-size: inherit;
+}
+
+.mx-hero-terminal {
+  max-width: 680px;
+  margin-bottom: 36px;
+}
+
+.mx-hero-ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+}
+
+.mx-hero-hint {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .mx-hero {
+    padding: 90px 20px 60px;
+    min-height: 100svh;
+  }
+  .mx-hero-name    { letter-spacing: -1px; margin-bottom: 14px; }
+  .mx-hero-tagline { margin-bottom: 28px; font-size: 16px; }
+  .mx-hero-terminal { max-width: 100%; }
+  .mx-hero-ctas   { flex-direction: column; gap: 10px; }
+  .mx-hero-ctas .mx-btn { justify-content: center; }
+}

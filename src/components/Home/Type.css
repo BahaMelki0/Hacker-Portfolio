@@ -1,37 +1,44 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap");
 
 /* Linux Command Styling */
+.typing-wrapper {
+  /* Reserve fixed height so the layout never shifts when text wraps */
+  min-height: 3.4rem;
+  display: flex;
+  align-items: flex-start;
+}
+
 .linux-command {
   font-family: "Source Code Pro", monospace;
   color: #00ff00;
-  font-size: clamp(0.8rem, 1.4vw, 0.9rem);
+  font-size: clamp(0.78rem, 1.3vw, 0.88rem);
   background-color: #000;
-  padding: clamp(10px, 2vw, 14px) clamp(16px, 3vw, 22px);
+  padding: clamp(10px, 2vw, 12px) clamp(14px, 3vw, 20px);
   border-radius: 8px;
-  text-shadow: 0 0 8px #00ff00;
+  text-shadow: 0 0 6px rgba(0, 255, 0, 0.6);
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: min(100%, 520px);
+  width: min(100%, 600px);
   max-width: 100%;
   margin: 0 auto;
-  line-height: 1.4;
-  white-space: normal;
-  word-break: break-word;
-  text-align: center;
+  /* Fixed height — text clips rather than wrapping and shifting layout */
+  height: 3rem;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .linux-command .Typewriter {
   display: flex;
   align-items: center;
-  justify-content: center;
   width: 100%;
+  overflow: hidden;
 }
 
 .Typewriter__wrapper {
   display: block;
-  width: 100%;
-  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
 }
 
 /* Cursor Animation */
@@ -57,6 +64,10 @@
 }
 
 @media (min-width: 900px) {
+  .typing-wrapper {
+    justify-content: flex-start;
+  }
+
   .typing-wrapper .linux-command {
     margin: 0;
     justify-content: flex-start;
@@ -64,9 +75,5 @@
 
   .typing-wrapper .Typewriter {
     justify-content: flex-start;
-  }
-
-  .typing-wrapper .Typewriter__wrapper {
-    text-align: left;
   }
 }

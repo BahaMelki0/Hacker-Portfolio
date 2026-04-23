@@ -1,53 +1,87 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
+import React, { useEffect, useRef } from "react";
+import { usePortfolio } from "../../context/PortfolioContext";
 import pdf from "../../Assets/Melki_Bahaeddine.pdf";
-import { AiOutlineDownload } from "react-icons/ai";
 import "./Resume.css";
 
-const highlights = [
-  "Telecommunications engineering student completing the SUP'COM × EURECOM Post-Master’s program in Security of Computer Systems and Communications.",
-  "Specialized in offensive security, network and application penetration testing, and adversarial AI research.",
-  "Active member of KB4B3T — a Tunisian CTF team competing weekly and sharing practical cybersecurity insights with the local community.",
-  "Certified Junior Penetration Tester (eJPT) and TryHackMe PT1, currently preparing for Hack The Box CPTS certification to deepen red-team expertise.",
-  "Exploring how AI can both power and defend against cyber attacks.",
-  "Open to end-of-studies internship opportunities across Europe in offensive security, red teaming, or AI-driven cyber defense.",
-];
+function SecHeader({ num, title, sub }) {
+  return (
+    <div className="mx-sec-header">
+      <span className="mx-sec-num">/{num}</span>
+      <h2 className="mx-sec-title">{title}</h2>
+      <span className="mx-sec-sub">{sub}</span>
+    </div>
+  );
+}
 
 function ResumeNew() {
-  return (
-    <div className="resume-page">
-      <Container fluid className="resume-section">
-        <Row style={{ justifyContent: "center", position: "relative" }}>
-          <Col md={8} className="resume-description">
-            <h2 className="resume-heading">
-              In a Nutshell :
-              <span className="emoji" role="img" aria-label="compass">
-                {"\u{1F9ED}"}
-              </span>
-            </h2>
-            <ul className="resume-points">
-              {highlights.map((point) => (
-                <li key={point}>{point}</li>
-              ))}
-            </ul>
-          </Col>
-        </Row>
+  const { data: PORTFOLIO } = usePortfolio();
+  const revealRefs = useRef([]);
 
-        <Row style={{ justifyContent: "center", position: "relative", marginTop: "20px" }}>
-          <Button
-            variant="primary"
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((e) => {
+        if (e.isIntersecting) { e.target.classList.add("mx-revealed"); observer.unobserve(e.target); }
+      }),
+      { threshold: 0.1 }
+    );
+    revealRefs.current.forEach((el) => el && observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
+  const addRef = (el) => { if (el && !revealRefs.current.includes(el)) revealRefs.current.push(el); };
+
+  return (
+    <div className="mx-section">
+      <SecHeader num="03" title="resume" sub="// career trace" />
+
+      <div className="mx-panel mx-resume-panel">
+        {/* panel header with download link */}
+        <div className="mx-panel-head">
+          <span className="mx-panel-dots"><span /><span /><span /></span>
+          <span>~/resume/bahaeddine_melki.log · size 4.2kB</span>
+          <a
             href={pdf}
             target="_blank"
             rel="noreferrer"
-            style={{ maxWidth: "250px" }}
-            aria-label="Download Bahaeddine Melki resume PDF"
+            className="mx-link mx-resume-dl"
+            aria-label="Download resume PDF"
           >
-            <AiOutlineDownload />
-            &nbsp;Download My CV
-          </Button>
-        </Row>
-      </Container>
+            ↓ download pdf
+          </a>
+        </div>
+
+        {/* timeline */}
+        <div style={{ padding: "24px 28px" }}>
+          {PORTFOLIO.experience.map((ex, i) => (
+            <div
+              key={i}
+              ref={addRef}
+              className="mx-reveal mx-resume-entry"
+              style={{
+                transitionDelay: `${i * 80}ms`,
+                borderBottom: i < PORTFOLIO.experience.length - 1
+                  ? "1px dashed var(--mx-border)"
+                  : "none",
+              }}
+            >
+              <div className="mx-dim mx-resume-date">{ex.date}</div>
+              <div>
+                <div className="mx-resume-role">
+                  <span className="mx-hl">{ex.role}</span>
+                  <span className="mx-dim mx-resume-org"> · {ex.org}</span>
+                </div>
+                <ul className="mx-resume-bullets">
+                  {ex.bullets.map((b) => (
+                    <li key={b}>
+                      <span className="mx-dim">▸</span> {b}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

@@ -21,7 +21,7 @@ import {
   FaBolt,
   FaLock,
 } from "react-icons/fa";
-import { SiPython, SiReact, SiFirebase, SiOracle } from "react-icons/si";
+import { SiPython, SiReact, SiFirebase } from "react-icons/si";
 
 const tagIcons = {
   Python: <SiPython />,
@@ -40,7 +40,7 @@ const tagIcons = {
   React: <SiReact />,
   "E-commerce": <FaShoppingBag />,
   CMS: <FaFileAlt />,
-  Oracle: <SiOracle />,
+  Oracle: <FaDatabase />,
   SQL: <FaDatabase />,
   Academic: <FaGraduationCap />,
   Discord: <FaDiscord />,
@@ -56,12 +56,15 @@ const tagIcons = {
 
 const renderTagIcon = (tag) => tagIcons[tag] || <FaBolt />;
 
-function ProjectCards({ title, short, description, tags = [], ghLink, demoLink }) {
+function ProjectCards({ title, short, description, tags = [], category, ghLink, demoLink, nda }) {
   return (
-    <Card className="project-card-view">
+    <Card className="project-card-view" data-category={category}>
       <Card.Body>
         <div className="project-card-header">
-          <Card.Title>{title}</Card.Title>
+          <div className="project-card-title-row">
+            <Card.Title>{title}</Card.Title>
+            {nda && <span className="project-nda-badge">NDA</span>}
+          </div>
           {short && <p className="project-short">{short}</p>}
           {tags.length > 0 && (
             <ul className="project-tags" aria-label="Technologies used">

@@ -1,95 +1,96 @@
 import { useEffect, useRef } from "react";
 
-const LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-
-const initializeCanvas = (canvas) => {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-  const fontSize = Math.max(10, window.innerWidth / 100);
-  const columns = Math.floor(canvas.width / fontSize);
-  return { fontSize, drops: Array.from({ length: columns }).fill(0) };
-};
+const GLYPHS =
+  "ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝ0123456789<>[]{}/\\|=+*ABCDEF";
 
 const MatrixBackground = () => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas) {
-      return undefined;
-    }
+    if (!canvas) return;
 
     const ctx = canvas.getContext("2d");
-    if (!ctx) {
-      return undefined;
-    }
+    if (!ctx) return;
 
-    let animationFrameId;
-    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    let isReducedMotion = mediaQuery.matches;
-    let { fontSize, drops } = initializeCanvas(canvas);
+    const fontSize = 14;
+    let cols = 0;
+    let drops = [];
+    let w = 0;
+    let h = 0;
 
-    const handleResize = () => {
-      ({ fontSize, drops } = initializeCanvas(canvas));
+    const resize = () => {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = window.innerWidth;
+      h = window.innerHeight;
+      canvas.width  = w * dpr;
+      canvas.height = h * dpr;
+      canvas.style.width  = w + "px";
+      canvas.style.height = h + "px";
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      cols  = Math.floor(w / fontSize);
+      drops = Array.from({ length: cols }, () => Math.random() * (h / fontSize));
     };
 
-    const handleMotionPreference = (event) => {
-      isReducedMotion = event.matches;
-    };
+    resize();
+    window.addEventListener("resize", resize, { passive: true });
 
-    const addMotionListener = () => {
-      if (mediaQuery.addEventListener) {
-        mediaQuery.addEventListener("change", handleMotionPreference);
-        return () => mediaQuery.removeEventListener("change", handleMotionPreference);
-      }
-      if (mediaQuery.addListener) {
-        mediaQuery.addListener(handleMotionPreference);
-        return () => mediaQuery.removeListener(handleMotionPreference);
-      }
-      return undefined;
-    };
+    const isMobile = () => window.innerWidth <= 768;
+    const getFpsInterval = () => (isMobile() ? 1000 / 15 : 1000 / 30);
 
-    const removeMotionListener = addMotionListener();
+    let raf = 0;
+    let last = 0;
+    let running = true;
 
-    const draw = () => {
-      ctx.fillStyle = "rgba(0, 0, 0, 0.02)";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+    const draw = (ts) => {
+      if (!running) return;
+      raf = requestAnimationFrame(draw);
+      if (ts - last < getFpsInterval()) return;
+      last = ts;
 
-      ctx.fillStyle = "#00ff00";
-      ctx.shadowColor = "#00ff00";
-      ctx.shadowBlur = 0;
-      ctx.font = `${fontSize}px monospace`;
+      ctx.fillStyle = "rgba(10, 16, 12, 0.10)";
+      ctx.fillRect(0, 0, w, h);
 
-      drops = drops.map((value, index) => {
-        const text = LETTERS[Math.floor(Math.random() * LETTERS.length)];
-        ctx.fillText(text, index * fontSize, value * fontSize);
-        if (value * fontSize > canvas.height && Math.random() > 0.975) {
-          return 0;
-        }
-        return value + (isReducedMotion ? 0.1 : 0.3);
+      ctx.font = `${fontSize}px "JetBrains Mono", monospace`;
+      ctx.textBaseline = "top";
+
+      drops.forEach((y, i) => {
+        const ch = GLYPHS[Math.floor(Math.random() * GLYPHS.length)];
+        const px = i * fontSize;
+        const py = y * fontSize;
+
+        // bright head ~2% of the time
+        ctx.globalAlpha = Math.random() < 0.02 ? 0.9 : 0.38;
+        ctx.fillStyle   = Math.random() < 0.02 ? "#cfffcf" : "#6fdc8c";
+        ctx.fillText(ch, px, py);
+        ctx.globalAlpha = 1;
+
+        if (py > h && Math.random() > 0.975) drops[i] = 0;
+        drops[i] += 1;
       });
-
-      animationFrameId = requestAnimationFrame(draw);
     };
 
-    draw();
-    window.addEventListener("resize", handleResize, { passive: true });
+    raf = requestAnimationFrame(draw);
+
+    const onVisibility = () => {
+      running = !document.hidden;
+      if (running) raf = requestAnimationFrame(draw);
+    };
+    document.addEventListener("visibilitychange", onVisibility);
 
     return () => {
-      window.removeEventListener("resize", handleResize);
-      if (removeMotionListener) {
-        removeMotionListener();
-      }
-      if (animationFrameId) {
-        cancelAnimationFrame(animationFrameId);
-      }
+      running = false;
+      cancelAnimationFrame(raf);
+      window.removeEventListener("resize", resize);
+      document.removeEventListener("visibilitychange", onVisibility);
     };
   }, []);
 
   return (
     <canvas
       ref={canvasRef}
-      style={{ position: "fixed", inset: 0, zIndex: -1, background: "#000" }}
+      style={{ position: "fixed", inset: 0, zIndex: -1, background: "#0a100c" }}
+      aria-hidden="true"
     />
   );
 };
