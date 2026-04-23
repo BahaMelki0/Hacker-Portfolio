@@ -3,13 +3,14 @@ import { usePortfolio } from "../context/PortfolioContext";
 
 function HeroTerminal() {
   const { data: PORTFOLIO } = usePortfolio();
+  const { terminalDemo } = PORTFOLIO;
   const [lineIdx, setLineIdx] = useState(0);
   const [history, setHistory] = useState([]);
   const [current, setCurrent] = useState("");
   const [typing, setTyping] = useState(true);
 
   useEffect(() => {
-    const entry = PORTFOLIO.terminalDemo[lineIdx % PORTFOLIO.terminalDemo.length];
+    const entry = terminalDemo[lineIdx % terminalDemo.length];
     const cmd = entry.cmd;
 
     if (typing) {
@@ -18,7 +19,6 @@ function HeroTerminal() {
         const t = setTimeout(() => setCurrent(cmd.slice(0, current.length + 1)), delay);
         return () => clearTimeout(t);
       }
-      // done typing → show output after a pause
       const t = setTimeout(() => {
         setHistory((h) => [...h.slice(-5), entry]);
         setCurrent("");
@@ -26,14 +26,13 @@ function HeroTerminal() {
       }, 500);
       return () => clearTimeout(t);
     } else {
-      // pause before next command
       const t = setTimeout(() => {
         setLineIdx((i) => i + 1);
         setTyping(true);
       }, 2000);
       return () => clearTimeout(t);
     }
-  }, [current, typing, lineIdx]);
+  }, [current, typing, lineIdx, terminalDemo]);
 
   return (
     <div style={{ fontFamily: "var(--mx-font)", fontSize: 13, lineHeight: 1.65 }}>
