@@ -2,7 +2,7 @@
 
 Personal portfolio for Bahaeddine Melki — offensive security engineer, Post-Master's student at EURECOM × SUP'COM, and member of the Tunisian CTF squad **KB4B3T**. Built with a retro hacker aesthetic: matrix rain, terminal typography, glitch effects.
 
-Live → **https://hacker-portfolio-ruddy.vercel.app/**
+Live → **[https://bahaeddine-melki.vercel.app/]**
 
 ---
 
