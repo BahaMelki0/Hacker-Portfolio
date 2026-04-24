@@ -22,12 +22,15 @@ class ErrorBoundary extends Component {
   static getDerivedStateFromError(error) { return { error }; }
   render() {
     if (this.state.error) {
-      return (
-        <div style={{ color: "#00ff00", background: "#000", padding: 40, fontFamily: "monospace", minHeight: "100vh" }}>
-          <h2>[ runtime error ]</h2>
-          <pre style={{ whiteSpace: "pre-wrap", color: "#ff4444" }}>{String(this.state.error)}</pre>
-        </div>
-      );
+      if (process.env.NODE_ENV === "development") {
+        return (
+          <div style={{ color: "#00ff00", background: "#000", padding: 40, fontFamily: "monospace", minHeight: "100vh" }}>
+            <h2>[ runtime error ]</h2>
+            <pre style={{ whiteSpace: "pre-wrap", color: "#ff4444" }}>{String(this.state.error)}</pre>
+          </div>
+        );
+      }
+      return null;
     }
     return this.props.children;
   }

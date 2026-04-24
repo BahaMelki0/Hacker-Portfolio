@@ -31,7 +31,8 @@ function SkillCard({ skill, index }) {
 
 function About() {
   const { data: PORTFOLIO } = usePortfolio();
-  const [tab, setTab] = useState("Security");
+  const tabs = Object.keys(PORTFOLIO.skills);
+  const [tab, setTab] = useState(tabs[0] || "Security");
   const revealRefs = useRef([]);
 
   useEffect(() => {
@@ -53,8 +54,6 @@ function About() {
   const addRef = (el) => {
     if (el && !revealRefs.current.includes(el)) revealRefs.current.push(el);
   };
-
-  const tabs = Object.keys(PORTFOLIO.skills);
 
   return (
     <div className="mx-section">
