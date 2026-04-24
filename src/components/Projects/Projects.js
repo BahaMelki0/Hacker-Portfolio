@@ -51,7 +51,7 @@ function ProjectCard({ project }) {
 }
 
 function Projects() {
-  const { data: PORTFOLIO } = usePortfolio();
+  const { data: PORTFOLIO, loading } = usePortfolio();
   const [cat, setCat] = useState("All");
   const revealRefs = useRef([]);
 
@@ -65,11 +65,21 @@ function Projects() {
       (entries) => entries.forEach((e) => {
         if (e.isIntersecting) { e.target.classList.add("mx-revealed"); observer.unobserve(e.target); }
       }),
-      { threshold: 0.08 }
+      { threshold: 0, rootMargin: "0px 0px -20px 0px" }
     );
     revealRefs.current.forEach((el) => el && observer.observe(el));
-    return () => observer.disconnect();
+    const t = setTimeout(() => {
+      revealRefs.current.forEach((el) => el && el.classList.add("mx-revealed"));
+    }, 500);
+    return () => { observer.disconnect(); clearTimeout(t); };
   }, [filtered]);
+
+  // force-reveal when data settles so a Supabase re-render never leaves cards hidden
+  useEffect(() => {
+    if (!loading) {
+      revealRefs.current.forEach((el) => el && el.classList.add("mx-revealed"));
+    }
+  }, [loading]);
 
   const addRef = (el) => { if (el && !revealRefs.current.includes(el)) revealRefs.current.push(el); };
 
