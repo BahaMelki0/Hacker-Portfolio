@@ -1,5 +1,5 @@
 /* ─── Resume ─── */
-.mx-resume-panel { margin-top: 0; }
+.mx-resume-panel { margin-top: 0; max-width: 860px; }
 
 .mx-resume-dl {
   margin-left: auto;

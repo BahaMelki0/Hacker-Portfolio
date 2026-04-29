@@ -302,7 +302,10 @@ body {
 
 /* ─── Page section ─── */
 .mx-section {
-  padding: 100px 60px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  padding-left: max(60px, calc((100vw - 1100px) / 2));
+  padding-right: max(60px, calc((100vw - 1100px) / 2));
   position: relative;
   background-image: none !important;
 }
@@ -325,12 +328,31 @@ body {
 }
 .mx-field-req { color: var(--mx-red); margin-left: 3px; }
 
+/* ─── Focus visible ─── */
+:focus-visible {
+  outline: 1px solid var(--mx-green);
+  outline-offset: 2px;
+}
+button:focus:not(:focus-visible),
+a:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
 /* ─── Responsive ─── */
+@media (max-width: 1024px) {
+  .mx-grid-about { grid-template-columns: 1fr; gap: 32px; }
+}
+
 @media (max-width: 768px) {
-  .mx-section { padding: 64px 20px; }
+  .mx-section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 
   .mx-grid-2,
-  .mx-grid-about,
   .mx-grid-contact { grid-template-columns: 1fr; gap: 24px; }
 
   .mx-sec-title { font-size: 26px; letter-spacing: -0.5px; }

@@ -1,7 +1,10 @@
 /* ─── Hero section ─── */
 .mx-hero {
   min-height: 100vh;
-  padding: 120px 60px 100px;
+  padding-top: 120px;
+  padding-bottom: 100px;
+  padding-left: max(60px, calc((100vw - 1100px) / 2));
+  padding-right: max(60px, calc((100vw - 1100px) / 2));
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -67,6 +70,8 @@
 @media (max-width: 768px) {
   .mx-hero {
     padding: 90px 20px 60px;
+    padding-left: 20px;
+    padding-right: 20px;
     min-height: 100svh;
   }
   .mx-hero-name    { letter-spacing: -1px; margin-bottom: 14px; }

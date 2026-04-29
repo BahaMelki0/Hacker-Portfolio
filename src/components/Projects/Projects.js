@@ -3,7 +3,7 @@ import { usePortfolio } from "../../context/PortfolioContext";
 import DecryptText from "../DecryptText";
 import "./Projects.css";
 
-const PROJECT_CATS = ["All", "Security", "AI", "Systems", "Web"];
+const PROJECT_CATS = ["All", "Security", "AI", "Systems"];
 
 function SecHeader({ num, title, sub }) {
   return (

@@ -47,7 +47,7 @@
 }
 
 /* ─── Skill cards ─── */
-.mx-skill-card { padding: 12px 14px !important; cursor: default; }
+.mx-skill-card { padding: 12px 14px !important; cursor: default; height: 100%; }
 .mx-skill-row {
   display: flex;
   justify-content: space-between;

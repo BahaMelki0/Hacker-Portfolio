@@ -64,7 +64,7 @@
 .mx-input::placeholder,
 .mx-textarea::placeholder { color: var(--mx-green-dim); opacity: 0.6; }
 
-.mx-textarea { resize: vertical; }
+.mx-textarea { resize: none; }
 
 .mx-contact-success {
   padding: 48px 0;
