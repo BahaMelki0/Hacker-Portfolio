@@ -22,15 +22,16 @@ class ErrorBoundary extends Component {
   static getDerivedStateFromError(error) { return { error }; }
   render() {
     if (this.state.error) {
-      if (process.env.NODE_ENV === "development") {
-        return (
-          <div style={{ color: "#00ff00", background: "#000", padding: 40, fontFamily: "monospace", minHeight: "100vh" }}>
-            <h2>[ runtime error ]</h2>
-            <pre style={{ whiteSpace: "pre-wrap", color: "#ff4444" }}>{String(this.state.error)}</pre>
-          </div>
-        );
-      }
-      return null;
+      const msg = process.env.NODE_ENV === "development" ? String(this.state.error) : null;
+      return (
+        <div style={{ color: "#6fdc8c", background: "#0a100c", padding: 40, fontFamily: "'JetBrains Mono', monospace", minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", gap: 16 }}>
+          <div style={{ color: "#e56b6b", fontSize: 13 }}>[ runtime error ]</div>
+          {msg && <pre style={{ whiteSpace: "pre-wrap", color: "#e56b6b", fontSize: 12, maxWidth: 600 }}>{msg}</pre>}
+          <button onClick={() => window.location.reload()} style={{ background: "none", border: "1px dashed #6fdc8c", color: "#6fdc8c", fontFamily: "inherit", padding: "8px 20px", cursor: "pointer", fontSize: 12 }}>
+            ▶ reload
+          </button>
+        </div>
+      );
     }
     return this.props.children;
   }

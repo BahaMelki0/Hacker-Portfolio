@@ -18,6 +18,7 @@ function Contact() {
   const { data: PORTFOLIO } = usePortfolio();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState("idle");
+  const [sentEmail, setSentEmail] = useState("");
 
   const onChange = (e) => setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
 
@@ -30,7 +31,7 @@ function Contact() {
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify(form),
       });
-      if (res.ok) { setStatus("success"); setForm({ name: "", email: "", message: "" }); }
+      if (res.ok) { setSentEmail(form.email); setStatus("success"); setForm({ name: "", email: "", message: "" }); }
       else setStatus("error");
     } catch {
       setStatus("error");
@@ -84,7 +85,7 @@ function Contact() {
                 <div style={{ fontSize: 36, marginBottom: 12 }}>▶</div>
                 <div className="mx-hl" style={{ fontSize: 18, marginBottom: 8 }}>Packet transmitted.</div>
                 <div className="mx-dim" style={{ fontSize: 13 }}>
-                  {">"} echo will reach you at {form.email || "—"}
+                  {">"} echo will reach you at {sentEmail || "—"}
                 </div>
               </div>
             ) : (

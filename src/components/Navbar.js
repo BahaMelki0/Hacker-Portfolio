@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { usePortfolio } from "../context/PortfolioContext";
 import "./Navbar.css";
 
 const LINKS = [
@@ -13,6 +14,7 @@ const LINKS = [
 function NavBar() {
   const location = useLocation();
   const [open, setOpen] = useState(false);
+  const { data: PORTFOLIO } = usePortfolio();
 
   const isActive = (to) =>
     to === "/" ? location.pathname === "/" : location.pathname.startsWith(to);
@@ -46,7 +48,7 @@ function NavBar() {
       <div className="mx-nav-right">
         <span className="mx-nav-status">
           <span className="mx-nav-dot">●</span>
-          ONLINE · Sophia Antipolis · FR
+          ONLINE · {PORTFOLIO.locale}
         </span>
       </div>
 

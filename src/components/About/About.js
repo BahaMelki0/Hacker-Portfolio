@@ -13,7 +13,6 @@ function SecHeader({ num, title, sub }) {
 }
 
 function SkillCard({ skill, index }) {
-  const bar = 68 + (skill.length * 3) % 28;
   return (
     <div className="mx-card mx-skill-card">
       <div className="mx-skill-row">
@@ -21,9 +20,6 @@ function SkillCard({ skill, index }) {
         <span className="mx-dim" style={{ fontSize: 10 }}>
           0x{(index + 1).toString(16).padStart(2, "0")}
         </span>
-      </div>
-      <div className="mx-skill-bar-track">
-        <div className="mx-skill-bar" style={{ width: `${bar}%` }} />
       </div>
     </div>
   );
@@ -77,13 +73,7 @@ function About() {
                 {PORTFOLIO.profile.map(({ key, val }) => (
                   <React.Fragment key={key}>
                     <span className="mx-dim">{key}</span>
-                    <span
-                      dangerouslySetInnerHTML={{
-                        __html: val
-                          .replace("RandoriSec", '<span class="mx-hl">RandoriSec</span>')
-                          .replace("EURECOM × SUP'COM", "<span class=\"mx-hl\">EURECOM × SUP'COM</span>"),
-                      }}
-                    />
+                    <span>{val}</span>
                   </React.Fragment>
                 ))}
               </div>

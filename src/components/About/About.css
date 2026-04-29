@@ -52,18 +52,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 8px;
 }
 .mx-skill-name { font-size: 13px; }
-.mx-skill-bar-track {
-  height: 2px;
-  background: var(--mx-border);
-}
-.mx-skill-bar {
-  height: 100%;
-  background: var(--mx-green);
-  box-shadow: 0 0 6px rgba(111, 220, 140, 0.5);
-}
 .mx-skill-footer {
   margin-top: 14px;
   font-size: 11px;
