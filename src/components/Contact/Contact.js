@@ -20,18 +20,34 @@ function Contact() {
   const [status, setStatus] = useState("idle");
   const [sentEmail, setSentEmail] = useState("");
 
-  const onChange = (e) => setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
+  const onChange = (e) => {
+    setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
+    if (status === "error" || status === "invalid") setStatus("idle");
+  };
 
   const onSubmit = async (e) => {
     e.preventDefault();
+
+    const payload = {
+      name: form.name.trim(),
+      email: form.email.trim(),
+      message: form.message.trim(),
+    };
+
+    if (!e.currentTarget.checkValidity() || !payload.name || !payload.email || !payload.message) {
+      setStatus("invalid");
+      e.currentTarget.reportValidity();
+      return;
+    }
+
     setStatus("sending");
     try {
       const res = await fetch(FORMSPREE, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify(payload),
       });
-      if (res.ok) { setSentEmail(form.email); setStatus("success"); setForm({ name: "", email: "", message: "" }); }
+      if (res.ok) { setSentEmail(payload.email); setStatus("success"); setForm({ name: "", email: "", message: "" }); }
       else setStatus("error");
     } catch {
       setStatus("error");
@@ -74,7 +90,7 @@ function Contact() {
         </div>
 
         {/* right: form */}
-        <form className="mx-panel" onSubmit={onSubmit} noValidate>
+        <form className="mx-panel" onSubmit={onSubmit}>
           <div className="mx-panel-head">
             <span className="mx-panel-dots"><span /><span /><span /></span>
             <span>/bin/contact · TLS 1.3</span>
@@ -124,6 +140,11 @@ function Contact() {
                 {status === "error" && (
                   <p style={{ color: "var(--mx-red)", fontSize: 12, marginTop: 10, textAlign: "center" }}>
                     Transmission failed. Try direct mail.
+                  </p>
+                )}
+                {status === "invalid" && (
+                  <p style={{ color: "var(--mx-red)", fontSize: 12, marginTop: 10, textAlign: "center" }}>
+                    Fill all fields before transmitting.
                   </p>
                 )}
               </>
