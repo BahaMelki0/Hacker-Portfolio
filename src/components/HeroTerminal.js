@@ -35,27 +35,21 @@ function HeroTerminal() {
   }, [current, typing, lineIdx, terminalDemo]);
 
   return (
-    <div style={{ fontFamily: "var(--mx-font)", fontSize: 13, lineHeight: 1.65 }}>
+    <div className="mx-terminal-stream">
       {history.map((entry, i) => (
-        <div key={i} style={{ opacity: 1 - (history.length - 1 - i) * 0.14 }}>
-          <div>
+        <div
+          className="mx-terminal-entry"
+          key={i}
+          style={{ opacity: 1 - (history.length - 1 - i) * 0.14 }}
+        >
+          <div className="mx-terminal-command">
             <span className="mx-hl">▸</span>{" "}
             <span className="mx-dim">{entry.cmd}</span>
           </div>
-          <div
-            style={{
-              color: "var(--mx-green)",
-              opacity: 0.8,
-              paddingLeft: 16,
-              whiteSpace: "pre",
-              marginBottom: 4,
-            }}
-          >
-            {entry.out}
-          </div>
+          <div className="mx-terminal-output">{entry.out}</div>
         </div>
       ))}
-      <div>
+      <div className="mx-terminal-command mx-terminal-current">
         <span className="mx-hl">▸</span>{" "}
         <span className="mx-hl">{current}</span>
         {typing && <span className="mx-caret">▋</span>}

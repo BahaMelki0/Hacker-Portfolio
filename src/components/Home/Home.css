@@ -52,6 +52,38 @@
 .mx-hero-terminal {
   max-width: 680px;
   margin-bottom: 36px;
+  overflow: hidden;
+}
+
+.mx-hero-terminal-body {
+  min-width: 0;
+  overflow: hidden;
+  padding: 16px 20px;
+}
+
+.mx-terminal-stream {
+  font-family: var(--mx-font);
+  font-size: 13px;
+  line-height: 1.65;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.mx-terminal-entry,
+.mx-terminal-command,
+.mx-terminal-output {
+  max-width: 100%;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.mx-terminal-output {
+  color: var(--mx-green);
+  margin-bottom: 4px;
+  opacity: 0.8;
+  padding-left: 16px;
+  white-space: pre-wrap;
 }
 
 .mx-hero-ctas {
@@ -77,6 +109,9 @@
   .mx-hero-name    { letter-spacing: -1px; margin-bottom: 14px; }
   .mx-hero-tagline { margin-bottom: 28px; font-size: 16px; }
   .mx-hero-terminal { max-width: 100%; }
+  .mx-hero-terminal-body { padding: 12px 14px; }
+  .mx-terminal-stream { font-size: 12px; line-height: 1.55; }
+  .mx-terminal-output { padding-left: 12px; }
   .mx-hero-ctas   { flex-direction: column; gap: 10px; }
   .mx-hero-ctas .mx-btn { justify-content: center; }
 }

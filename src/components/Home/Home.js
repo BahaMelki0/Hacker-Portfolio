@@ -46,7 +46,7 @@ function Home() {
           </span>
           <span>/dev/tty0 &nbsp;·&nbsp; bmelki@matrix</span>
         </div>
-        <div style={{ padding: "16px 20px" }}>
+        <div className="mx-hero-terminal-body">
           <HeroTerminal />
         </div>
       </div>
