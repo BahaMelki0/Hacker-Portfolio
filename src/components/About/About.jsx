@@ -68,7 +68,7 @@ function About() {
               <p className="mx-dim mx-about-cmd">
                 <span className="mx-hl">$</span> cat about.md
               </p>
-              <p className="mx-about-bio mx-hl">{PORTFOLIO.bio}</p>
+              <p className="mx-about-bio mx-hl">{PORTFOLIO.aboutSummary || PORTFOLIO.bio}</p>
 
               <div className="mx-about-kv">
                 {PORTFOLIO.profile.map(({ key, val }) => (

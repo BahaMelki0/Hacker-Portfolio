@@ -10,6 +10,7 @@ function HeroTerminal() {
   const [typing, setTyping] = useState(true);
 
   useEffect(() => {
+    if (!terminalDemo.length) return;
     const entry = terminalDemo[lineIdx % terminalDemo.length];
     const cmd = entry.cmd;
 
@@ -20,7 +21,7 @@ function HeroTerminal() {
         return () => clearTimeout(t);
       }
       const t = setTimeout(() => {
-        setHistory((h) => [...h.slice(-5), entry]);
+        setHistory([entry]);
         setCurrent("");
         setTyping(false);
       }, 500);

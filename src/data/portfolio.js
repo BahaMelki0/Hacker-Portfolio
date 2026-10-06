@@ -1,6 +1,7 @@
 const PORTFOLIO = {
   "name": "Bahaeddine Melki",
   "handle": "bmelki",
+  "aboutSummary": "Recently graduated Telecommunications Engineer specialized in Cybersecurity. I build tools for cloud identity, detection and AppSec, drawing on my RandoriSec framework internship and IT/cybersecurity experience at KPMG Tunisia.",
   "locale": "Open to roles in France",
   "taglines": [
     "Recently graduated Telecommunications Engineer.",

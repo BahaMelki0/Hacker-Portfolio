@@ -1,5 +1,4 @@
 import React from "react";
-import Typewriter from "typewriter-effect";
 import HeroTerminal from "../HeroTerminal";
 import { useNavigate } from "react-router-dom";
 import { usePortfolio } from "../../context/PortfolioContext";
@@ -22,23 +21,8 @@ function Home() {
         {PORTFOLIO.name}
       </h1>
 
-      <p className="mx-hero-intro">Recently graduated Telecommunications Engineer specialized in Cybersecurity. Cloud &amp; Identity, SOC/Detection, offensive security and AppSec.</p>
+      <p className="mx-hero-intro">Telecommunications Engineer. Cybersecurity graduate. Builder of security tools.</p>
       <p className="mx-hero-availability">Open to CDI / CDD opportunities in France.</p>
-
-      {/* tagline typewriter */}
-      <div className="mx-hero-tagline">
-        <span className="mx-hl">▶&nbsp;</span>
-        <Typewriter
-          options={{
-            strings: PORTFOLIO.taglines,
-            autoStart: true,
-            loop: true,
-            deleteSpeed: 28,
-            delay: 48,
-            cursor: "▋",
-          }}
-        />
-      </div>
 
       {/* inline terminal */}
       <div className="mx-panel mx-hero-terminal">
