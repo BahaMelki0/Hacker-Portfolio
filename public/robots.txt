@@ -1,14 +1,2 @@
-# Hey hacker, you've uncovered our robots.txt!
-# Our hidden directories are just for fun – nothing serious here. 
-
 User-agent: *
-Disallow: /admin-panel/         # Where the secret admins (not really) hang out
-Disallow: /wp-admin/           
-Disallow: /secret-stash/       
-Disallow: /matrix-code/        
-Disallow: /app-store/          
-Disallow: /play-store/          
-Disallow: /instagram-api/       
-Disallow: /facebook-graph/     
-Disallow: /twitter-feed/        
-Disallow: /super-secret-hacklab/
+Allow: /

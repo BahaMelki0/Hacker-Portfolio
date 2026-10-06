@@ -38,7 +38,7 @@ function ResumeNew() {
         {/* panel header with download link */}
         <div className="mx-panel-head">
           <span className="mx-panel-dots"><span /><span /><span /></span>
-          <span>~/resume/bahaeddine_melki.log · size 4.2kB</span>
+          <span>Experience and education</span>
           <a
             href={pdf}
             target="_blank"

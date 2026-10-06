@@ -1,92 +1,56 @@
-# Hacker Portfolio
+# Bahaeddine Melki — Cybersecurity Portfolio
 
-Personal portfolio for Bahaeddine Melki, a recently graduated Telecommunications Engineer specialized in Cybersecurity, seeking CDI/CDD roles in France. Covers Security Engineering, Cloud & Identity, SOC/Detection, offensive security, AppSec/DevSecOps, networking and systems security.
+[Live portfolio](https://bahaeddine-melki.vercel.app/) · [GitHub](https://github.com/BahaMelki0) · [LinkedIn](https://linkedin.com/in/bahaeddine-melki)
 
-Live → **[https://bahaeddine-melki.vercel.app/]**
+Personal portfolio for a recently graduated Telecommunications Engineer specialized in Cybersecurity, open to CDI/CDD roles in France. It presents Security Engineering, Cloud & Identity, SOC/Detection, offensive security, AppSec/DevSecOps, networking and systems work through a Matrix-inspired interface.
 
----
+## Featured work
 
-## Stack
+| Project | Focus |
+| --- | --- |
+| Detection Forge | Case-based detection engineering, identity telemetry and investigations |
+| APK Sentinel | Android AppSec, static evidence, runtime traffic and validation |
+| JobForge | Local AI, junior-France job discovery and application tracking |
+| SecurePipeline | DevSecOps security gates |
+| Windows 11 Call-Graph Toolkit | Reverse engineering and systems security |
+| Voice Spoof Detection | Machine learning and security research |
+| ZK-SNARK / Polynomial Commitments | Cryptography research |
 
-- **React 18** + **React Router v7** (HashRouter), built with **Vite**, tested with **Vitest**
-- **Supabase** (Postgres) — live content DB, editable via dashboard
-- **Vercel** — CI/CD, auto-deploys on push to `main`
-- Custom CSS (`mx.css`) for the matrix/terminal theme
-- **react-icons**, **typewriter-effect**, **Bootstrap CSS**
+## Stack and setup
 
----
+React 18, React Router 7, Vite, Supabase, Bootstrap CSS and Vitest. Node.js 24 is required.
 
-## Pages
-
-| Route | Content |
-|-------|---------|
-| `/` | Hero — glitch name, typewriter taglines, live terminal demo |
-| `/about` | Bio, profile KV, tabbed skill grid |
-| `/project` | Filterable project cards (Security / AI / Systems) |
-| `/resume` | Career timeline + PDF download |
-| `/contact` | Contact form (Formspree) + links |
-| `/admin-panel` | Easter egg |
-
----
-
-## Content Management
-
-All content is stored in **Supabase** and fetched at runtime. To update anything:
-
-1. Go to your [Supabase dashboard](https://supabase.com) → **Table Editor**
-2. Find the relevant table and edit inline — changes are live immediately
-
-Tables: `profile`, `taglines`, `terminal_demo`, `profile_kv`, `skills`, `projects`, `experience`
-
-Static fallback data lives in `src/data/portfolio.js` — used if Supabase is unreachable.
-
----
-
-## Local Development
-
-```bash
+```powershell
 git clone https://github.com/BahaMelki0/Hacker-Portfolio.git
 cd Hacker-Portfolio
-cp .env.example .env   # fill in your Supabase credentials
+Copy-Item .env.example .env
 npm ci
-npm start              # http://localhost:3000
+npm start
 ```
 
-Or with Docker:
-```bash
-docker run --rm -p 3004:3000 \
-  -v "$(pwd):/app" -w /app \
-  node:24-slim sh -c "npm ci && npm start -- --host 0.0.0.0"
+Open http://localhost:3000. Copy the environment file only on first setup. Configure `REACT_APP_SUPABASE_URL` and `REACT_APP_SUPABASE_ANON_KEY`; the equivalent `VITE_` names are also supported. These variables are public browser configuration, never service-role credentials.
+
+## Content and routes
+
+Routes use HashRouter: home, about, projects (`#/project`), resume and contact. Supabase supplies profile, taglines, terminal demo, profile fields, skills, projects and experience. Failed sections retain curated fallback data independently; requests are bounded to 15 seconds. Successful empty tables remain empty. Static content is in `src/data/portfolio.js`.
+
+The contact form sends through Formspree, independently of Supabase. The CV download uses the existing bundled PDF; its content requires separate review.
+
+## Validation and deployment
+
+```powershell
+npm test
+npm run build
+npm audit
 ```
 
----
+Production output is `build/`; preview with `npm run preview`. The connected Vercel project deploys pushes to `main`, using `vercel.json`. Hash routes need no server route rewrite. AWS hosting is not configured.
 
-## Environment Variables
+The Matrix canvas stays fixed outside the content's stacking context. Reduced-motion preference disables animation. Manual desktop/mobile visual review remains required alongside automated tests.
 
-| Variable | Description |
-|----------|-------------|
-| `REACT_APP_SUPABASE_URL` | Your Supabase project URL |
-| `REACT_APP_SUPABASE_ANON_KEY` | Your Supabase anon/public key |
+## Guides
 
-Set these in Vercel under **Project Settings → Environment Variables**.
+- [Graduate content and Supabase migration](docs/CONTENT_UPDATE.md)
+- [Dependency security and deployment compatibility](docs/DEPENDENCY_SECURITY.md)
 
----
-
-## Deploy
-
-Pushes to `main` trigger the connected Vercel deployment. `vercel.json` selects Vite, `npm run build` and output directory `build/`; Node.js 24 is required. Existing public Supabase environment names remain compatible. Check the deployment result after pushing.
-
-## Dependency checks
-
-Run `npm test`, `npm run build` and `npm audit`. The October 6 refresh passed three tests and a production build, with zero npm audit vulnerabilities in the resolved lockfile. See [dependency security and deployment notes](docs/DEPENDENCY_SECURITY.md).
-
----
-
-## Contact
-
-[linkedin.com/in/bahaeddine-melki](https://linkedin.com/in/bahaeddine-melki) · [github.com/BahaMelki0](https://github.com/BahaMelki0)
-
-
-## Verified graduate content
-
-See [content refresh and Supabase migration](docs/CONTENT_UPDATE.md). Updated fallback and fresh-install seed include RandoriSec framework work, KPMG, certifications and seven portfolio projects. Existing Supabase content requires the transactional migration; the public read key cannot administer it. The downloadable CV PDF is retained for separate review. AWS hosting has not been configured.
+No private environment files, generated builds, databases or service-role credentials belong in the repository. Dependency advisory checks are not a full application security assessment.

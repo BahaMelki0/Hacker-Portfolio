@@ -58,12 +58,12 @@ function Contact() {
 
   return (
     <div className="mx-section mx-section-tinted">
-      <SecHeader num="04" title="contact" sub="// secure channel" />
+      <SecHeader num="04" title="contact" sub="// opportunities and collaboration" />
 
       <div className="mx-grid-contact">
         {/* left: info */}
         <div className="mx-contact-info">
-          <p className="mx-hl mx-contact-lead">Incoming transmissions welcome.</p>
+          <p className="mx-hl mx-contact-lead">Let’s discuss your next security project.</p>
           <p className="mx-contact-body" style={{ opacity: 0.85 }}>
             For CDI/CDD opportunities in France, security engineering roles or research collaboration, get in touch.
           </p>
@@ -90,39 +90,39 @@ function Contact() {
         <form className="mx-panel" onSubmit={onSubmit}>
           <div className="mx-panel-head">
             <span className="mx-panel-dots"><span /><span /><span /></span>
-            <span>/bin/contact · TLS 1.3</span>
+            <span>Contact form · delivered through Formspree</span>
           </div>
           <div style={{ padding: "22px 24px" }}>
             {status === "success" ? (
               <div className="mx-contact-success">
                 <div style={{ fontSize: 36, marginBottom: 12 }}>▶</div>
-                <div className="mx-hl" style={{ fontSize: 18, marginBottom: 8 }}>Packet transmitted.</div>
+                <div className="mx-hl" style={{ fontSize: 18, marginBottom: 8 }}>Message sent.</div>
                 <div className="mx-dim" style={{ fontSize: 13 }}>
-                  {">"} echo will reach you at {sentEmail || "—"}
+                  Reply address: {sentEmail || "—"}
                 </div>
               </div>
             ) : (
               <>
                 <div className="mx-field">
-                  <label className="mx-field-label">
-                    {">"} callsign <span className="mx-field-req">*</span>
+                  <label className="mx-field-label" htmlFor="contact-name">
+                    Name <span className="mx-field-req">*</span>
                   </label>
-                  <input className="mx-input" name="name" value={form.name} onChange={onChange}
+                  <input id="contact-name" className="mx-input" name="name" value={form.name} onChange={onChange}
                     required placeholder="your name" autoComplete="name" />
                 </div>
                 <div className="mx-field">
-                  <label className="mx-field-label">
-                    {">"} uplink <span className="mx-field-req">*</span>
+                  <label className="mx-field-label" htmlFor="contact-email">
+                    Email <span className="mx-field-req">*</span>
                   </label>
-                  <input className="mx-input" name="email" type="email" value={form.email}
+                  <input id="contact-email" className="mx-input" name="email" type="email" value={form.email}
                     onChange={onChange} required placeholder="you@domain.tld" autoComplete="email" />
                 </div>
                 <div className="mx-field">
-                  <label className="mx-field-label">
-                    {">"} payload <span className="mx-field-req">*</span>
+                  <label className="mx-field-label" htmlFor="contact-message">
+                    Message <span className="mx-field-req">*</span>
                   </label>
-                  <textarea className="mx-textarea" name="message" rows={5} value={form.message}
-                    onChange={onChange} required placeholder="encrypted message..." />
+                  <textarea id="contact-message" className="mx-textarea" name="message" rows={5} value={form.message}
+                    onChange={onChange} required placeholder="Tell me about the role or project…" />
                 </div>
 
                 <button
@@ -131,17 +131,17 @@ function Contact() {
                   style={{ width: "100%", justifyContent: "center", marginTop: 8 }}
                   disabled={status === "sending"}
                 >
-                  {status === "sending" ? "transmitting..." : "▶ TRANSMIT"}
+                  {status === "sending" ? "Sending…" : "Send message"}
                 </button>
 
                 {status === "error" && (
                   <p style={{ color: "var(--mx-red)", fontSize: 12, marginTop: 10, textAlign: "center" }}>
-                    Transmission failed. Try direct mail.
+                    Could not send your message. Please email me directly.
                   </p>
                 )}
                 {status === "invalid" && (
                   <p style={{ color: "var(--mx-red)", fontSize: 12, marginTop: 10, textAlign: "center" }}>
-                    Fill all fields before transmitting.
+                    Please complete the required fields.
                   </p>
                 )}
               </>
