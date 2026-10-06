@@ -142,14 +142,16 @@ function App() {
         {loading ? (
           <Pre />
         ) : (
-          <div className="App mx-crt">
+          <>
+          <MatrixBackground />
+          <div className="App">
             <ScrollProgress />
-            <MatrixBackground />
             <Navbar />
             <ScrollToTop />
             <AppContent />
             <Footer />
           </div>
+          </>
         )}
       </Router>
     </PortfolioProvider>

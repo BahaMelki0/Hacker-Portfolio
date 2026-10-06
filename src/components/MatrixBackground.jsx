@@ -75,8 +75,12 @@ const MatrixBackground = () => {
     raf = requestAnimationFrame(draw);
 
     const onVisibility = () => {
+      cancelAnimationFrame(raf);
       running = !document.hidden;
-      if (running) raf = requestAnimationFrame(draw);
+      if (running) {
+        last = 0;
+        raf = requestAnimationFrame(draw);
+      }
     };
     document.addEventListener("visibilitychange", onVisibility);
 
@@ -91,7 +95,7 @@ const MatrixBackground = () => {
   return (
     <canvas
       ref={canvasRef}
-      style={{ position: "fixed", inset: 0, zIndex: -1, background: "#0a100c" }}
+      className="matrix-background mx-crt"
       aria-hidden="true"
     />
   );
