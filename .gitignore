@@ -10,6 +10,11 @@
 
 # production
 /build
+/dist
+/.vite
+/node_modules/.vite
+.env.*
+!.env.example
 
 # misc
 .DS_Store

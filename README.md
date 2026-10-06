@@ -8,11 +8,11 @@ Live → **[https://bahaeddine-melki.vercel.app/]**
 
 ## Stack
 
-- **React 18** + **React Router v6** (HashRouter)
+- **React 18** + **React Router v7** (HashRouter), built with **Vite**, tested with **Vitest**
 - **Supabase** (Postgres) — live content DB, editable via dashboard
 - **Vercel** — CI/CD, auto-deploys on push to `main`
 - Custom CSS (`mx.css`) for the matrix/terminal theme
-- **react-icons**, **typewriter-effect**, **react-bootstrap**
+- **react-icons**, **typewriter-effect**, **Bootstrap CSS**
 
 ---
 
@@ -48,7 +48,7 @@ Static fallback data lives in `src/data/portfolio.js` — used if Supabase is un
 git clone https://github.com/BahaMelki0/Hacker-Portfolio.git
 cd Hacker-Portfolio
 cp .env.example .env   # fill in your Supabase credentials
-npm install
+npm ci
 npm start              # http://localhost:3000
 ```
 
@@ -56,7 +56,7 @@ Or with Docker:
 ```bash
 docker run --rm -p 3004:3000 \
   -v "$(pwd):/app" -w /app \
-  node:20-slim sh -c "npm install && npm start"
+  node:24-slim sh -c "npm ci && npm start -- --host 0.0.0.0"
 ```
 
 ---
@@ -74,7 +74,11 @@ Set these in Vercel under **Project Settings → Environment Variables**.
 
 ## Deploy
 
-Pushes to `main` auto-deploy via Vercel. No manual steps needed.
+Pushes to `main` trigger the connected Vercel deployment. `vercel.json` selects Vite, `npm run build` and output directory `build/`; Node.js 24 is required. Existing public Supabase environment names remain compatible. Check the deployment result after pushing.
+
+## Dependency checks
+
+Run `npm test`, `npm run build` and `npm audit`. The October 6 refresh passed three tests and a production build, with zero npm audit vulnerabilities in the resolved lockfile. See [dependency security and deployment notes](docs/DEPENDENCY_SECURITY.md).
 
 ---
 

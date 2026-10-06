@@ -22,7 +22,7 @@ class ErrorBoundary extends Component {
   static getDerivedStateFromError(error) { return { error }; }
   render() {
     if (this.state.error) {
-      const msg = process.env.NODE_ENV === "development" ? String(this.state.error) : null;
+      const msg = import.meta.env.DEV ? String(this.state.error) : null;
       return (
         <div style={{ color: "#6fdc8c", background: "#0a100c", padding: 40, fontFamily: "'JetBrains Mono', monospace", minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", gap: 16 }}>
           <div style={{ color: "#e56b6b", fontSize: 13 }}>[ runtime error ]</div>
