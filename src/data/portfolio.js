@@ -1,158 +1,248 @@
 const PORTFOLIO = {
-  name: "Bahaeddine Melki",
-  handle: "bmelki",
-  locale: "Sophia Antipolis · FR",
-  taglines: [
-    "Breaking Azure tenants by day.",
-    "Post-Master @ EURECOM × SUP'COM.",
-    "Building red-team tooling in Rust.",
-    "Poking at LLMs until they lie.",
+  "name": "Bahaeddine Melki",
+  "handle": "bmelki",
+  "locale": "Open to roles in France",
+  "taglines": [
+    "Recently graduated Telecommunications Engineer.",
+    "Cybersecurity across cloud identity, detection and offensive security.",
+    "Building security tools from evidence to investigation.",
+    "Open to CDI / CDD opportunities in France."
   ],
-  terminalDemo: [
-    { cmd: "whoami",                                              out: "bmelki (uid=1337)  groups=redteam,eurecom" },
-    { cmd: "cat /etc/identity",                                   out: "Bahaeddine Melki · Offensive Security · FR/TN" },
-    { cmd: "nmap -sS -A target.corp",                             out: "22/tcp open  ssh  ·  443/tcp open  https  ·  3389/tcp filtered" },
-    { cmd: "az ad signed-in-user show",                           out: "svc_backup@tenant.onmicrosoft.com  ·  MFA: disabled ⚠" },
-    { cmd: "python3 rat_analyzer.py --sample discord_c2.exe",     out: "[+] C2 channel detected · discord://gateway · entropy=7.8" },
+  "terminalDemo": [
+    {
+      "cmd": "whoami",
+      "out": "Bahaeddine Melki | Telecommunications Engineer | Cybersecurity"
+    },
+    {
+      "cmd": "cat focus.txt",
+      "out": "Cloud & Identity / SOC & Detection / OffSec / AppSec / Networking"
+    },
+    {
+      "cmd": "ls projects/",
+      "out": "Detection Forge / APK Sentinel / JobForge / SecurePipeline"
+    },
+    {
+      "cmd": "cat certifications.txt",
+      "out": "SC-200 / CRTP / CARTP / eJPT / PT1 | CPTS ongoing"
+    }
   ],
-  bio: `Pentest Intern at RandoriSec and Post-Master's student at EURECOM
-in the SUP'COM × EURECOM program — Security of Computer Systems
-and Communications. I like shells on cloud tenants, adversarial
-ML, and writing tools that are uncomfortably effective.`,
-  profile: [
-    { key: "role",      val: "Pentest Intern @ RandoriSec" },
-    { key: "study",     val: "Post-Master · EURECOM × SUP'COM" },
-    { key: "focus",     val: "Azure red team · Adversarial AI · C2 dev" },
-    { key: "languages", val: "FR · EN · AR" },
-    { key: "pgp",       val: "A3F1 9C2D … 88EE" },
+  "bio": "Recently graduated Telecommunications Engineer specialized in Cybersecurity, combining security engineering, Cloud & Identity, SOC/Detection, offensive security, AppSec/DevSecOps, networking and low-level systems security.\n\nDuring my end-of-studies internship at RandoriSec, I worked on an internal Microsoft Graph / Entra ID / Microsoft 365 security assessment framework, refactoring 15+ modules and building authentication, enumeration, permissions, service-principal, artifact-collection and SQLite persistence workflows. My prior experience at KPMG Tunisia covered network troubleshooting, Active Directory and access-control administration.\n\nI am seeking CDI/CDD opportunities in France where I can investigate, automate and build practical security tooling.",
+  "profile": [
+    {
+      "key": "role",
+      "val": "Telecommunications Engineer | Cybersecurity"
+    },
+    {
+      "key": "status",
+      "val": "Recently graduated"
+    },
+    {
+      "key": "focus",
+      "val": "Security Engineering / Cloud & Identity / SOC / OffSec / AppSec"
+    },
+    {
+      "key": "languages",
+      "val": "French / English / Arabic"
+    },
+    {
+      "key": "opportunities",
+      "val": "CDI / CDD in France"
+    }
   ],
-  skills: {
-    Security: [
-      "Azure Red Team", "Active Directory", "Web Pentest",
-      "Malware Analysis", "Privilege Escalation", "C2 Dev",
+  "skills": {
+    "Cloud & Identity": [
+      "Entra ID",
+      "Microsoft Graph",
+      "Microsoft 365",
+      "IAM",
+      "OAuth / OIDC",
+      "Azure",
+      "Active Directory"
     ],
-    Tooling: [
-      "Rust", "Python", "PowerShell",
-      "Bash", "Docker", "Linux",
+    "SOC & Detection": [
+      "Microsoft Sentinel",
+      "KQL",
+      "Defender XDR",
+      "Windows Event Logs",
+      "Sysmon",
+      "MITRE ATT&CK"
     ],
-    "AI / ML": [
-      "Adversarial ML", "PyTorch", "LLM Evaluation",
-      "LSTM / GRU", "Anomaly Detection", "ZK-SNARK",
+    "OffSec & AppSec": [
+      "Pentesting",
+      "AD attack paths",
+      "Privilege escalation",
+      "Lateral movement",
+      "Threat modeling",
+      "Vulnerability management",
+      "DevSecOps"
     ],
+    "Engineering": [
+      "Python",
+      "PowerShell",
+      "Bash",
+      "Rust",
+      "C/C++",
+      "SQL",
+      "Networking",
+      "Low-level systems security"
+    ],
+    "Certifications": [
+      "SC-200",
+      "CRTP",
+      "CARTP",
+      "eJPT",
+      "PT1",
+      "CPTS (ongoing)"
+    ]
   },
-  projects: [
+  "projects": [
     {
-      id: "azure-rt",
-      name: "Azure Red Team Arsenal",
-      cat: "Security",
-      year: "2026",
-      nda: true,
-      summary: "Suite of Azure tenant enumeration and abuse primitives. Covers graph API, devicecode phish, service principal pivoting.",
-      stack: ["Python", "PowerShell", "Azure CLI", "Graph API"],
-      status: "active",
-      ghLink: null,
+      "id": "detection-forge",
+      "name": "Detection Forge",
+      "cat": "Security",
+      "year": "",
+      "nda": false,
+      "summary": "Case-based detection engineering for Entra ID, Windows and Sysmon logs, with YAML rules, hybrid correlation, cited local AI analysis and investigation reports.",
+      "stack": [
+        "Python",
+        "Entra ID",
+        "Sysmon",
+        "Ollama"
+      ],
+      "status": "active",
+      "ghLink": "https://github.com/BahaMelki0/Detection-Forge"
     },
     {
-      id: "zk-rust",
-      name: "ZK-SNARK in Rust",
-      cat: "Systems",
-      year: "2025",
-      nda: false,
-      summary: "From-scratch Groth16 verifier in safe Rust. Bilinear pairing math and transparent setup for reproducible experiments.",
-      stack: ["Rust", "Cryptography", "bls12-381"],
-      status: "shipped",
-      ghLink: null,
+      "id": "apk-sentinel",
+      "name": "APK Sentinel",
+      "cat": "Security",
+      "year": "",
+      "nda": false,
+      "summary": "Android AppSec workspace combining static evidence, dependency intelligence, traffic interception and replay, release comparison and tester-validated reporting.",
+      "stack": [
+        "Python",
+        "Android",
+        "Flask",
+        "SARIF"
+      ],
+      "status": "active",
+      "ghLink": "https://github.com/BahaMelki0/Apk-sentinel"
     },
     {
-      id: "llm-spoof",
-      name: "LLM Spoof Detection",
-      cat: "AI",
-      year: "2025",
-      nda: false,
-      summary: "ASR + LLM pipeline for the ASVspoof-5 task. Fine-tuned DistilBERT and Wav2Vec2 variants to identify spoofed speech.",
-      stack: ["PyTorch", "HF Transformers", "Wav2Vec2"],
-      status: "shipped",
-      ghLink: "https://github.com/BahaMelki0/llm-spoof-detection-asvspoof5",
+      "id": "jobforge",
+      "name": "JobForge",
+      "cat": "AI",
+      "year": "",
+      "nda": false,
+      "summary": "Local-first discovery and application workspace for junior IT and cybersecurity roles in France: scheduled collection, explainable ranking, local AI drafting and application tracking.",
+      "stack": [
+        "Python",
+        "FastAPI",
+        "SQLite",
+        "Ollama"
+      ],
+      "status": "active",
+      "ghLink": "https://github.com/BahaMelki0/jobforge"
     },
     {
-      id: "syscall-graph",
-      name: "Win11 Syscall Call Graph",
-      cat: "Security",
-      year: "2025",
-      nda: false,
-      summary: "Toolkit that maps Windows 11 DLL exports (kernel32, advapi32, user32) to their ntdll syscall stubs via automated Ghidra analysis. Produces unified call graphs, reachability sets, and an interactive Dash UI for exploring hook surface.",
-      stack: ["Python", "Ghidra", "Dash", "igraph", "PowerShell"],
-      status: "shipped",
-      ghLink: "https://github.com/BahaMelki0/Win11Lib_Call_Graph_Construction",
+      "id": "securepipeline",
+      "name": "SecurePipeline",
+      "cat": "Security",
+      "year": "",
+      "nda": false,
+      "summary": "DevSecOps project integrating security gates into CI workflows to make security checks part of the development pipeline.",
+      "stack": [
+        "GitHub Actions",
+        "DevSecOps",
+        "Security automation"
+      ],
+      "status": "active",
+      "ghLink": "https://github.com/BahaMelki0/Secure-Pipeline"
     },
     {
-      id: "discord-rat",
-      name: "Discord RAT Research",
-      cat: "Security",
-      year: "2024",
-      nda: false,
-      summary: "Lab-only research implant to study C2 evasion techniques and tune detection rules. Strictly used in private ethical testbeds.",
-      stack: ["Python", "YARA", "Wireshark"],
-      status: "shipped",
-      ghLink: null,
+      "id": "syscall-graph",
+      "name": "Windows 11 Call-Graph Toolkit",
+      "cat": "Systems",
+      "year": "",
+      "nda": false,
+      "summary": "Windows 11 call-graph and reverse-engineering toolkit for exploring DLL exports, syscall relationships and low-level systems security.",
+      "stack": [
+        "Python",
+        "Ghidra",
+        "Dash",
+        "PowerShell"
+      ],
+      "status": "active",
+      "ghLink": "https://github.com/BahaMelki0/Win11Lib_Call_Graph_Construction"
     },
     {
-      id: "energy-lstm",
-      name: "Energy Forecasting LSTM",
-      cat: "AI",
-      year: "2024",
-      nda: false,
-      summary: "GRU/LSTM ensemble for short-horizon electrical load forecasting with tunable anomaly detection output.",
-      stack: ["PyTorch", "Pandas", "Keras"],
-      status: "shipped",
-      ghLink: null,
+      "id": "llm-spoof",
+      "name": "Voice Spoof Detection",
+      "cat": "AI",
+      "year": "",
+      "nda": false,
+      "summary": "Research project exploring LLM-based voice spoof detection and the intersection of machine learning and security.",
+      "stack": [
+        "Python",
+        "Machine learning",
+        "LLMs"
+      ],
+      "status": "active",
+      "ghLink": "https://github.com/BahaMelki0/llm-spoof-detection-asvspoof5"
     },
     {
-      id: "voronoi",
-      name: "Voronoi Diagram Generator",
-      cat: "Systems",
-      year: "2024",
-      nda: false,
-      summary: "C++ implementation of Fortune's sweep-line algorithm for interactive Voronoi diagrams — computational geometry focus.",
-      stack: ["C++", "Algorithms", "Geometry"],
-      status: "shipped",
-      ghLink: null,
-    },
+      "id": "zk-research",
+      "name": "ZK-SNARK and Polynomial Commitments",
+      "cat": "Systems",
+      "year": "",
+      "nda": false,
+      "summary": "Research into zero-knowledge proofs, ZK-SNARKs and polynomial commitment techniques.",
+      "stack": [
+        "Cryptography",
+        "ZK-SNARK",
+        "Polynomial commitments"
+      ],
+      "status": "research",
+      "ghLink": "https://github.com/BahaMelki0/ZK_Snark"
+    }
   ],
-  experience: [
+  "experience": [
     {
-      role: "Pentest Intern",
-      org: "RandoriSec",
-      date: "2026 —",
-      bullets: ["Azure red-team engagements", "Internal AD assessments", "Offensive tool dev in Python / PowerShell"],
+      "role": "End-of-studies Cybersecurity Internship",
+      "org": "RandoriSec",
+      "date": "Completed internship",
+      "bullets": [
+        "Worked on an internal Microsoft Graph / Entra ID / Microsoft 365 security assessment framework.",
+        "Refactored 15+ modules.",
+        "Built authentication, enumeration, permissions, service-principal and artifact-collection workflows with SQLite persistence."
+      ]
     },
     {
-      role: "MSc — Security of Computer Systems",
-      org: "EURECOM",
-      date: "2024 — 2026",
-      bullets: ["Security of Computer Systems & Communications", "Applied cryptography, adversarial ML", "Thesis: offensive use of LLMs"],
+      "role": "IT / Cybersecurity Experience",
+      "org": "KPMG Tunisia",
+      "date": "Prior experience",
+      "bullets": [
+        "Network troubleshooting.",
+        "Active Directory and access-control administration."
+      ]
     },
     {
-      role: "Research Intern",
-      org: "Tunisian Grid Lab",
-      date: "2024",
-      bullets: ["Load forecasting with LSTM / GRU", "Dataset cleaning and feature engineering"],
-    },
-    {
-      role: "Engineer Degree — Telecommunications",
-      org: "SUP'COM",
-      date: "2022 — 2024",
-      bullets: ["Telecommunications engineering, security focus", "Top 5% of cohort"],
-    },
+      "role": "Telecommunications Engineer — Cybersecurity",
+      "org": "SUP'COM / EURECOM",
+      "date": "Recently graduated",
+      "bullets": [
+        "Hybrid focus across offensive and defensive security, cloud identity, networking and systems.",
+        "Portfolio spanning detection engineering, Android AppSec, DevSecOps, voice spoof detection and cryptography."
+      ]
+    }
   ],
-  contact: {
-    email: "bahaeddine.melki@eurecom.fr",
-    github: "github.com/BahaMelki0",
-    linkedin: "linkedin.com/in/bahaeddine-melki",
-    pgp: "A3F1 9C2D … 88EE",
-  },
+  "contact": {
+    "email": "bahaeddine.melki@eurecom.fr",
+    "github": "github.com/BahaMelki0",
+    "linkedin": "linkedin.com/in/bahaeddine-melki",
+    "pgp": null
+  }
 };
 
-export const PROJECT_CATS = ["All", "Security", "AI", "Systems", "Web"];
-
+export const PROJECT_CATS = ["All", "Security", "AI", "Systems"];
 export default PORTFOLIO;

@@ -29,6 +29,7 @@ function About() {
   const { data: PORTFOLIO } = usePortfolio();
   const tabs = Object.keys(PORTFOLIO.skills);
   const [tab, setTab] = useState(tabs[0] || "Security");
+  const activeTab = tabs.includes(tab) ? tab : tabs[0];
   const revealRefs = useRef([]);
 
   useEffect(() => {
@@ -88,7 +89,7 @@ function About() {
             {tabs.map((t) => (
               <button
                 key={t}
-                className={`mx-tab-btn ${tab === t ? "mx-tab-active" : ""}`}
+                className={`mx-tab-btn ${activeTab === t ? "mx-tab-active" : ""}`}
                 onClick={() => setTab(t)}
               >
                 {t}
@@ -98,13 +99,13 @@ function About() {
 
           {/* skill grid */}
           <div className="mx-grid-2" style={{ marginTop: 0 }}>
-            {PORTFOLIO.skills[tab].map((skill, i) => (
+            {(PORTFOLIO.skills[activeTab] || []).map((skill, i) => (
               <SkillCard key={skill} skill={skill} index={i} />
             ))}
           </div>
 
           <p className="mx-dim mx-skill-footer">
-            ▸ {PORTFOLIO.skills[tab].length} modules loaded · tab to switch
+            ▸ {(PORTFOLIO.skills[activeTab] || []).length} skills and credentials · select a category
           </p>
         </div>
       </div>

@@ -22,7 +22,7 @@ function ProjectCard({ project }) {
   return (
     <div className="mx-card mx-project-card">
       <div className="mx-project-meta mx-dim">
-        [{year}] ·{" "}
+        {year ? `[${year}] · ` : ''}
         <span style={{ color: "var(--mx-green)" }}>{cat.toUpperCase()}</span>
         {" · "}
         <span className={statusCls}>{status}</span>

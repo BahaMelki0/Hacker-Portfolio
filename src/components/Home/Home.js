@@ -14,14 +14,16 @@ function Home() {
       {/* boot meta */}
       <div className="mx-hero-meta mx-dim">
         <span className="mx-hl">[ system::boot ]</span>
-        &nbsp;&nbsp;identity: verified &nbsp;·&nbsp; clearance: ops &nbsp;·&nbsp; status:{" "}
-        <span className="mx-hl">online</span>
+        &nbsp;&nbsp;Cybersecurity engineering &nbsp;·&nbsp; France
       </div>
 
       {/* glitch name */}
       <h1 className="mx-glitch mx-hero-name" data-text={PORTFOLIO.name}>
         {PORTFOLIO.name}
       </h1>
+
+      <p className="mx-hero-intro">Recently graduated Telecommunications Engineer specialized in Cybersecurity. Cloud &amp; Identity, SOC/Detection, offensive security and AppSec.</p>
+      <p className="mx-hero-availability">Open to CDI / CDD opportunities in France.</p>
 
       {/* tagline typewriter */}
       <div className="mx-hero-tagline">
@@ -54,16 +56,16 @@ function Home() {
       {/* CTAs */}
       <div className="mx-hero-ctas">
         <button className="mx-btn mx-btn-primary" onClick={() => navigate("/project")}>
-          <span>▶</span> View Operations
+          <span>▶</span> View projects
         </button>
         <button className="mx-btn" onClick={() => navigate("/contact")}>
-          <span>⌁</span> Establish Contact
+          <span>⌁</span> Contact me
         </button>
       </div>
 
       {/* scroll hint */}
       <div className="mx-hero-hint mx-dim">
-        ↓ scroll &nbsp;·&nbsp; wake up, neo
+        Security tooling, investigations and research
       </div>
     </section>
   );

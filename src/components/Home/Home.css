@@ -99,6 +99,17 @@
   text-transform: uppercase;
 }
 
+.mx-hero-intro {
+  max-width: 720px;
+  font-size: 17px;
+  line-height: 1.7;
+  margin: 0 0 12px;
+}
+.mx-hero-availability {
+  color: var(--mx-green-bright);
+  font-size: 14px;
+  margin: 0 0 24px;
+}
 @media (max-width: 768px) {
   .mx-hero {
     padding: 90px 20px 60px;

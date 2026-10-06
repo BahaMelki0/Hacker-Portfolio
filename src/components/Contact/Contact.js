@@ -65,8 +65,7 @@ function Contact() {
         <div className="mx-contact-info">
           <p className="mx-hl mx-contact-lead">Incoming transmissions welcome.</p>
           <p className="mx-contact-body" style={{ opacity: 0.85 }}>
-            For engagements, research collaboration, or a coffee — send a packet.
-            Responses within 48h. Encrypted mail preferred.
+            For CDI/CDD opportunities in France, security engineering roles or research collaboration, get in touch.
           </p>
 
           <div className="mx-contact-kv">
@@ -76,15 +75,13 @@ function Contact() {
             <a href="https://github.com/BahaMelki0" target="_blank" rel="noreferrer" className="mx-link">{contact.github}</a>
             <span className="mx-dim">in</span>
             <a href="https://linkedin.com/in/bahaeddine-melki" target="_blank" rel="noreferrer" className="mx-link">{contact.linkedin}</a>
-            <span className="mx-dim">pgp</span>
-            <span className="mx-mono" style={{ fontSize: 12 }}>{contact.pgp}</span>
+            {contact.pgp && !contact.pgp.includes('…') && <><span className="mx-dim">pgp</span><span className="mx-mono" style={{ fontSize: 12 }}>{contact.pgp}</span></>}
           </div>
 
           <div className="mx-contact-note">
             <div className="mx-hl" style={{ marginBottom: 6, fontSize: 11 }}>⚠ operational note</div>
             <p style={{ margin: 0, fontSize: 11, color: "var(--mx-green-dim)" }}>
-              For sensitive disclosures, use PGP or Signal. Never send client data
-              in cleartext. The system is listening.
+              Please share only information suitable for a public contact form. For technical discussions, describe the scope without including credentials or private client data.
             </p>
           </div>
         </div>

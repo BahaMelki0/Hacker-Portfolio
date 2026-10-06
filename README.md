@@ -1,6 +1,6 @@
 # Hacker Portfolio
 
-Personal portfolio for Bahaeddine Melki — offensive security engineer, Post-Master's student at EURECOM × SUP'COM, and member of the Tunisian CTF squad **KB4B3T**. Built with a retro hacker aesthetic: matrix rain, terminal typography, glitch effects.
+Personal portfolio for Bahaeddine Melki, a recently graduated Telecommunications Engineer specialized in Cybersecurity, seeking CDI/CDD roles in France. Covers Security Engineering, Cloud & Identity, SOC/Detection, offensive security, AppSec/DevSecOps, networking and systems security.
 
 Live → **[https://bahaeddine-melki.vercel.app/]**
 
@@ -81,3 +81,8 @@ Pushes to `main` auto-deploy via Vercel. No manual steps needed.
 ## Contact
 
 [linkedin.com/in/bahaeddine-melki](https://linkedin.com/in/bahaeddine-melki) · [github.com/BahaMelki0](https://github.com/BahaMelki0)
+
+
+## Verified graduate content
+
+See [content refresh and Supabase migration](docs/CONTENT_UPDATE.md). Updated fallback and fresh-install seed include RandoriSec framework work, KPMG, certifications and seven portfolio projects. Existing Supabase content requires the transactional migration; the public read key cannot administer it. The downloadable CV PDF is retained for separate review. AWS hosting has not been configured.

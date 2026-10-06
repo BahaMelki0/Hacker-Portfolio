@@ -1,91 +1,17 @@
--- ============================================================
--- HACKER PORTFOLIO — Supabase Schema + Seed
--- Run this entire file in the Supabase SQL Editor
--- ============================================================
-
--- ── Tables ──────────────────────────────────────────────────
-
-create table if not exists profile (
-  id      serial primary key,
-  name    text not null,
-  handle  text,
-  locale  text,
-  bio     text,
-  email   text,
-  github  text,
-  linkedin text,
-  pgp     text
-);
-
-create table if not exists taglines (
-  id   serial primary key,
-  text text not null,
-  ord  int  not null default 0
-);
-
-create table if not exists terminal_demo (
-  id  serial primary key,
-  cmd text not null,
-  out text not null,
-  ord int  not null default 0
-);
-
-create table if not exists profile_kv (
-  id  serial primary key,
-  key text not null,
-  val text not null,
-  ord int  not null default 0
-);
-
-create table if not exists skills (
-  id       serial primary key,
-  category text not null,
-  name     text not null,
-  ord      int  not null default 0
-);
-
-create table if not exists projects (
-  id      text primary key,
-  name    text not null,
-  cat     text not null,
-  year    text,
-  nda     boolean default false,
-  summary text,
-  stack   text[],
-  status  text default 'shipped',
-  gh_link text,
-  ord     int  not null default 0
-);
-
-create table if not exists experience (
-  id      serial primary key,
-  role    text not null,
-  org     text not null,
-  date    text,
-  bullets text[],
-  ord     int  not null default 0
-);
-
--- ── RLS: public read-only ────────────────────────────────────
-
-alter table profile      enable row level security;
-alter table taglines     enable row level security;
-alter table terminal_demo enable row level security;
-alter table profile_kv   enable row level security;
-alter table skills       enable row level security;
-alter table projects     enable row level security;
-alter table experience   enable row level security;
-
-create policy "public read" on profile       for select using (true);
-create policy "public read" on taglines      for select using (true);
-create policy "public read" on terminal_demo for select using (true);
-create policy "public read" on profile_kv    for select using (true);
-create policy "public read" on skills        for select using (true);
-create policy "public read" on projects      for select using (true);
-create policy "public read" on experience    for select using (true);
-
--- ── Seed Data ───────────────────────────────────────────────
-
+begin;
+-- Single-owner portfolio content refresh. Replaces the public content tables only.
+do $$ begin
+  if exists (select 1 from profile where handle is distinct from 'bmelki') or (select count(*) from profile) > 1 then
+    raise exception 'Expected the single-owner bmelki portfolio; no content changed';
+  end if;
+end $$;
+delete from experience;
+delete from projects;
+delete from skills;
+delete from profile_kv;
+delete from terminal_demo;
+delete from taglines;
+delete from profile;
 insert into profile (name,handle,locale,bio,email,github,linkedin,pgp) values
   ('Bahaeddine Melki','bmelki','Open to roles in France','Recently graduated Telecommunications Engineer specialized in Cybersecurity, combining security engineering, Cloud & Identity, SOC/Detection, offensive security, AppSec/DevSecOps, networking and low-level systems security.
 
@@ -155,3 +81,4 @@ insert into experience (role,org,date,bullets,ord) values
   ('End-of-studies Cybersecurity Internship','RandoriSec','Completed internship',ARRAY['Worked on an internal Microsoft Graph / Entra ID / Microsoft 365 security assessment framework.','Refactored 15+ modules.','Built authentication, enumeration, permissions, service-principal and artifact-collection workflows with SQLite persistence.']::text[],0),
   ('IT / Cybersecurity Experience','KPMG Tunisia','Prior experience',ARRAY['Network troubleshooting.','Active Directory and access-control administration.']::text[],1),
   ('Telecommunications Engineer — Cybersecurity','SUP''COM / EURECOM','Recently graduated',ARRAY['Hybrid focus across offensive and defensive security, cloud identity, networking and systems.','Portfolio spanning detection engineering, Android AppSec, DevSecOps, voice spoof detection and cryptography.']::text[],2);
+commit;
